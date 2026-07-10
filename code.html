@@ -208,6 +208,18 @@
     </style>
 </head>
 <body class="bg-background text-on-background selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Loading Screen -->
+<div id="loader" class="fixed inset-0 z-[100] bg-background flex flex-col items-center justify-center transition-opacity duration-700">
+    <div class="animate-pulse mb-6">
+        <span class="material-symbols-outlined text-[96px] text-primary-fixed drop-shadow-[0_0_15px_rgba(209,158,0,0.5)]">fitness_center</span>
+    </div>
+    <div class="h-10 relative w-full max-w-sm text-center flex justify-center items-center">
+        <div id="loader-text" class="font-headline-md text-headline-md text-primary uppercase tracking-widest transition-opacity duration-300">
+            Warming up...
+        </div>
+    </div>
+</div>
+
 <!-- TopNavBar -->
 <nav class="docked full-width top-0 sticky z-50 bg-background border-b-2 border-surface-variant">
 <div class="flex justify-between items-center w-full px-gutter py-4 max-w-container-max mx-auto">
@@ -731,4 +743,32 @@
             observer.observe(section);
         });
     </script>
+
+    <!-- Loader Script -->
+    <script>
+        const loader = document.getElementById('loader');
+        const loaderText = document.getElementById('loader-text');
+        const phrases = ["Building muscle...", "Doing sprints...", "Lifting heavy...", "Forging champions..."];
+        let phraseIndex = 0;
+
+        const textInterval = setInterval(() => {
+            loaderText.style.opacity = '0';
+            setTimeout(() => {
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                loaderText.innerText = phrases[phraseIndex];
+                loaderText.style.opacity = '1';
+            }, 300);
+        }, 600);
+
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                clearInterval(textInterval);
+                loader.style.opacity = '0';
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                }, 700);
+            }, 2000);
+        });
+    </script>
+
 </body></html>
