@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FITWAY GYM | CALCULATED AGGRESSION</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&amp;family=Inter:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "on-tertiary-fixed-variant": "#474746",
+                "outline-variant": "#4d4732",
+                "secondary-container": "#474746",
+                "on-secondary-fixed": "#1c1b1b",
+                "surface-dim": "#131313",
+                "surface-variant": "#353534",
+                "error": "#ffb4ab",
+                "on-tertiary-fixed": "#1b1c1c",
+                "secondary": "#c8c6c5",
+                "primary-fixed": "#d19e00",
+                "tertiary-fixed-dim": "#c8c6c5",
+                "primary-fixed-dim": "#b38700",
+                "surface-container-low": "#1c1b1b",
+                "inverse-surface": "#e5e2e1",
+                "on-tertiary": "#303030",
+                "secondary-fixed": "#e5e2e1",
+                "primary": "#fff6df",
+                "surface": "#131313",
+                "surface-container-highest": "#353534",
+                "on-surface-variant": "#d0c6ab",
+                "on-primary-fixed": "#221b00",
+                "on-secondary-fixed-variant": "#474746",
+                "outline": "#999077",
+                "surface-container": "#201f1f",
+                "on-primary-fixed-variant": "#544600",
+                "tertiary": "#f8f6f5",
+                "on-background": "#e5e2e1",
+                "on-secondary": "#313030",
+                "on-surface": "#e5e2e1",
+                "primary-container": "#d19e00",
+                "surface-bright": "#3a3939",
+                "secondary-fixed-dim": "#c8c6c5",
+                "error-container": "#93000a",
+                "surface-container-high": "#2a2a2a",
+                "tertiary-container": "#dcd9d9",
+                "surface-tint": "#b38700",
+                "on-tertiary-container": "#5f5f5e",
+                "on-error": "#690005",
+                "on-primary-container": "#705e00",
+                "tertiary-fixed": "#e4e2e1",
+                "on-secondary-container": "#b7b5b4",
+                "surface-container-lowest": "#0e0e0e",
+                "on-error-container": "#ffdad6",
+                "on-primary": "#3a3000",
+                "inverse-on-surface": "#313030",
+                "background": "#131313",
+                "inverse-primary": "#705d00"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "base": "8px",
+                "container-max": "1280px",
+                "margin-mobile": "16px",
+                "gutter": "24px",
+                "section-gap": "120px",
+                "margin-desktop": "64px"
+        },
+        "fontFamily": {
+                "label-bold": [
+                        "Inter"
+                ],
+                "label-sm": [
+                        "Inter"
+                ],
+                "headline-lg": [
+                        "Oswald"
+                ],
+                "headline-md": [
+                        "Oswald"
+                ],
+                "body-md": [
+                        "Inter"
+                ],
+                "display-lg": [
+                        "Oswald"
+                ],
+                "headline-lg-mobile": [
+                        "Oswald"
+                ],
+                "body-lg": [
+                        "Inter"
+                ]
+        },
+        "fontSize": {
+                "label-bold": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                "label-sm": [
+                        "12px",
+                        {
+                                "lineHeight": "1",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-lg": [
+                        "48px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "1.3",
+                                "fontWeight": "500"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ],
+                "display-lg": [
+                        "72px",
+                        {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "32px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ]
+        }
+      },
+    },
+  }
+</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        .hard-shadow {
+            box-shadow: 4px 4px 0px 0px #b38700;
+        }
+
+        .btn-primary:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 4px 4px 0px 0px #000000;
+        }
+
+        .brutalist-border {
+            border: 1px solid #2A2A2A;
+        }
+
+        .gradient-overlay {
+            background: linear-gradient(90deg, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.4) 50%, rgba(179,135,0,0.15) 100%);
+        }
+
+        .trainer-card:hover img {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
+        .trainer-card img {
+            filter: grayscale(100%);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: max-content;
+            animation: marquee 30s linear infinite;
+        }
+        .animate-marquee:hover {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="docked full-width top-0 sticky z-50 bg-background border-b-2 border-surface-variant">
+<div class="flex justify-between items-center w-full px-gutter py-4 max-w-container-max mx-auto">
+<div class="font-display-lg text-headline-md uppercase tracking-tighter text-primary">
+                FITWAY GYM
+            </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-bold text-label-bold text-on-surface hover:text-primary-fixed transition-colors" href="#">Memberships</a>
+<a class="font-label-bold text-label-bold text-on-surface hover:text-primary-fixed transition-colors" href="#">Schedule</a>
+<a class="font-label-bold text-label-bold text-on-surface hover:text-primary-fixed transition-colors" href="#">Trainers</a>
+<a class="font-label-bold text-label-bold text-on-surface hover:text-primary-fixed transition-colors" href="#">Location</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary-fixed text-on-primary-fixed font-label-bold text-label-bold px-6 py-2 uppercase hover:translate-y-[-2px] transition-transform duration-200 active:scale-95">
+                    Contact Us
+                </button>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-primary-fixed/20 z-10 pointer-events-none"></div>
+<div class="absolute inset-0 gradient-overlay z-10"></div>
+<div class="w-full h-full bg-cover bg-center" data-alt="A gritty cinematic grayscale photograph of a professional Olympic weightlifter mid-lift, muscles tensed and chalk dust exploding in the air. The scene is shot in a high-contrast industrial gym setting with raw concrete walls and intense overhead spotlighting. An Dark Yellow color wash is applied selectively to the highlights, creating a powerful high-impact visual that matches the FITWAY GYM brand aesthetic. The lighting is dramatic and moody, emphasizing every detail of physical exertion." style="background-image: url('./images/hero.jpg')"></div>
+</div>
+<div class="relative z-20 w-full px-gutter max-w-container-max mx-auto">
+<div class="max-w-4xl">
+<!-- Tag removed -->
+<h1 class="font-display-lg text-[64px] md:text-display-lg leading-tight uppercase text-primary mb-8 italic">
+                        Push Your <span class="text-primary-fixed">Limits</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-12 border-l-4 border-primary-fixed pl-6">
+                        Calculated aggression meets digital precision. Join Fitway's elite performance sanctuary where we forge champions out of pure grit.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-6">
+<button class="bg-primary-fixed text-on-primary-fixed font-label-bold text-label-bold px-10 py-5 uppercase text-lg hard-shadow btn-primary transition-all duration-200">
+                            Contact Us
+                        </button>
+<button class="border-2 border-primary text-primary font-label-bold text-label-bold px-10 py-5 uppercase text-lg hover:bg-primary hover:text-background transition-colors">
+                            View Programs
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Arsenal (Bento Grid) -->
+<section class="py-section-gap px-gutter max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div>
+<h2 class="font-headline-lg text-headline-lg uppercase text-primary">Our <span class="text-primary-fixed">Arsenal</span></h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">World-class machinery for elite performance.</p>
+</div>
+<div class="hidden md:block h-1 w-32 bg-primary-fixed mb-4"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[600px]">
+<!-- Weight Training -->
+<div class="md:col-span-7 relative group overflow-hidden brutalist-border bg-surface-container">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Close-up artistic shot of heavy iron plates and barbells stacked in a rows. The lighting is low-key with sharp highlights reflecting off the metallic surfaces. The color palette is dominated by deep charcoal grays and blacks with subtle Dark Yellow glows in the shadows. The atmosphere is dense and energetic, evoking the feeling of a professional weight training zone in a premium brutalist gym." style="background-image: url('./images/weight_training.jpg')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-80"></div>
+</div>
+<div class="relative z-10 h-full p-8 flex flex-col justify-end">
+<h3 class="font-headline-md text-headline-md text-primary uppercase">Weight Training</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 max-w-md">30,000 sq ft of pure iron. Custom-built platforms and elite hammer strength equipment.</p>
+</div>
+</div>
+<!-- Cardio Zone -->
+<div class="md:col-span-5 relative group overflow-hidden brutalist-border bg-surface-container">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A row of high-tech curved treadmills and air bikes arranged in a clean, modern gym layout. The setting features exposed brick walls and neon Dark Yellow strip lighting along the ceiling. The image is captured with a slight motion blur to suggest movement and speed. The mood is focused and high-energy, typical of a professional cardio training zone in a luxury industrial fitness facility." style="background-image: url('./images/cardio_zone.jpg')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-80"></div>
+</div>
+<div class="relative z-10 h-full p-8 flex flex-col justify-end">
+<h3 class="font-headline-md text-headline-md text-primary uppercase">Cardio Zone</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">HIIT-focused infrastructure featuring Skillmills and Assault Bikes.</p>
+</div>
+</div>
+<!-- Crossfit -->
+<div class="md:col-span-12 relative group overflow-hidden brutalist-border bg-surface-container h-[300px]">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A wide-angle shot of a vast CrossFit box interior during golden hour. Shadows of athletes hanging from pull-up rigs are cast across the rubber floor. Ropes, kettlebells, and gymnastics rings are visible in a structured but raw layout. The aesthetic is gritty and authentic, using high-contrast lighting to create a sense of scale and community mission." style="background-image: url('./images/crossfit_zone.jpg')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+</div>
+<div class="relative z-10 h-full p-8 flex flex-col justify-end items-start md:items-end md:text-right">
+<h3 class="font-headline-md text-headline-md text-primary uppercase">Crossfit &amp; Functional</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 max-w-xl">A playground for the obsessed. Multi-rig setups, turf tracks, and dedicated mobility zones.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Elite Coaching -->
+<section class="bg-surface-container-low py-section-gap">
+<div class="px-gutter max-w-container-max mx-auto">
+<div class="mb-16">
+<h2 class="font-headline-lg text-headline-lg uppercase text-primary">Elite <span class="text-primary-fixed">Coaches</span></h2>
+<div class="w-24 h-2 bg-primary-fixed mt-4"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Trainer 1 -->
+<div class="trainer-card group brutalist-border bg-background overflow-hidden relative">
+<div class="h-[450px] overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A powerful studio portrait of a male fitness coach with an intense expression. He has a muscular build and is wearing a black branded FITWAY GYM tank top. The background is a flat Slate Gray with a single sharp Dark Yellow rim light highlighting his silhouette. The style is sharp, professional, and slightly aggressive, matching a high-end fitness brand identity." src="./images/trainer1.jpg"/>
+</div>
+<div class="p-8 relative">
+<div class="absolute -top-12 left-8 bg-primary-fixed text-on-primary-fixed p-4 font-display-lg text-headline-md uppercase italic">
+                                Vikram S.
+                            </div>
+<p class="font-label-bold text-label-bold text-primary-fixed uppercase tracking-widest mt-6">Head of Strength</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4">Former national powerlifter with 12+ years of experience in biomechanics and peak performance.</p>
+<button class="mt-8 flex items-center gap-2 font-label-bold text-label-bold text-primary uppercase group-hover:text-primary-fixed transition-colors">
+                                Book Session <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Trainer 2 -->
+<div class="trainer-card group brutalist-border bg-background overflow-hidden relative">
+<div class="h-[450px] overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A dynamic portrait of a female CrossFit athlete and coach. She is shown in an athletic stance, mid-adjustment of her wrist wraps. Her expression is focused and determined. The lighting is cold and cinematic, emphasizing muscular definition and grit. The scene is set in an industrial gym background blurred in the distance. High-contrast Slate and Black tones with Dark Yellow accents." src="./images/trainer2.jpg"/>
+</div>
+<div class="p-8 relative">
+<div class="absolute -top-12 left-8 bg-primary-fixed text-on-primary-fixed p-4 font-display-lg text-headline-md uppercase italic">
+                                Ananya R.
+                            </div>
+<p class="font-label-bold text-label-bold text-primary-fixed uppercase tracking-widest mt-6">HIIT &amp; Conditioning</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4">Specialist in high-intensity metabolic conditioning and functional movement restoration.</p>
+<button class="mt-8 flex items-center gap-2 font-label-bold text-label-bold text-primary uppercase group-hover:text-primary-fixed transition-colors">
+                                Book Session <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Trainer 3 -->
+<div class="trainer-card group brutalist-border bg-background overflow-hidden relative">
+<div class="h-[450px] overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A portrait of a male trainer with a calm yet authoritative presence. He is standing with arms crossed, wearing a black performance t-shirt. The background features a subtle hint of gym equipment under soft, moody lighting. The image focuses on professional grit and reliability. Dark obsidian foundation with Dark Yellow light accents on the edges of his clothing." src="./images/trainer3.jpg"/>
+</div>
+<div class="p-8 relative">
+<div class="absolute -top-12 left-8 bg-primary-fixed text-on-primary-fixed p-4 font-display-lg text-headline-md uppercase italic">
+                                Karan M.
+                            </div>
+<p class="font-label-bold text-label-bold text-primary-fixed uppercase tracking-widest mt-6">Transformation Specialist</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4">Expert in nutrition design and sustainable fat loss transitions for busy professionals.</p>
+<button class="mt-8 flex items-center gap-2 font-label-bold text-label-bold text-primary uppercase group-hover:text-primary-fixed transition-colors">
+                                Book Session <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Reviews Section -->
+<section class="py-section-gap overflow-hidden bg-surface-container-low relative">
+    <div class="px-gutter max-w-container-max mx-auto mb-16 relative z-20">
+        <div class="flex items-center gap-4">
+            <h2 class="font-headline-lg text-headline-lg uppercase text-primary">Google <span class="text-primary-fixed">Reviews</span></h2>
+            <svg viewBox="0 0 24 24" width="32" height="32" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        </div>
+        <div class="w-24 h-2 bg-primary-fixed mt-4"></div>
+    </div>
+    
+    <div class="w-full overflow-hidden relative pb-8">
+        <div class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-surface-container-low to-transparent z-10 pointer-events-none"></div>
+        <div class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-surface-container-low to-transparent z-10 pointer-events-none"></div>
+        
+        <div class="animate-marquee gap-6 px-4 hover:cursor-pointer">
+            <!-- Review 1 -->
+            <div class="brutalist-border bg-background p-8 min-w-[400px] max-w-[400px] flex-shrink-0 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center font-label-bold text-primary">R</div>
+                            <div>
+                                <div class="font-label-bold text-label-bold text-primary uppercase">Renu Renu</div>
+                                <div class="font-body-md text-on-surface-variant text-sm">2 months ago</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex text-primary-fixed mb-4">
+                        <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <p class="font-body-md text-body-md text-on-surface-variant italic">"Fitway Gym stands out for its professionalism and quality service. The gym is well-equipped hygienic and offers a great workout atmosphere. The staff is cooperative and ensures proper guidance."</p>
+                </div>
+            </div>
+            <!-- Review 2 -->
+            <div class="brutalist-border bg-background p-8 min-w-[400px] max-w-[400px] flex-shrink-0 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center font-label-bold text-primary">S</div>
+                            <div>
+                                <div class="font-label-bold text-label-bold text-primary uppercase">Sujal Soni</div>
+                                <div class="font-body-md text-on-surface-variant text-sm">2 months ago</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex text-primary-fixed mb-4">
+                        <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <p class="font-body-md text-body-md text-on-surface-variant italic">"Hands down the best gym in Sector 67. The equipment is top-notch, the space is always clean, and the vibe is incredibly motivating! Perfectly located near CP67 Mall."</p>
+                </div>
+            </div>
+            <!-- Review 3 -->
+            <div class="brutalist-border bg-background p-8 min-w-[400px] max-w-[400px] flex-shrink-0 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center font-label-bold text-primary">A</div>
+                            <div>
+                                <div class="font-label-bold text-label-bold text-primary uppercase">Akhil Negi</div>
+                                <div class="font-body-md text-on-surface-variant text-sm">a month ago</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex text-primary-fixed mb-4">
+                        <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <p class="font-body-md text-body-md text-on-surface-variant italic">"Amazing gym with great equipment, a motivating atmosphere, and supportive trainers. Highly recommended! All trainer are good but nikhil sir is good trainer."</p>
+                </div>
+            </div>
+            <!-- Review 4 -->
+            <div class="brutalist-border bg-background p-8 min-w-[400px] max-w-[400px] flex-shrink-0 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center font-label-bold text-primary">P</div>
+                            <div>
+                                <div class="font-label-bold text-label-bold text-primary uppercase">Prashant Chauhan</div>
+                                <div class="font-body-md text-on-surface-variant text-sm">a month ago</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex text-primary-fixed mb-4">
+                        <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <p class="font-body-md text-body-md text-on-surface-variant italic">"The staff is always friendly, professional, and ready to help. Excellent customer service and a very welcoming atmosphere. The staff keeps the gym clean, organized, and enjoyable to use."</p>
+                </div>
+            </div>
+            <!-- Review 5 -->
+            <div class="brutalist-border bg-background p-8 min-w-[400px] max-w-[400px] flex-shrink-0 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center font-label-bold text-primary">A</div>
+                            <div>
+                                <div class="font-label-bold text-label-bold text-primary uppercase">Aaditya Sharma</div>
+                                <div class="font-body-md text-on-surface-variant text-sm">a month ago</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex text-primary-fixed mb-4">
+                        <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <p class="font-body-md text-body-md text-on-surface-variant italic">"I’ve had a great experience at this fit way gym. The environment is clean, well-maintained, and very motivating for anyone focused on fitness. The equipment is modern and always in good condition."</p>
+                </div>
+            </div>
+            <!-- Duplicated for infinite scroll effect -->
+            <!-- Review 1 -->
+            <div class="brutalist-border bg-background p-8 min-w-[400px] max-w-[400px] flex-shrink-0 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center font-label-bold text-primary">R</div>
+                            <div>
+                                <div class="font-label-bold text-label-bold text-primary uppercase">Renu Renu</div>
+                                <div class="font-body-md text-on-surface-variant text-sm">2 months ago</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex text-primary-fixed mb-4">
+                        <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <p class="font-body-md text-body-md text-on-surface-variant italic">"Fitway Gym stands out for its professionalism and quality service. The gym is well-equipped hygienic and offers a great workout atmosphere. The staff is cooperative and ensures proper guidance."</p>
+                </div>
+            </div>
+            <!-- Review 2 -->
+            <div class="brutalist-border bg-background p-8 min-w-[400px] max-w-[400px] flex-shrink-0 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center font-label-bold text-primary">S</div>
+                            <div>
+                                <div class="font-label-bold text-label-bold text-primary uppercase">Sujal Soni</div>
+                                <div class="font-body-md text-on-surface-variant text-sm">2 months ago</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex text-primary-fixed mb-4">
+                        <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <p class="font-body-md text-body-md text-on-surface-variant italic">"Hands down the best gym in Sector 67. The equipment is top-notch, the space is always clean, and the vibe is incredibly motivating! Perfectly located near CP67 Mall."</p>
+                </div>
+            </div>
+            <!-- Review 3 -->
+            <div class="brutalist-border bg-background p-8 min-w-[400px] max-w-[400px] flex-shrink-0 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center font-label-bold text-primary">A</div>
+                            <div>
+                                <div class="font-label-bold text-label-bold text-primary uppercase">Akhil Negi</div>
+                                <div class="font-body-md text-on-surface-variant text-sm">a month ago</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex text-primary-fixed mb-4">
+                        <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <p class="font-body-md text-body-md text-on-surface-variant italic">"Amazing gym with great equipment, a motivating atmosphere, and supportive trainers. Highly recommended! All trainer are good but nikhil sir is good trainer."</p>
+                </div>
+            </div>
+            <!-- Review 4 -->
+            <div class="brutalist-border bg-background p-8 min-w-[400px] max-w-[400px] flex-shrink-0 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center font-label-bold text-primary">P</div>
+                            <div>
+                                <div class="font-label-bold text-label-bold text-primary uppercase">Prashant Chauhan</div>
+                                <div class="font-body-md text-on-surface-variant text-sm">a month ago</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex text-primary-fixed mb-4">
+                        <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <p class="font-body-md text-body-md text-on-surface-variant italic">"The staff is always friendly, professional, and ready to help. Excellent customer service and a very welcoming atmosphere. The staff keeps the gym clean, organized, and enjoyable to use."</p>
+                </div>
+            </div>
+            <!-- Review 5 -->
+            <div class="brutalist-border bg-background p-8 min-w-[400px] max-w-[400px] flex-shrink-0 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center font-label-bold text-primary">A</div>
+                            <div>
+                                <div class="font-label-bold text-label-bold text-primary uppercase">Aaditya Sharma</div>
+                                <div class="font-body-md text-on-surface-variant text-sm">a month ago</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex text-primary-fixed mb-4">
+                        <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <p class="font-body-md text-body-md text-on-surface-variant italic">"I’ve had a great experience at this fit way gym. The environment is clean, well-maintained, and very motivating for anyone focused on fitness. The equipment is modern and always in good condition."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Gallery Section -->
+<section class="py-section-gap px-gutter max-w-container-max mx-auto overflow-hidden">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg uppercase text-primary">The <span class="text-primary-fixed">Iron Collective</span></h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 uppercase tracking-[0.2em]">Witness the Work</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="relative overflow-hidden brutalist-border h-[400px] group">
+<img alt="FITWAY GYM floor" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" src="./images/gallery1.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</div>
+<div class="relative overflow-hidden brutalist-border h-[400px] group">
+<img alt="Heavy iron plates" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" src="./images/gallery2.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</div>
+<div class="relative overflow-hidden brutalist-border h-[400px] group">
+<img alt="Athlete deadlifting" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" src="./images/gallery3.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</div>
+<div class="relative overflow-hidden brutalist-border h-[400px] group">
+<img alt="Gripping the bar" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" src="./images/gallery4.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</div>
+</div>
+<div class="mt-16 flex justify-center">
+<button class="bg-surface-container-high text-primary border border-outline px-8 py-4 font-label-bold text-label-bold uppercase flex items-center gap-2 hover:bg-primary-fixed hover:text-on-primary-fixed transition-all">
+            View Full Gallery <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-section-gap bg-primary-fixed">
+<div class="px-gutter max-w-container-max mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+<div class="max-w-2xl">
+<h2 class="font-display-lg text-[48px] md:text-headline-lg leading-tight uppercase text-on-primary-fixed italic">
+                        Ready to join the aggression?
+                    </h2>
+<p class="font-body-lg text-body-lg text-on-primary-fixed/80 mt-4">
+                        Stop watching from the sidelines. Your transformation starts with a single decision. Claim your 24-hour elite pass today.
+                    </p>
+</div>
+<button class="bg-background text-primary px-12 py-6 font-label-bold text-label-bold text-xl uppercase italic hard-shadow hover:translate-x-1 hover:translate-y-1 transition-transform">
+                    Get Access Now
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="full-width relative bg-surface-container-lowest border-t-4 border-secondary-container">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-gutter py-section-gap max-w-container-max mx-auto">
+<div class="md:col-span-1">
+<div class="font-headline-lg text-headline-lg text-primary uppercase mb-6">IRON</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Fitway's premium sanctuary for performance-driven athletes and the dedicated few.</p>
+</div>
+<div class="md:col-span-1">
+<h4 class="font-label-bold text-label-bold text-primary mb-6 uppercase">Quick Links</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Memberships</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Class Schedule</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Expert Trainers</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Careers</a></li>
+</ul>
+</div>
+<div class="md:col-span-1">
+<h4 class="font-label-bold text-label-bold text-primary mb-6 uppercase">Legal</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Gym Rules</a></li>
+</ul>
+</div>
+<div class="md:col-span-1">
+<h4 class="font-label-bold text-label-bold text-primary mb-6 uppercase">Contact</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">SCO 34-35, Sector 67, Sahibzada Ajit Singh Nagar, Punjab.</p>
+<div class="flex gap-4 mt-6">
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+</a>
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant/30 py-8 px-gutter">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-label-bold text-label-bold text-on-surface-variant/50 uppercase tracking-widest text-xs">
+                    © 2024 FITWAY GYM. CALCULATED AGGRESSION.
+                </p>
+<div class="flex gap-8">
+<span class="material-symbols-outlined text-primary-fixed">fitness_center</span>
+<span class="material-symbols-outlined text-primary-fixed">bolt</span>
+<span class="material-symbols-outlined text-primary-fixed">shield_with_heart</span>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mousedown', () => {
+                button.classList.add('scale-95');
+            });
+            button.addEventListener('mouseup', () => {
+                button.classList.remove('scale-95');
+            });
+            button.addEventListener('mouseleave', () => {
+                button.classList.remove('scale-95');
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+    </script>
+</body></html>
