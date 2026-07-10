@@ -65,7 +65,7 @@ Open `http://localhost:8000/code.html` in your browser.
 This repository maintains a highly organized, professional file structure to ensure maintainability and scalability for production environments.
 
 - `code.html`: The primary entry point containing semantic HTML5, embedded Tailwind CSS (via CDN for rapid deployment), and vanilla JavaScript logic.
-- `images/`: A curated directory of highly optimized, descriptive image assets. Files are named utilizing strict snake_case conventions (e.g., `strength_training_zone.jpg`) to ensure SEO compliance and professional auditability.
+- `assets/`: A curated directory of highly optimized, descriptive image assets. Files are named utilizing strict snake_case conventions (e.g., `strength_training_zone.jpg`) to ensure SEO compliance and professional auditability.
 
 ## 🛠️ Code Quality & Standards
 - **Semantic HTML5**: Fully accessible markup structure.
