@@ -210,11 +210,9 @@
 <body class="bg-background text-on-background selection:bg-primary-fixed selection:text-on-primary-fixed">
 <!-- Loading Screen -->
 <div id="loader" class="fixed inset-0 z-[100] bg-background flex flex-col items-center justify-center transition-opacity duration-700">
-    <!-- Smooth SVG Spinner -->
-    <div class="mb-8">
-        <svg class="animate-spin h-16 w-16 text-primary-fixed" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+    <div class="mb-8 animate-pulse text-primary-fixed drop-shadow-[0_0_15px_rgba(209,158,0,0.5)]">
+        <svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.5 4V10H18V14H20.5V20H15V17H12.5V20H7V17H4.5V20H2V4H4.5V7H7V4H12.5V7H15V4H20.5ZM15 9V15H18V9H15ZM7 9V15H9.5V9H7Z"/>
         </svg>
     </div>
     <div class="h-10 relative w-full max-w-sm text-center flex justify-center items-center">
@@ -257,19 +255,29 @@
                 FITWAY GYM
             </div>
 <div class="hidden md:flex gap-8 items-center">
-<a class="font-label-bold text-label-bold text-on-surface hover:text-primary-fixed transition-colors" href="#">Memberships</a>
-<a class="font-label-bold text-label-bold text-on-surface hover:text-primary-fixed transition-colors" href="#">Schedule</a>
-<a class="font-label-bold text-label-bold text-on-surface hover:text-primary-fixed transition-colors" href="#">Trainers</a>
-<a class="font-label-bold text-label-bold text-on-surface hover:text-primary-fixed transition-colors" href="#">Location</a>
+<a class="font-label-bold text-label-bold text-on-surface hover:text-primary-fixed transition-colors" href="#services">Services</a>
+<a class="font-label-bold text-label-bold text-on-surface hover:text-primary-fixed transition-colors" href="#timings">Timings</a>
+<a class="font-label-bold text-label-bold text-on-surface hover:text-primary-fixed transition-colors" href="#trainers">Trainers</a>
+<a class="font-label-bold text-label-bold text-on-surface hover:text-primary-fixed transition-colors" href="#location">Location</a>
 </div>
 <div class="flex items-center gap-4">
-<button class="bg-primary-fixed text-on-primary-fixed font-label-bold text-label-bold px-6 py-2 uppercase hover:translate-y-[-2px] transition-transform duration-200 active:scale-95">
+<button class="hidden md:block bg-primary-fixed text-on-primary-fixed font-label-bold text-label-bold px-6 py-2 uppercase hover:translate-y-[-2px] transition-transform duration-200 active:scale-95" onclick="document.getElementById('location').scrollIntoView({behavior: 'smooth'})">
                     Contact Us
                 </button>
-<button class="md:hidden text-primary">
+<button id="mobile-menu-btn" class="md:hidden text-primary p-2 border border-outline rounded-md hover:bg-surface-variant transition-colors flex items-center justify-center">
 <span class="material-symbols-outlined">menu</span>
 </button>
 </div>
+</div>
+<!-- Mobile Menu Dropdown -->
+<div id="mobile-menu" class="hidden absolute top-[100%] left-0 w-full bg-surface-container-highest border-b border-surface-variant flex-col p-4 shadow-xl z-50 transition-all">
+    <a class="p-4 font-label-bold text-label-bold text-primary hover:text-primary-fixed transition-colors border-b border-outline/20" href="#services">Services</a>
+    <a class="p-4 font-label-bold text-label-bold text-primary hover:text-primary-fixed transition-colors border-b border-outline/20" href="#timings">Timings</a>
+    <a class="p-4 font-label-bold text-label-bold text-primary hover:text-primary-fixed transition-colors border-b border-outline/20" href="#trainers">Trainers</a>
+    <a class="p-4 font-label-bold text-label-bold text-primary hover:text-primary-fixed transition-colors mb-4" href="#location">Location</a>
+    <button class="bg-primary-fixed text-on-primary-fixed font-label-bold text-label-bold px-6 py-3 uppercase w-full text-center" onclick="document.getElementById('location').scrollIntoView({behavior: 'smooth'}); document.getElementById('mobile-menu').classList.add('hidden'); document.getElementById('mobile-menu').classList.remove('flex');">
+        Contact Us
+    </button>
 </div>
 </nav>
 <main>
@@ -674,7 +682,7 @@
 </section>
 </main>
 <!-- Footer -->
-<footer class="full-width relative bg-surface-container-lowest border-t-4 border-secondary-container">
+<footer id="location" class="full-width relative bg-surface-container-lowest border-t-4 border-secondary-container">
 <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-gutter py-section-gap max-w-container-max mx-auto">
 <div class="md:col-span-1">
 <div class="font-headline-lg text-headline-lg text-primary uppercase mb-6">FITWAY GYM</div>
@@ -776,9 +784,10 @@
 
     <!-- Loader Script -->
     <script>
+        // Loader Script
         const loader = document.getElementById('loader');
         const loaderText = document.getElementById('loader-text');
-        const phrases = ["Building muscle...", "Doing sprints...", "Lifting heavy...", "Forging champions..."];
+        const phrases = ["Building muscle...", "Doing sprints...", "Losing weight...", "Forging champions..."];
         let phraseIndex = 0;
 
         const textInterval = setInterval(() => {
@@ -788,7 +797,7 @@
                 loaderText.innerText = phrases[phraseIndex];
                 loaderText.style.opacity = '1';
             }, 300);
-        }, 600);
+        }, 800);
 
         window.addEventListener('load', () => {
             setTimeout(() => {
@@ -797,8 +806,24 @@
                 setTimeout(() => {
                     loader.style.display = 'none';
                 }, 700);
-            }, 2000);
+            }, 2500);
         });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if(mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('flex');
+            });
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                });
+            });
+        }
     </script>
 
 </body></html>
