@@ -772,61 +772,51 @@
 </div>
 </footer>
 <script>
-        
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        if(mobileMenuBtn && mobileMenu) {
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-                mobileMenu.classList.toggle('flex');
-            });
-            mobileMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.add('hidden');
-                    mobileMenu.classList.remove('flex');
-                });
-            });
-        }
+    // Intersection Observer for fade-in animations
+    const observerOptions = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('opacity-100', 'translate-y-0');
+                entry.target.classList.remove('opacity-0', 'translate-y-10');
+            }
+        });
+    }, observerOptions);
 
-        // Micro-interaction for buttons
-        document.querySelectorAll('button').forEach(button => {
-            button.addEventListener('mousedown', () => {
-                button.classList.add('scale-95');
-            });
-            button.addEventListener('mouseup', () => {
-                button.classList.remove('scale-95');
-            });
-            button.addEventListener('mouseleave', () => {
-                button.classList.remove('scale-95');
+    document.querySelectorAll('section').forEach(section => {
+        section.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+        observer.observe(section);
+    });
+
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if(mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
             });
         });
+    }
 
-        // Intersection Observer for fade-in animations
-        const observerOptions = {
-            threshold: 0.1
-        };
+    // Micro-interaction for buttons
+    document.querySelectorAll('button').forEach(button => {
+        button.addEventListener('mousedown', () => button.classList.add('scale-95'));
+        button.addEventListener('mouseup', () => button.classList.remove('scale-95'));
+        button.addEventListener('mouseleave', () => button.classList.remove('scale-95'));
+    });
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('opacity-100', 'translate-y-0');
-                    entry.target.classList.remove('opacity-0', 'translate-y-10');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('section').forEach(section => {
-            section.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
-            observer.observe(section);
-        });
-    </script>
-
-    <!-- Loader Script -->
-    <script>
-        // Loader Script
+    // Loader Script (Safe execution)
+    const initLoader = () => {
         const loader = document.getElementById('loader');
         const loaderText = document.getElementById('loader-text');
+        if (!loader || !loaderText) return;
+        
         const phrases = ["Building muscle...", "Doing sprints...", "Losing weight...", "Forging champions..."];
         let phraseIndex = 0;
 
@@ -839,7 +829,6 @@
             }, 300);
         }, 800);
 
-        // Fail-safe and un-hanging loader logic
         const dismissLoader = () => {
             clearInterval(textInterval);
             loader.style.opacity = '0';
@@ -848,7 +837,7 @@
             }, 700);
         };
 
-        // Attempt to wait for load, but forcefully dismiss after 2.5s maximum to prevent infinite hanging
+        // Guarantee dismissal within 2.5 seconds
         let loaded = false;
         window.addEventListener('load', () => {
             if (!loaded) {
@@ -856,105 +845,15 @@
                 setTimeout(dismissLoader, 1500);
             }
         });
-
         setTimeout(() => {
             if (!loaded) {
                 loaded = true;
                 dismissLoader();
             }
         }, 2500);
+    };
 
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        if(mobileMenuBtn && mobileMenu) {
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-                mobileMenu.classList.toggle('flex');
-            });
-            mobileMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.add('hidden');
-                    mobileMenu.classList.remove('flex');
-                });
-            });
-        }
-
-        // Micro-interaction for buttons
-        document.querySelectorAll('button').forEach(button => {
-            button.addEventListener('mousedown', () => {
-                button.classList.add('scale-95');
-            });
-            button.addEventListener('mouseup', () => {
-                button.classList.remove('scale-95');
-            });
-            button.addEventListener('mouseleave', () => {
-                button.classList.remove('scale-95');
-            });
-        });
-
-        // Intersection Observer for fade-in animations
-        const observerOptions = {
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('opacity-100', 'translate-y-0');
-                    entry.target.classList.remove('opacity-0', 'translate-y-10');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('section').forEach(section => {
-            section.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
-            observer.observe(section);
-        });
-    </script>
-
-    <!-- Loader Script -->
-    <script>
-        // Loader Script
-        const loader = document.getElementById('loader');
-        const loaderText = document.getElementById('loader-text');
-        const phrases = ["Building muscle...", "Doing sprints...", "Losing weight...", "Forging champions..."];
-        let phraseIndex = 0;
-
-        const textInterval = setInterval(() => {
-            loaderText.style.opacity = '0';
-            setTimeout(() => {
-                phraseIndex = (phraseIndex + 1) % phrases.length;
-                loaderText.innerText = phrases[phraseIndex];
-                loaderText.style.opacity = '1';
-            }, 300);
-        }, 800);
-
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                clearInterval(textInterval);
-                loader.style.opacity = '0';
-                setTimeout(() => {
-                    loader.style.display = 'none';
-                }, 700);
-            }, 2500);
-        });
-
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        if(mobileMenuBtn && mobileMenu) {
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-                mobileMenu.classList.toggle('flex');
-            });
-            mobileMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.add('hidden');
-                    mobileMenu.classList.remove('flex');
-                });
-            });
-        }
-    </script>
-
-</body></html>
+    initLoader();
+</script>
+</body>
+</html>
