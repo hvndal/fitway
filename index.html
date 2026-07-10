@@ -207,6 +207,11 @@
         .animate-marquee:hover {
             animation-play-state: paused;
         }
+            .mobile-focus { transform: scale(1.05); background-color: var(--surface-container); }
+        .mobile-focus .group-hover\:scale-110 { transform: scale(1.1); }
+        .mobile-focus .group-hover\:grayscale-0 { filter: grayscale(0); }
+        .mobile-focus .group-hover\:opacity-100 { opacity: 1; }
+        .mobile-focus .group-hover\:text-primary-fixed { color: var(--primary-fixed); }
     </style>
     <link rel="preload" href="./assets/hero_landing_powerlifter.jpg" as="image">
 </head>
@@ -856,6 +861,30 @@
     };
 
     initLoader();
+
+    // Mobile Hover Simulation (Focus cards when they enter center of screen)
+    if (window.matchMedia("(max-width: 768px)").matches) {
+        const cardObserverOptions = {
+            root: null,
+            rootMargin: '-30% 0px -30% 0px', // Trigger when card is in the middle 40% of the screen
+            threshold: 0
+        };
+
+        const cardObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('mobile-focus');
+                } else {
+                    entry.target.classList.remove('mobile-focus');
+                }
+            });
+        }, cardObserverOptions);
+
+        // Observe Services, Trainers, and Gallery cards
+        document.querySelectorAll('.brutalist-border.group').forEach(card => {
+            cardObserver.observe(card);
+        });
+    }
 </script>
 </body>
 </html>
