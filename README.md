@@ -59,3 +59,16 @@ Open `http://localhost:8000/code.html` in your browser.
 <div align="center">
   <i>Designed and developed for Fitway Gym.</i>
 </div>
+
+
+## 📂 Project Structure & Asset Management
+This repository maintains a highly organized, professional file structure to ensure maintainability and scalability for production environments.
+
+- `code.html`: The primary entry point containing semantic HTML5, embedded Tailwind CSS (via CDN for rapid deployment), and vanilla JavaScript logic.
+- `images/`: A curated directory of highly optimized, descriptive image assets. Files are named utilizing strict snake_case conventions (e.g., `strength_training_zone.jpg`) to ensure SEO compliance and professional auditability.
+
+## 🛠️ Code Quality & Standards
+- **Semantic HTML5**: Fully accessible markup structure.
+- **BEM-style CSS Utility Classes**: Predictable styling architecture via Tailwind CSS.
+- **Vanilla JavaScript**: Zero-dependency DOM manipulation for maximum performance and minimum footprint.
+- **Responsive Design**: Mobile-first media queries ensuring a flawless experience on all devices.
