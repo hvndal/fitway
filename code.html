@@ -210,14 +210,44 @@
 <body class="bg-background text-on-background selection:bg-primary-fixed selection:text-on-primary-fixed">
 <!-- Loading Screen -->
 <div id="loader" class="fixed inset-0 z-[100] bg-background flex flex-col items-center justify-center transition-opacity duration-700">
-    <div class="animate-pulse mb-6">
-        <span class="material-symbols-outlined text-[96px] text-primary-fixed drop-shadow-[0_0_15px_rgba(209,158,0,0.5)]">fitness_center</span>
+    <!-- Smooth SVG Spinner -->
+    <div class="mb-8">
+        <svg class="animate-spin h-16 w-16 text-primary-fixed" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
     </div>
     <div class="h-10 relative w-full max-w-sm text-center flex justify-center items-center">
         <div id="loader-text" class="font-headline-md text-headline-md text-primary uppercase tracking-widest transition-opacity duration-300">
             Warming up...
         </div>
     </div>
+</div>
+
+<!-- Sticky Social Bar -->
+<div class="fixed right-0 top-1/2 -translate-y-1/2 z-[90] flex flex-col gap-2 p-2 bg-surface-container-high/80 backdrop-blur-md rounded-l-xl border border-r-0 border-outline/30">
+    <a href="https://www.facebook.com/p/Fitway-Gym-61571249441872" target="_blank" rel="noopener noreferrer" class="hover:scale-110 transition-transform">
+        <svg viewBox="0 0 24 24" width="36" height="36">
+            <path fill="#1877F2" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            <path fill="#fff" d="M16.671 10.859l.532-3.469h-3.328V5.14c0-.949.465-1.874 1.956-1.874h1.589V.648S16.146.413 14.834.413c-2.741 0-4.533 1.662-4.533 4.67v2.308H7.078v3.469h3.223v8.385c.813.13 1.644.198 2.49.198.845 0 1.676-.068 2.49-.198v-8.385h2.796z"/>
+        </svg>
+    </a>
+    <a href="https://www.instagram.com/fitwaygymmohali/?hl=en" target="_blank" rel="noopener noreferrer" class="hover:scale-110 transition-transform">
+        <svg viewBox="0 0 24 24" width="36" height="36">
+            <defs>
+                <linearGradient id="ig-grad-side" x1="2%" y1="83%" x2="74%" y2="5%">
+                    <stop stop-color="#f09433" offset="0%" />
+                    <stop stop-color="#e6683c" offset="25%" />
+                    <stop stop-color="#dc2743" offset="50%" />
+                    <stop stop-color="#cc2366" offset="75%" />
+                    <stop stop-color="#bc1888" offset="100%" />
+                </linearGradient>
+            </defs>
+            <path fill="url(#ig-grad-side)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"/>
+            <path fill="#fff" d="M12 7.163A4.837 4.837 0 1016.837 12 4.837 4.837 0 0012 7.163zm0 7.95a3.113 3.113 0 113.113-3.113A3.113 3.113 0 0112 15.113zm3.8-6.72a1.15 1.15 0 11-1.15-1.15 1.15 1.15 0 011.15 1.15z"/>
+            <path fill="url(#ig-grad-side)" d="M12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 22.214c-3.15 0-3.543-.013-4.786-.07-2.991-.137-4.22-1.365-4.356-4.356-.057-1.243-.07-1.636-.07-4.786s.013-3.543.07-4.786c.136-2.992 1.365-4.22 4.356-4.356 1.243-.057 1.636-.07 4.786-.07s3.543.013 4.786.07c2.991.136 4.22 1.364 4.356 4.356.057 1.243.07 1.636.07 4.786s-.013 3.543-.07 4.786c-.136 2.991-1.365 4.219-4.356 4.356-1.243.057-1.636.07-4.786.07z"/>
+        </svg>
+    </a>
 </div>
 
 <!-- TopNavBar -->
@@ -647,8 +677,8 @@
 <footer class="full-width relative bg-surface-container-lowest border-t-4 border-secondary-container">
 <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-gutter py-section-gap max-w-container-max mx-auto">
 <div class="md:col-span-1">
-<div class="font-headline-lg text-headline-lg text-primary uppercase mb-6">IRON</div>
-<p class="font-body-md text-body-md text-on-surface-variant">Fitway's premium sanctuary for performance-driven athletes and the dedicated few.</p>
+<div class="font-headline-lg text-headline-lg text-primary uppercase mb-6">FITWAY GYM</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Fitway Gym's premium sanctuary for performance-driven athletes and the dedicated few.</p>
 </div>
 <div class="md:col-span-1">
 <h4 class="font-label-bold text-label-bold text-primary mb-6 uppercase">Quick Links</h4>
@@ -683,7 +713,7 @@
 <div class="border-t border-outline-variant/30 py-8 px-gutter">
 <div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
 <p class="font-label-bold text-label-bold text-on-surface-variant/50 uppercase tracking-widest text-xs">
-                    © 2024 FITWAY GYM. CALCULATED AGGRESSION.
+                    © FITWAY GYM. CALCULATED AGGRESSION.
                 </p>
 <div class="flex gap-8">
 <span class="material-symbols-outlined text-primary-fixed">fitness_center</span>
