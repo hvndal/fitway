@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="en"><head>
+<html class="dark scroll-smooth" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>FITWAY GYM | CALCULATED AGGRESSION</title>
@@ -232,7 +232,7 @@
 </nav>
 <main>
 <!-- Hero Section -->
-<section class="relative min-h-[921px] flex items-center overflow-hidden">
+<section class="relative min-h-[100svh] md:min-h-[921px] flex items-center overflow-hidden">
 <div class="absolute inset-0 z-0">
 <div class="absolute inset-0 bg-primary-fixed/20 z-10 pointer-events-none"></div>
 <div class="absolute inset-0 gradient-overlay z-10"></div>
@@ -241,7 +241,7 @@
 <div class="relative z-20 w-full px-gutter max-w-container-max mx-auto">
 <div class="max-w-4xl">
 <!-- Tag removed -->
-<h1 class="font-display-lg text-[64px] md:text-display-lg leading-tight uppercase text-primary mb-8 italic">
+<h1 class="font-display-lg text-5xl md:text-7xl lg:text-display-lg leading-tight uppercase text-primary mb-8 italic">
                         Push Your <span class="text-primary-fixed">Limits</span>
 </h1>
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-12 border-l-4 border-primary-fixed pl-6">
@@ -682,6 +682,23 @@
 </div>
 </footer>
 <script>
+        
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if(mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('flex');
+            });
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                });
+            });
+        }
+
         // Micro-interaction for buttons
         document.querySelectorAll('button').forEach(button => {
             button.addEventListener('mousedown', () => {
