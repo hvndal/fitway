@@ -333,7 +333,7 @@
 <div class="absolute inset-0 z-0">
 <div class="absolute inset-0 bg-primary-fixed/20 z-10 pointer-events-none"></div>
 <div class="absolute inset-0 gradient-overlay z-10"></div>
-<video class="w-full h-full object-cover mix-blend-luminosity opacity-80" autoplay loop muted playsinline>
+<video id="hero-video" class="w-full h-full object-cover mix-blend-luminosity opacity-80" autoplay loop muted playsinline preload="auto">
     <source src="https://cdn.coverr.co/videos/coverr-a-man-lifting-weights-in-a-gym-2509/1080p.mp4" type="video/mp4">
     Your browser does not support the video tag.
 </video>
@@ -887,6 +887,30 @@
         document.querySelectorAll('.brutalist-border.group').forEach(card => {
             cardObserver.observe(card);
         });
+    }
+
+    // Force Autoplay for Mobile (Safari/iOS strict policies)
+    const heroVideo = document.getElementById('hero-video');
+    if (heroVideo) {
+        // Explicitly mute via JS which often bypasses iOS blocks
+        heroVideo.muted = true;
+        heroVideo.setAttribute('muted', '');
+        heroVideo.setAttribute('playsinline', '');
+        
+        // Attempt to force play
+        const playPromise = heroVideo.play();
+        if (playPromise !== undefined) {
+            playPromise.catch(error => {
+                console.log("Autoplay blocked by browser policy. User interaction required.");
+                // We could add a "Play Video" button here if strictly necessary, but usually setting muted via JS works.
+            });
+        }
+        
+        // Also try to play on first touch if blocked
+        document.body.addEventListener('touchstart', function playOnTouch() {
+            heroVideo.play();
+            document.body.removeEventListener('touchstart', playOnTouch);
+        }, { once: true });
     }
 </script>
 </body>
