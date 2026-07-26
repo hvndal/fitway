@@ -4,6 +4,8 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
 <title>FITWAY GYM | CALCULATED AGGRESSION</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&amp;family=Inter:wght@400;700&amp;display=swap" rel="stylesheet"/>
@@ -167,6 +169,7 @@
             -webkit-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
         img, svg, video {
             -webkit-user-drag: none;
@@ -762,7 +765,7 @@
         });
     });
     
-    // Smooth Intersection Observer for section reveal on scroll
+    // Smooth Intersection Observer for section reveal on scroll (excl. Hero section for instant initial paint)
     const observerOptions = { threshold: 0.08 };
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -773,7 +776,7 @@
         });
     }, observerOptions);
 
-    document.querySelectorAll('section').forEach(section => {
+    document.querySelectorAll('section:not(:first-of-type)').forEach(section => {
         section.classList.add('transition-all', 'duration-500', 'ease-out', 'opacity-0', 'translate-y-6');
         observer.observe(section);
     });
