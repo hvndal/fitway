@@ -201,6 +201,35 @@
             transform: scale(1.05);
         }
 
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        .hard-shadow {
+            box-shadow: 4px 4px 0px 0px #b38700;
+        }
+
+        .btn-primary:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 4px 4px 0px 0px #000000;
+        }
+
+        .brutalist-border {
+            border: 1px solid #2A2A2A;
+        }
+
+        .gradient-overlay {
+            background: linear-gradient(90deg, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.4) 50%, rgba(179,135,0,0.15) 100%);
+        }
+
+        .trainer-card:hover img {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
         .trainer-card img {
             filter: grayscale(100%);
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -218,13 +247,12 @@
         .animate-marquee:hover {
             animation-play-state: paused;
         }
-            .mobile-focus { transform: scale(1.05); background-color: var(--surface-container); }
+        .mobile-focus { transform: scale(1.05); background-color: var(--surface-container); }
         .mobile-focus .group-hover\:scale-110 { transform: scale(1.1); }
         .mobile-focus .group-hover\:grayscale-0 { filter: grayscale(0); }
         .mobile-focus .group-hover\:opacity-100 { opacity: 1; }
         .mobile-focus .group-hover\:text-primary-fixed { color: var(--primary-fixed); }
     </style>
-    <link rel="preload" href="./assets/hero_landing_powerlifter.jpg" as="image">
 </head>
 <body class="bg-background text-on-background selection:bg-primary-fixed selection:text-on-primary-fixed select-none">
 <!-- Sticky Social Bar -->
@@ -282,11 +310,10 @@
 <main>
 <!-- Hero Section -->
 <section class="relative min-h-[100svh] md:min-h-[921px] flex items-center overflow-hidden">
-<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-background z-0">
 <div class="absolute inset-0 bg-primary-fixed/20 z-10 pointer-events-none"></div>
 <div class="absolute inset-0 gradient-overlay z-10"></div>
-<div class="w-full h-full bg-cover bg-center absolute inset-0" style="background-image: url('./assets/hero_landing_powerlifter.jpg')"></div>
-<video id="hero-video" class="w-full h-full object-cover opacity-85 filter grayscale brightness-90 relative z-5" poster="./assets/hero_landing_powerlifter.jpg" autoplay loop muted="muted" playsinline webkit-playsinline preload="auto">
+<video id="hero-video" class="w-full h-full object-cover filter grayscale brightness-90 relative z-5" autoplay loop muted="muted" playsinline webkit-playsinline preload="auto">
     <source src="assets/hero_video.mp4" type="video/mp4">
     <source src="./assets/hero_video.mp4" type="video/mp4">
     <source src="https://assets.mixkit.co/videos/preview/mixkit-athlete-doing-deadlifts-in-a-gym-42618-large.mp4" type="video/mp4">
@@ -724,6 +751,20 @@
     }
     window.addEventListener('load', () => {
         window.scrollTo(0, 0);
+    });
+
+    // Prevent URL hash in browser address bar on section link click
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href').substring(1);
+            if (targetId) {
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
     });
     
     // Smooth Intersection Observer for section reveal on scroll
