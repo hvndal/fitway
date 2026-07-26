@@ -307,14 +307,13 @@
     </button>
 </div>
 </nav>
-<main>
-<section class="relative min-h-[100svh] md:min-h-[921px] flex items-center overflow-hidden bg-background">
+<section class="relative min-h-[100dvh] md:min-h-[921px] flex items-center overflow-hidden bg-background">
 <div class="absolute inset-0 z-0 overflow-hidden">
-<video id="hero-video" class="w-full h-full object-cover relative z-0" src="assets/hero_video.mp4?v=20260726_final" autoplay loop muted="muted" playsinline webkit-playsinline preload="auto">
+<video id="hero-video" class="w-full h-full object-cover object-center scale-105 sm:scale-100 transition-opacity duration-500 relative z-0" src="assets/hero_video.mp4?v=20260726_final" autoplay loop muted="muted" playsinline webkit-playsinline preload="auto">
     <source src="assets/hero_video.mp4?v=20260726_final" type="video/mp4">
     <source src="./assets/hero_video.mp4?v=20260726_final" type="video/mp4">
 </video>
-<div class="absolute inset-0 bg-black/30 z-10 pointer-events-none"></div>
+<div class="absolute inset-0 bg-black/25 z-10 pointer-events-none"></div>
 </div>
 <div class="relative z-20 w-full px-gutter max-w-container-max mx-auto">
 <div class="max-w-4xl bg-background/40 backdrop-blur-sm p-6 md:p-8 rounded-xl brutalist-border">
@@ -801,14 +800,27 @@
         btn.addEventListener('touchend', () => btn.classList.remove('scale-95'), { passive: true });
     });
 
-    // Force Hero Video Autoplay (iOS / Android / Domain fallback)
+    // Force Hero Video Autoplay & Cinematic Slow Loop (0.8x speed)
     const heroVideo = document.getElementById('hero-video');
     if (heroVideo) {
         heroVideo.defaultMuted = true;
         heroVideo.muted = true;
+        heroVideo.playbackRate = 0.8; // Cinematic 0.8x slow-mo
+        
         const playVideo = () => {
+            heroVideo.playbackRate = 0.8;
             heroVideo.play().catch(() => {});
         };
+        
+        // Smooth loop transition handling
+        heroVideo.addEventListener('timeupdate', () => {
+            if (heroVideo.duration && heroVideo.currentTime > heroVideo.duration - 0.4) {
+                heroVideo.classList.add('opacity-90');
+            } else {
+                heroVideo.classList.remove('opacity-90');
+            }
+        });
+        
         playVideo();
         window.addEventListener('DOMContentLoaded', playVideo);
         document.body.addEventListener('touchstart', playVideo, { once: true, passive: true });
