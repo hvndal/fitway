@@ -160,7 +160,18 @@
   }
 </script>
 <style>
-        html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
+        html, body { 
+            scroll-behavior: smooth; 
+            -webkit-tap-highlight-color: transparent; 
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+        img, svg, video {
+            -webkit-user-drag: none;
+            user-drag: none;
+        }
 
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -215,7 +226,7 @@
     </style>
     <link rel="preload" href="./assets/hero_landing_powerlifter.jpg" as="image">
 </head>
-<body class="bg-background text-on-background selection:bg-primary-fixed selection:text-on-primary-fixed">
+<body class="bg-background text-on-background selection:bg-primary-fixed selection:text-on-primary-fixed select-none">
 <!-- Sticky Social Bar -->
 <div class="fixed right-0 top-1/2 -translate-y-1/2 z-[90] flex flex-col gap-2 md:gap-3 p-2 md:p-3 bg-surface-container-high/95 backdrop-blur-md rounded-l-xl border border-r-0 border-outline/40 shadow-2xl">
     <div class="hidden md:block text-[10px] font-label-bold uppercase tracking-widest text-primary-fixed text-center [writing-mode:vertical-lr] rotate-180 mb-1">Follow Us</div>
@@ -275,7 +286,8 @@
 <div class="absolute inset-0 bg-primary-fixed/20 z-10 pointer-events-none"></div>
 <div class="absolute inset-0 gradient-overlay z-10"></div>
 <div class="w-full h-full bg-cover bg-center absolute inset-0" style="background-image: url('./assets/hero_landing_powerlifter.jpg')"></div>
-<video id="hero-video" class="w-full h-full object-cover opacity-85 filter grayscale brightness-90 relative z-5" poster="./assets/hero_landing_powerlifter.jpg" autoplay loop muted playsinline webkit-playsinline preload="auto">
+<video id="hero-video" class="w-full h-full object-cover opacity-85 filter grayscale brightness-90 relative z-5" poster="./assets/hero_landing_powerlifter.jpg" autoplay loop muted="muted" playsinline webkit-playsinline preload="auto">
+    <source src="assets/hero_video.mp4" type="video/mp4">
     <source src="./assets/hero_video.mp4" type="video/mp4">
     <source src="https://assets.mixkit.co/videos/preview/mixkit-athlete-doing-deadlifts-in-a-gym-42618-large.mp4" type="video/mp4">
 </video>
@@ -752,13 +764,18 @@
         btn.addEventListener('touchend', () => btn.classList.remove('scale-95'), { passive: true });
     });
 
-    // Force Hero Video Autoplay (iOS / Android fallback)
+    // Force Hero Video Autoplay (iOS / Android / Domain fallback)
     const heroVideo = document.getElementById('hero-video');
     if (heroVideo) {
+        heroVideo.defaultMuted = true;
         heroVideo.muted = true;
-        heroVideo.play().catch(() => {
-            document.body.addEventListener('touchstart', () => heroVideo.play(), { once: true, passive: true });
-        });
+        const playVideo = () => {
+            heroVideo.play().catch(() => {});
+        };
+        playVideo();
+        window.addEventListener('DOMContentLoaded', playVideo);
+        document.body.addEventListener('touchstart', playVideo, { once: true, passive: true });
+        document.body.addEventListener('click', playVideo, { once: true, passive: true });
     }
 
     // Scroll Focus for Mobile Cards (Smooth Hover Effect on Swipe)
