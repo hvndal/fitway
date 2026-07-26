@@ -2,7 +2,7 @@
 
 <html class="dark scroll-smooth" lang="en"><head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
 <title>FITWAY GYM | CALCULATED AGGRESSION</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -160,7 +160,7 @@
   }
 </script>
 <style>
-        html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
 
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -275,7 +275,7 @@
 <div class="absolute inset-0 bg-primary-fixed/20 z-10 pointer-events-none"></div>
 <div class="absolute inset-0 gradient-overlay z-10"></div>
 <div class="w-full h-full bg-cover bg-center absolute inset-0" style="background-image: url('./assets/hero_landing_powerlifter.jpg')"></div>
-<video id="hero-video" class="w-full h-full object-cover mix-blend-luminosity opacity-90 relative z-5" autoplay loop muted playsinline preload="auto">
+<video id="hero-video" class="w-full h-full object-cover opacity-85 filter grayscale brightness-90 relative z-5" poster="./assets/hero_landing_powerlifter.jpg" autoplay loop muted playsinline webkit-playsinline preload="auto">
     <source src="https://assets.mixkit.co/videos/preview/mixkit-athlete-doing-deadlifts-in-a-gym-42618-large.mp4" type="video/mp4">
     <source src="https://cdn.coverr.co/videos/coverr-a-man-lifting-weights-in-a-gym-2509/1080p.mp4" type="video/mp4">
 </video>
