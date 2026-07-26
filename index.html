@@ -333,9 +333,9 @@
 <div class="absolute inset-0 z-0">
 <div class="absolute inset-0 bg-primary-fixed/20 z-10 pointer-events-none"></div>
 <div class="absolute inset-0 gradient-overlay z-10"></div>
-<video id="hero-video" class="w-full h-full object-cover mix-blend-luminosity opacity-80" autoplay loop muted playsinline preload="auto">
+<div class="w-full h-full bg-cover bg-center absolute inset-0" style="background-image: url('./assets/hero_landing_powerlifter.jpg')"></div>
+<video id="hero-video" class="w-full h-full object-cover mix-blend-luminosity opacity-80 relative z-5" autoplay loop muted playsinline preload="auto">
     <source src="https://cdn.coverr.co/videos/coverr-a-man-lifting-weights-in-a-gym-2509/1080p.mp4" type="video/mp4">
-    Your browser does not support the video tag.
 </video>
 </div>
 <div class="relative z-20 w-full px-gutter max-w-container-max mx-auto">
@@ -419,10 +419,8 @@
 </div>
 </section>
 
-��< ! D O
-
 <!-- Elite Coaching -->
-<section class="bg-surface-container-low py-16 md:py-24">
+<section id="trainers" class="bg-surface-container-low py-16 md:py-24 scroll-mt-24">
 <div class="px-gutter max-w-container-max mx-auto">
 <div class="mb-16">
 <h2 class="font-headline-lg text-headline-lg uppercase text-primary">Elite <span class="text-primary-fixed">Coaches</span></h2>
@@ -432,7 +430,7 @@
 <!-- Trainer 1 -->
 <div class="trainer-card group brutalist-border bg-background overflow-hidden relative">
 <div class="h-[350px] md:h-[450px] overflow-hidden">
-<img class="w-full h-full object-cover" data-alt="A powerful studio portrait of a male fitness coach with an intense expression. He has a muscular build and is wearing a black branded FITWAY GYM tank top. The background is a flat Slate Gray with a single sharp Dark Yellow rim light highlighting his silhouette. The style is sharp, professional, and slightly aggressive, matching a high-end fitness brand identity."  loading="lazy" src="./assets/head_strength_coach.jpg"/>
+<img class="w-full h-full object-cover" alt="Vikram S. - Head of Strength" src="./assets/head_strength_coach.jpg"/>
 </div>
 <div class="p-8 relative">
 <div class="absolute -top-12 left-8 bg-primary-fixed text-on-primary-fixed p-4 font-display-lg text-headline-md uppercase italic">
@@ -448,7 +446,7 @@
 <!-- Trainer 2 -->
 <div class="trainer-card group brutalist-border bg-background overflow-hidden relative">
 <div class="h-[350px] md:h-[450px] overflow-hidden">
-<img class="w-full h-full object-cover" data-alt="A dynamic portrait of a female CrossFit athlete and coach. She is shown in an athletic stance, mid-adjustment of her wrist wraps. Her expression is focused and determined. The lighting is cold and cinematic, emphasizing muscular definition and grit. The scene is set in an industrial gym background blurred in the distance. High-contrast Slate and Black tones with Dark Yellow accents."  loading="lazy" src="./assets/hiit_conditioning_specialist.jpg"/>
+<img class="w-full h-full object-cover" alt="Ananya R. - HIIT & Conditioning" src="./assets/hiit_conditioning_specialist.jpg"/>
 </div>
 <div class="p-8 relative">
 <div class="absolute -top-12 left-8 bg-primary-fixed text-on-primary-fixed p-4 font-display-lg text-headline-md uppercase italic">
@@ -464,7 +462,7 @@
 <!-- Trainer 3 -->
 <div class="trainer-card group brutalist-border bg-background overflow-hidden relative">
 <div class="h-[350px] md:h-[450px] overflow-hidden">
-<img class="w-full h-full object-cover" data-alt="A portrait of a male trainer with a calm yet authoritative presence. He is standing with arms crossed, wearing a black performance t-shirt. The background features a subtle hint of gym equipment under soft, moody lighting. The image focuses on professional grit and reliability. Dark obsidian foundation with Dark Yellow light accents on the edges of his clothing."  loading="lazy" src="./assets/transformation_expert.jpg"/>
+<img class="w-full h-full object-cover" alt="Karan M. - Transformation Specialist" src="./assets/transformation_expert.jpg"/>
 </div>
 <div class="p-8 relative">
 <div class="absolute -top-12 left-8 bg-primary-fixed text-on-primary-fixed p-4 font-display-lg text-headline-md uppercase italic">
@@ -480,6 +478,7 @@
 </div>
 </div>
 </section>
+
 <!-- Reviews Section -->
 <section class="py-16 md:py-24 overflow-hidden bg-surface-container-low relative">
     <div class="px-gutter max-w-container-max mx-auto mb-16 relative z-20">
