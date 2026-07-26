@@ -216,59 +216,6 @@
     <link rel="preload" href="./assets/hero_landing_powerlifter.jpg" as="image">
 </head>
 <body class="bg-background text-on-background selection:bg-primary-fixed selection:text-on-primary-fixed">
-<!-- Loading Screen -->
-<div id="loader" class="fixed inset-0 z-[100] bg-background flex flex-col items-center justify-center transition-opacity duration-700">
-    <div class="mb-8 text-primary-fixed drop-shadow-[0_0_15px_rgba(209,158,0,0.4)]">
-        <svg viewBox="0 0 64 64" width="96" height="96">
-            <style>
-                @keyframes dash { to { stroke-dashoffset: -20; } }
-                @keyframes pedaling { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-                @keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-2px); } }
-                .road { stroke-dasharray: 10; animation: dash 0.8s linear infinite; }
-                .wheel { transform-origin: center; animation: pedaling 1s linear infinite; }
-                .rider { animation: bob 0.5s ease-in-out infinite; }
-            </style>
-            <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                <!-- road -->
-                <line x1="2" y1="58" x2="62" y2="58" class="road" stroke-width="2"/>
-                <g class="rider">
-                    <!-- wheels -->
-                    <circle cx="16" cy="42" r="10" class="wheel" style="transform-origin: 16px 42px;"/>
-                    <circle cx="48" cy="42" r="10" class="wheel" style="transform-origin: 48px 42px;"/>
-                    <line x1="16" y1="42" x2="16" y2="38" class="wheel" style="transform-origin: 16px 42px;"/>
-                    <line x1="48" y1="42" x2="48" y2="38" class="wheel" style="transform-origin: 48px 42px;"/>
-                    
-                    <!-- frame -->
-                    <polyline points="16,42 26,22 42,22 48,42"/>
-                    <polyline points="26,22 34,42 48,42"/>
-                    <!-- handlebar -->
-                    <path d="M 42 22 L 46 16 L 50 16"/>
-                    <!-- seat -->
-                    <line x1="22" y1="22" x2="30" y2="22"/>
-                    
-                    <!-- rider head -->
-                    <circle cx="38" cy="6" r="4" fill="currentColor"/>
-                    <!-- rider body -->
-                    <path d="M 38 10 L 26 22 L 28 34"/>
-                    <!-- arms -->
-                    <path d="M 38 10 L 44 18 L 48 16"/>
-                    <!-- legs pedaling -->
-                    <g class="wheel" style="transform-origin: 34px 42px;">
-                        <circle cx="34" cy="42" r="2" fill="currentColor"/>
-                        <line x1="34" y1="42" x2="34" y2="34" stroke-width="3"/>
-                        <line x1="34" y1="42" x2="34" y2="50" stroke-width="3"/>
-                    </g>
-                </g>
-            </g>
-        </svg>
-    </div>
-    <div class="h-10 relative w-full max-w-sm text-center flex justify-center items-center">
-        <div id="loader-text" class="font-headline-md text-headline-md text-primary uppercase tracking-widest transition-opacity duration-300">
-            Warming up...
-        </div>
-    </div>
-</div>
-
 <!-- Sticky Social Bar -->
 <div class="fixed right-0 top-1/2 -translate-y-1/2 z-[90] flex flex-col gap-3 p-3 bg-surface-container-high/90 backdrop-blur-md rounded-l-2xl border border-r-0 border-primary-fixed/40 shadow-[0_0_20px_rgba(209,158,0,0.25)]">
     <div class="text-[10px] font-label-bold uppercase tracking-widest text-primary-fixed text-center [writing-mode:vertical-lr] rotate-180 mb-1">Follow Us</div>
@@ -839,4 +786,68 @@
     </div>
 </div>
 </footer>
+<script>
+    // Smooth Intersection Observer for section reveal on scroll
+    const observerOptions = { threshold: 0.08 };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('opacity-100', 'translate-y-0');
+                entry.target.classList.remove('opacity-0', 'translate-y-6');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('section').forEach(section => {
+        section.classList.add('transition-all', 'duration-500', 'ease-out', 'opacity-0', 'translate-y-6');
+        observer.observe(section);
+    });
+
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if(mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+            });
+        });
+    }
+
+    // Micro-interactions for buttons
+    document.querySelectorAll('button, a').forEach(btn => {
+        btn.addEventListener('touchstart', () => btn.classList.add('scale-95'), { passive: true });
+        btn.addEventListener('touchend', () => btn.classList.remove('scale-95'), { passive: true });
+    });
+
+    // Force Hero Video Autoplay (iOS / Android fallback)
+    const heroVideo = document.getElementById('hero-video');
+    if (heroVideo) {
+        heroVideo.muted = true;
+        heroVideo.play().catch(() => {
+            document.body.addEventListener('touchstart', () => heroVideo.play(), { once: true, passive: true });
+        });
+    }
+
+    // Scroll Focus for Mobile Cards (Smooth Hover Effect on Swipe)
+    if (window.matchMedia("(max-width: 768px)").matches) {
+        const cardObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('mobile-focus');
+                } else {
+                    entry.target.classList.remove('mobile-focus');
+                }
+            });
+        }, { rootMargin: '-25% 0px -25% 0px' });
+
+        document.querySelectorAll('.brutalist-border.group').forEach(card => cardObserver.observe(card));
+    }
+</script>
+</body>
 </html>
