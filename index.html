@@ -308,16 +308,13 @@
 </div>
 </nav>
 <main>
-<!-- Hero Section -->
-<section class="relative min-h-[100svh] md:min-h-[921px] flex items-center overflow-hidden">
-<div class="absolute inset-0 bg-background z-0">
-<div class="absolute inset-0 bg-primary-fixed/20 z-10 pointer-events-none"></div>
-<div class="absolute inset-0 gradient-overlay z-10"></div>
-<video id="hero-video" class="w-full h-full object-cover filter grayscale brightness-90 relative z-5" autoplay loop muted="muted" playsinline webkit-playsinline preload="auto">
+<section class="relative min-h-[100svh] md:min-h-[921px] flex items-center overflow-hidden bg-background">
+<div class="absolute inset-0 z-0 overflow-hidden">
+<video id="hero-video" class="w-full h-full object-cover relative z-0" src="assets/hero_video.mp4" autoplay loop muted="muted" playsinline webkit-playsinline preload="auto">
     <source src="assets/hero_video.mp4" type="video/mp4">
     <source src="./assets/hero_video.mp4" type="video/mp4">
-    <source src="https://assets.mixkit.co/videos/preview/mixkit-athlete-doing-deadlifts-in-a-gym-42618-large.mp4" type="video/mp4">
 </video>
+<div class="absolute inset-0 bg-gradient-to-r from-background/95 via-background/60 to-transparent z-10 pointer-events-none"></div>
 </div>
 <div class="relative z-20 w-full px-gutter max-w-container-max mx-auto">
 <div class="max-w-4xl">
