@@ -803,16 +803,34 @@
         btn.addEventListener('touchend', () => btn.classList.remove('scale-95'), { passive: true });
     });
 
-    // Force Hero Video Autoplay & Cinematic Slow Loop (0.8x speed)
+    // Force Hero Video Autoplay & Low Power / Battery Saver Mode Override
     const heroVideo = document.getElementById('hero-video');
     if (heroVideo) {
         heroVideo.defaultMuted = true;
         heroVideo.muted = true;
         heroVideo.playbackRate = 0.8; // Cinematic 0.8x slow-mo
         
-        const playVideo = () => {
+        const attemptPlay = () => {
+            heroVideo.defaultMuted = true;
+            heroVideo.muted = true;
             heroVideo.playbackRate = 0.8;
-            heroVideo.play().catch(() => {});
+            const playPromise = heroVideo.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(() => {
+                    // Triggered on Low Power / Battery Saver mode.
+                    // Force play on first scroll, touch, tap, or pointer interaction
+                    const userActionPlay = () => {
+                        heroVideo.playbackRate = 0.8;
+                        heroVideo.play().catch(() => {});
+                        ['touchstart', 'touchend', 'scroll', 'click', 'pointerdown'].forEach(evt => {
+                            window.removeEventListener(evt, userActionPlay);
+                        });
+                    };
+                    ['touchstart', 'touchend', 'scroll', 'click', 'pointerdown'].forEach(evt => {
+                        window.addEventListener(evt, userActionPlay, { passive: true });
+                    });
+                });
+            }
         };
         
         // Smooth loop transition handling
@@ -824,10 +842,12 @@
             }
         });
         
-        playVideo();
-        window.addEventListener('DOMContentLoaded', playVideo);
-        document.body.addEventListener('touchstart', playVideo, { once: true, passive: true });
-        document.body.addEventListener('click', playVideo, { once: true, passive: true });
+        attemptPlay();
+        window.addEventListener('DOMContentLoaded', attemptPlay);
+        window.addEventListener('load', attemptPlay);
+        document.addEventListener('visibilitychange', () => {
+            if (document.visibilityState === 'visible') attemptPlay();
+        });
     }
 
     // Scroll Focus for Mobile Cards (Smooth Hover Effect on Swipe)
