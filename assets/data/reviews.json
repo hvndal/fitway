@@ -1,0 +1,58 @@
+{
+  "lastSynced": "2026-08-28T13:00:00Z",
+  "averageRating": 5.0,
+  "totalReviews": 500,
+  "placeId": "ChIJ_fitway_sector67_mohali",
+  "reviews": [
+    {
+      "id": "rev-1",
+      "author": "Sujal Soni",
+      "avatar": "SS",
+      "rating": 5,
+      "text": "Hands down the best gym in Sector 67. The equipment is top-notch, the space is always clean, and the vibe is incredibly motivating! Perfectly located near CP67 Mall.",
+      "relativeTime": "Google Local Guide",
+      "badge": "Local Guide • Sector 67",
+      "verified": true
+    },
+    {
+      "id": "rev-2",
+      "author": "Renu Renu",
+      "avatarImage": "assets/reviewer_renu.jpg",
+      "rating": 5,
+      "text": "Great environment for workout and clean gym. Trainers are very helpful and motivating. Best gym in the area!",
+      "relativeTime": "Google Reviewer",
+      "badge": "Google Reviewer • Mohali",
+      "verified": true
+    },
+    {
+      "id": "rev-3",
+      "author": "Akhil Negi",
+      "avatar": "AN",
+      "rating": 5,
+      "text": "Amazing gym with great equipment, a motivating atmosphere, and supportive trainers. Highly recommended!",
+      "relativeTime": "Google Reviewer",
+      "badge": "Google Reviewer • Sector 67",
+      "verified": true
+    },
+    {
+      "id": "rev-4",
+      "author": "Prashant Chauhan",
+      "avatar": "PC",
+      "rating": 5,
+      "text": "The staff is always friendly, professional, and ready to help. Excellent customer service and a very welcoming atmosphere. The staff keeps the gym clean, organized, and enjoyable to use.",
+      "relativeTime": "Google Reviewer",
+      "badge": "Google Reviewer • Mohali",
+      "verified": true
+    },
+    {
+      "id": "rev-5",
+      "author": "Aaditya Sharma",
+      "avatar": "AS",
+      "rating": 5,
+      "text": "I’ve had a great experience at this fit way gym. The environment is clean, well-maintained, and very motivating for anyone focused on fitness. The equipment is modern and always in good condition.",
+      "relativeTime": "Google Reviewer",
+      "badge": "Google Reviewer • Mohali",
+      "verified": true
+    }
+  ]
+}
