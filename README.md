@@ -1,11 +1,11 @@
-# Gagan Singh Performance Website
+# FitWay Gym Website
 
 <div align="center">
-  <img src="screen.png" alt="Gagan Singh Performance Screenshot" width="800"/>
+  <img src="screen.png" alt="FitWay Gym Screenshot" width="800"/>
 </div>
 
 <div align="center">
-  <strong>The official landing page for Gagan Singh Performance located in Sahibzada Ajit Singh Nagar, Punjab.</strong>
+  <strong>The official landing page for FitWay Gym located in Sahibzada Ajit Singh Nagar, Punjab.</strong>
 </div>
 
 <br />
@@ -19,7 +19,7 @@
 <br />
 
 ## 🏋️‍♂️ About
-Gagan Singh Performance is a premium fitness facility designed to push limits. This repository contains the source code for the landing page, crafted with a dynamic, brutalist, and modern aesthetic. It is fully responsive and optimized for conversions, featuring striking micro-animations, bold typography, and an automated Google Reviews showcase.
+FitWay Gym is a premium fitness facility designed to push limits. This repository contains the source code for the landing page, crafted with a dynamic, brutalist, and modern aesthetic. It is fully responsive and optimized for conversions, featuring striking micro-animations, bold typography, and an automated Google Reviews showcase.
 
 ## ✨ Features
 - **Responsive Design**: Flawless experience on mobile, tablet, and desktop.
@@ -59,7 +59,7 @@ Open `http://localhost:8000/index.html` in your browser.
 ---
 
 <div align="center">
-  <i>Official website for Gagan Singh Performance • Sector 67, Mohali (<a href="https://fitwaygym.in">fitwaygym.in</a>)</i>
+  <i>Official website for FitWay Gym • Sector 67, Mohali (<a href="https://fitwaygym.in">fitwaygym.in</a>)</i>
 </div>
 
 ## 📂 Project Structure & Architecture
