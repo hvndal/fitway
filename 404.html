@@ -1,50 +1,141 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="bg-black text-white antialiased">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Not Found</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BE02RPRXZM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-BE02RPRXZM');
+    </script>
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+    <title>Page Not Found | Gagan Singh Performance</title>
+    <meta name="description" content="The page you are looking for does not exist. Return to the Gagan Singh Performance homepage to explore memberships, personal training, and class schedules."/>
+    <meta name="robots" content="noindex, follow"/>
+    <link rel="icon" type="image/png" href="assets/hero_landing_powerlifter.jpg"/>
+    <link rel="manifest" href="site.webmanifest"/>
+    <meta name="theme-color" content="#050505"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'display': ['Oswald', 'Arial Narrow', 'sans-serif'],
+                        'body': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        black: '#050505',
+                        white: '#F4F4F4',
+                        gold: '#D19E00',
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background-color: #f8fafc;
-            color: #1e293b;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            text-align: center;
+        /* ========================================================================= */
+        /* LIGHT MODE FIRST (DEFAULT) & SYSTEM DARK MODE ENGINE                      */
+        /* ========================================================================= */
+        :root {
+            --bg-canvas: #FFFFFF;
+            --text-heading: #0A0A0A;
+            --text-body: #374151;
+            --border-hairline: rgba(0, 0, 0, 0.08);
         }
-        .container {
-            max-width: 480px;
-            padding: 2rem;
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-canvas: #050505;
+                --text-heading: #F4F4F4;
+                --text-body: #D0C6AB;
+                --border-hairline: rgba(255, 255, 255, 0.10);
+            }
         }
-        h1 {
-            font-size: 5rem;
-            font-weight: 700;
-            margin: 0;
-            color: #64748b;
+
+        html, body {
+            background-color: var(--bg-canvas);
+            color: var(--text-body);
         }
-        h2 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin: 1rem 0 0.5rem;
+
+        .text-white {
+            color: var(--text-heading);
         }
-        p {
-            color: #64748b;
-            font-size: 1rem;
-            line-height: 1.5;
-            margin: 0;
+
+        .border-white\/10, .border-white\/20 {
+            border-color: var(--border-hairline) !important;
+        }
+
+        /* VC Bold & Serious Editorial Notice & Subtle Legal Header */
+        .vc-notice-headline {
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-weight: 800;
+            letter-spacing: -0.035em;
+            color: #FFFFFF;
+            text-wrap: balance;
+        }
+        .legal-notice {
+            color: #404040;
+            font-size: 11px;
+            letter-spacing: 0.05em;
+            user-select: text;
+        }
+        .legal-notice:hover {
+            color: #888888;
+        }
+        /* Notice Carousel */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <h1>404</h1>
-        <h2>Page Not Found</h2>
-        <p>The requested URL was not found on this server.</p>
-    </div>
+<body class="min-h-screen flex flex-col justify-between p-6 md:p-12">
+
+    <header class="flex justify-between items-center max-w-7xl mx-auto w-full">
+        <a href="/" class="text-2xl font-display uppercase tracking-tight font-bold text-gold">
+            GAGAN FITNESS
+        </a>
+        <a href="https://wa.me/918146298024?text=Hi%20Gagan%20Fitness!%20I%20got%20lost%20on%20the%20website." target="_blank" rel="noopener noreferrer" class="text-xs uppercase font-mono tracking-widest text-gold hover:text-white transition-colors">
+            WhatsApp Support →
+        </a>
+    </header>
+
+    <main class="max-w-4xl mx-auto my-auto text-center py-16">
+        <span class="text-xs uppercase tracking-[0.3em] font-mono text-gold block mb-4">404 Error • Off Route</span>
+        <h1 class="text-6xl md:text-[8vw] font-display uppercase font-bold tracking-tighter leading-none mb-6">
+            Lost Your Form?
+        </h1>
+        <p class="text-neutral-400 font-body text-base md:text-lg max-w-md mx-auto mb-10 leading-relaxed">
+            The page you're searching for does not exist or has been relocated. Return to the main sanctuary and continue your training.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/" class="bg-white text-black font-display text-lg uppercase font-bold px-8 py-4 hover:bg-gold transition-colors">
+                Return to Sanctuary
+            </a>
+            <a href="/#personal-training" class="border border-white/20 text-white font-display text-lg uppercase px-8 py-4 hover:border-gold hover:text-gold transition-colors">
+                Explore Coaching
+            </a>
+        </div>
+    </main>
+
+    <footer class="max-w-7xl mx-auto w-full text-center md:text-left text-xs font-mono text-neutral-600 flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10">
+        <p>&copy; 2026 Gagan Singh Performance. SCO 34-35, Sector 67, Mohali.</p>
+        <div class="flex gap-4 mt-2 md:mt-0">
+            <a href="https://wa.me/918146298024" target="_blank" rel="noopener noreferrer" class="hover:text-gold">WhatsApp (+91 81462 98024)</a>
+            <span>•</span>
+            <a href="/#location" class="hover:text-gold">Location</a>
+        </div>
+    </footer>
+
 </body>
 </html>
