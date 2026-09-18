@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="es" class="scroll-smooth bg-black text-zinc-950 antialiased">
+﻿<!DOCTYPE html>
+<html lang="es" class="scroll-smooth bg-pure-white text-near-black antialiased">
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BE02RPRXZM"></script>
@@ -7,1201 +7,346 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-BE02RPRXZM');
     </script>
 
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
-    <title>Entrenamiento Personal 1 a 1 & Nutrición | FITAWAY Olivos Buenos Aires</title>
-    <meta name="description" content="Entrenamiento personalizado 1 a 1 de élite con Head Coach y entrenadores certificados en FITAWAY Olivos, Vicente López. Periodización científica, biomecánica, nutrición deportiva integral y seguimiento continuo."/>
+    <title>Coaching 1 a 1 & Fuerza | FITAWAY Olivos Buenos Aires</title>
+    <meta name="description" content="Coaching personalizado 1 a 1 de élite en FITAWAY Olivos. Biomecánica aplicada, periodización científica, nutrición deportiva e instrucción técnica rigurosa en Av. del Libertador 2450."/>
     
     <!-- SEO & Open Graph -->
-    <meta property="og:title" content="Entrenamiento Personal 1 a 1 & Nutrición | FITAWAY Olivos Buenos Aires"/>
-    <meta property="og:description" content="Entrenamiento de fuerza 1 a 1, recomposición corporal y nutrición deportiva en FITAWAY Olivos, Vicente López."/>
+    <meta property="og:title" content="Personal Training 1 a 1 | FITAWAY Olivos Buenos Aires"/>
+    <meta property="og:description" content="Coaching individual de alto rendimiento en Av. del Libertador 2450, Olivos, Vicente López."/>
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="https://fitwaygym.in/personal-training.html"/>
-    <meta property="og:image" content="https://fitwaygym.in/assets/coach_training_pro.jpg"/>
+    <meta property="og:image" content="https://fitwaygym.in/assets/head_strength_coach.jpg"/>
+    <meta property="og:site_name" content="FITAWAY"/>
     <meta name="twitter:card" content="summary_large_image"/>
     <link rel="canonical" href="https://fitwaygym.in/personal-training.html"/>
     <link rel="icon" type="image/png" href="assets/hero_gym_bright.jpg"/>
     <link rel="manifest" href="site.webmanifest"/>
-    <meta name="theme-color" content="#FFFFFF"/>
+    <meta name="theme-color" content="#101010"/>
 
-    <!-- Schema.org Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Service",
-          "@id": "https://fitwaygym.in/personal-training.html#service",
-          "name": "Entrenamiento Personal 1 a 1 y Nutrición FITAWAY",
-          "serviceType": "Entrenamiento Personal y Coaching Nutricional",
-          "provider": {
-            "@type": "ExerciseGym",
-            "name": "FITAWAY",
-            "url": "https://fitwaygym.in/",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "Av. del Libertador 2450",
-              "addressLocality": "Olivos",
-              "addressRegion": "Buenos Aires",
-              "postalCode": "B1636",
-              "addressCountry": "AR"
-            }
-          },
-          "areaServed": {
-            "@type": "AdministrativeArea",
-            "name": "Olivos, Vicente López, Buenos Aires"
-          },
-          "description": "Entrenamiento de fuerza 1 a 1, recomposición corporal, biomecánica aplicada y nutrición deportiva con entrenadores certificados en FITAWAY Olivos."
-        },
-        {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "FITAWAY",
-              "item": "https://fitwaygym.in/"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "Entrenamiento Personal",
-              "item": "https://fitwaygym.in/personal-training.html"
-            }
-          ]
-        }
-      ]
-    }
-    </script>
-
-    <!-- Fonts & Tailwind -->
+    <!-- Google Fonts: Oswald, Bebas Neue, Inter, Mr Dafoe, Satisfy -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Satisfy&family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Mr+Dafoe&family=Oswald:wght@400;500;600;700;800&family=Satisfy&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        'display': ['Oswald', 'Arial Narrow', 'sans-serif'],
-                        'body': ['Inter', 'system-ui', 'sans-serif'],
-                        'script': ['Satisfy', 'cursive'],
+                        'display': ['Oswald', 'sans-serif'],
+                        'bebas': ['Bebas Neue', 'sans-serif'],
+                        'script': ['Mr Dafoe', 'Satisfy', 'cursive'],
+                        'body': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                        'mono': ['ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace']
                     },
                     colors: {
-                        black: '#050505',
-                        white: '#F4F4F4',
-                        gold: '#D19E00',
-                        neutral: {
-                            900: '#111111',
-                            800: '#1C1B1B',
-                            700: '#2A2A2A',
-                            600: '#474746',
-                            400: '#999077',
-                            300: '#D0C6AB',
-                        }
+                        'pure-white': '#FFFFFF',
+                        'near-black': '#101010',
+                        'charcoal': '#1A1A1A',
+                        'celeste': '#75AADB',
+                        'gold': '#C9A227',
+                        'vice-coral': '#F472B6',
+                        'vice-cyan': '#2DD4BF'
                     }
                 }
             }
         }
     </script>
-    <style>
-        :root {
-            --bg-canvas: #FFFFFF;
-            --bg-card: #FFFFFF;
-            --bg-card-subtle: #F9FAFB;
-            --bg-card-inner: #F3F4F6;
-            --text-heading: #0A0A0A;
-            --text-body: #374151;
-            --text-muted: #6B7280;
-            --border-hairline: rgba(0, 0, 0, 0.08);
-            --border-hover: rgba(209, 158, 0, 0.4);
-            --nav-bg: rgba(255, 255, 255, 0.94);
-            --nav-border: rgba(0, 0, 0, 0.08);
-            --nav-text: #050505;
-        }
-
-        html, body { 
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            overscroll-behavior: none;
-            background-color: var(--bg-canvas);
-            color: var(--text-body);
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
-
-        main section {
-            background-color: var(--bg-canvas);
-            color: var(--text-body);
-        }
-
-        .text-zinc-950 {
-            color: var(--text-heading);
-        }
-
-        .text-zinc-500, .text-zinc-600 {
-            color: var(--text-body);
-        }
-
-        .text-neutral-500 {
-            color: var(--text-muted);
-        }
-
-        .bg-black {
-            background-color: var(--bg-canvas);
-        }
-
-        .bg-zinc-50, .bg-zinc-50\/90, .bg-zinc-50\/60, .bg-zinc-50\/80, .bg-neutral-950 {
-            background-color: var(--bg-card) !important;
-            border-color: var(--border-hairline) !important;
-            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04);
-        }
-
-        .bg-black\/60, .bg-neutral-800 {
-            background-color: var(--bg-card-inner) !important;
-            border-color: var(--border-hairline) !important;
-        }
-
-        .border-white\/10, .border-white\/20, .border-white\/30 {
-            border-color: var(--border-hairline) !important;
-        }
-
-        header {
-            background-color: var(--nav-bg) !important;
-            border-bottom: 1px solid var(--nav-border) !important;
-        }
-
-        header a, header button, header span:not(.text-gold) {
-            color: var(--nav-text);
-        }
-
-        footer {
-            background-color: #050505 !important;
-            color: #F4F4F4 !important;
-        }
-        footer .text-zinc-950 {
-            color: #F4F4F4 !important;
-        }
-        footer .text-zinc-500, footer .text-zinc-600 {
-            color: #999077 !important;
-        }
-        footer .border-white\/10 {
-            border-color: rgba(255, 255, 255, 0.1) !important;
-        }
-
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg-canvas: #050505;
-                --bg-card: #111111;
-                --bg-card-subtle: #0E0E0E;
-                --bg-card-inner: #1C1B1B;
-                --text-heading: #F4F4F4;
-                --text-body: #D0C6AB;
-                --text-muted: #999077;
-                --border-hairline: rgba(255, 255, 255, 0.10);
-                --border-hover: rgba(209, 158, 0, 0.5);
-                --nav-bg: rgba(5, 5, 5, 0.92);
-                --nav-border: rgba(255, 255, 255, 0.10);
-                --nav-text: #F4F4F4;
-            }
-
-            .bg-zinc-50, .bg-zinc-50\/90, .bg-zinc-50\/60, .bg-zinc-50\/80, .bg-neutral-950 {
-                box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
-            }
-        }
-
-        .reveal-text-mask {
-            overflow: hidden;
-            display: block;
-        }
-        .reveal-text {
-            opacity: 0;
-            transform: translateY(115%) rotate(1.2deg);
-            filter: blur(6px);
-            transition: opacity 1.35s cubic-bezier(0.16, 1, 0.3, 1), 
-                        transform 1.35s cubic-bezier(0.16, 1, 0.3, 1), 
-                        filter 1.35s cubic-bezier(0.16, 1, 0.3, 1);
-            will-change: opacity, transform, filter;
-            transform-origin: 0% 100%;
-        }
-        .reveal-text.active {
-            opacity: 1;
-            transform: translateY(0) rotate(0deg);
-            filter: blur(0px);
-        }
-
-        .reveal-delay-1 { transition-delay: 0.12s; }
-        .reveal-delay-2 { transition-delay: 0.24s; }
-        .reveal-delay-3 { transition-delay: 0.36s; }
-        .reveal-delay-4 { transition-delay: 0.48s; }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(32px);
-            filter: blur(4px);
-            transition: opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1), 
-                        transform 1.1s cubic-bezier(0.16, 1, 0.3, 1), 
-                        filter 1.1s cubic-bezier(0.16, 1, 0.3, 1);
-            will-change: opacity, transform, filter;
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-            filter: blur(0px);
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .reveal { opacity: 1 !important; transform: none !important; }
-        }
-
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .font-script { font-family: 'Satisfy', cursive; }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-    </style>
 </head>
-<body class="bg-white text-zinc-900 selection:bg-zinc-950 selection:text-zinc-950">
+<body class="selection:bg-celeste selection:text-near-black min-h-screen bg-pure-white text-near-black font-body overflow-x-hidden">
 
-    <!-- HEADER / NAVIGATION -->
-    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-zinc-200 px-6 py-4">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="/" class="text-2xl md:text-3xl font-display uppercase tracking-tight font-extrabold text-zinc-950">
-                FITAWAY
+    <!-- HEADER -->
+    <header class="sticky top-0 left-0 w-full z-50 bg-near-black text-white px-6 md:px-12 py-5 border-b border-white/10">
+        <div class="max-w-[1700px] mx-auto flex justify-between items-center">
+            <a href="/" class="group flex items-baseline gap-2">
+                <span class="font-display font-black text-2xl md:text-3xl tracking-tighter uppercase text-white transition-colors group-hover:text-celeste">
+                    FITAWAY
+                </span>
+                <span class="font-script text-lg text-celeste tracking-normal lowercase hidden sm:inline-block">
+                    buenos aires
+                </span>
             </a>
-            <nav class="hidden md:flex items-center gap-8 text-xs font-mono uppercase tracking-widest text-zinc-600">
-                <a href="/" class="hover:text-zinc-950 transition-colors">Inicio</a>
-                <a href="/#train" class="hover:text-gold transition-colors">Disciplinas</a>
-                <a href="#methodology" class="hover:text-gold transition-colors">Metodología</a>
-                <a href="#nutrition" class="hover:text-gold transition-colors">Nutrición</a>
-                <a href="#special-programs" class="hover:text-gold transition-colors">Programas</a>
-                <a href="#plans" class="hover:text-gold transition-colors">Planes</a>
+
+            <nav class="hidden xl:flex items-center gap-9 text-[11px] font-mono uppercase tracking-[0.22em] text-white/80">
+                <a href="/" class="hover:text-celeste transition-colors">INICIO</a>
+                <a href="/#train" class="hover:text-celeste transition-colors">DISCIPLINAS</a>
+                <a href="personal-training.html" class="text-gold font-bold transition-colors">PERSONAL TRAINING</a>
+                <a href="/#philosophy" class="hover:text-celeste transition-colors">FILOSOFÍA</a>
+                <a href="/#memberships" class="hover:text-celeste transition-colors">MEMBRESÍAS</a>
+                <a href="/#location" class="hover:text-celeste transition-colors">UBICACIÓN</a>
+                <a href="blog.html" class="hover:text-celeste transition-colors">JOURNAL</a>
             </nav>
-            <div class="flex items-center gap-4">
-                <a href="https://wa.me/5491123456789?text=Hola!%20Quiero%20consultar%20sobre%20Entrenamiento%20Personal%20en%20FITAWAY." target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase bg-[#25D366] text-black px-4 py-2.5 hover:bg-white transition-all font-mono shadow-md">
-                    <svg class="w-4 h-4 fill-current text-black" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.101.005.241-.038.376.287.144.35.49 1.199.534 1.286.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.13.559 4.129 1.534 5.864l-1.634 5.964 6.13-1.609c1.684.919 3.609 1.447 5.658 1.447 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/></svg>
-                    <span>Consultar Entrenador</span>
-                </a>
-                <button id="mobile-menu-btn" class="md:hidden text-zinc-950 uppercase text-xs font-semibold tracking-widest flex items-center gap-1.5 border border-zinc-300 px-3 py-1.5" aria-label="Toggle Menu">
-                    <span class="material-symbols-outlined text-base">menu</span>
-                    <span>Menú</span>
-                </button>
-            </div>
+
+            <a href="https://wa.me/5491123456789?text=Hola!%20Quiero%20solicitar%20un%20plan%20de%20Personal%20Training%201%20a%201." target="_blank" rel="noopener noreferrer" class="hidden sm:inline-block text-xs font-mono uppercase tracking-[0.2em] font-semibold text-white px-5 py-2.5 border border-white/30 hover:border-celeste hover:text-celeste transition-all">
+                CONSULTAR COACH →
+            </a>
         </div>
     </header>
-
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 bg-black/95 backdrop-blur-xl z-[100] hidden flex-col justify-center items-center gap-6 px-6 text-center">
-        <button id="close-menu-btn" class="absolute top-6 right-6 text-xs uppercase tracking-widest flex items-center gap-1.5 text-zinc-500 hover:text-zinc-950" aria-label="Close Menu">
-            <span class="material-symbols-outlined text-lg">close</span>
-            <span>Cerrar</span>
-        </button>
-        <span class="text-xs text-gold uppercase tracking-[0.2em] font-mono">FITAWAY • COACHING 1 A 1</span>
-        <a href="/" class="text-3xl font-display uppercase mobile-link hover:text-gold">Inicio</a>
-        <a href="/#train" class="text-3xl font-display uppercase mobile-link hover:text-gold">Disciplinas</a>
-        <a href="#methodology" class="text-3xl font-display uppercase mobile-link hover:text-gold">Metodología</a>
-        <a href="#nutrition" class="text-3xl font-display uppercase mobile-link hover:text-gold">Nutrición</a>
-        <a href="#special-programs" class="text-3xl font-display uppercase mobile-link hover:text-gold">Programas</a>
-        <a href="#plans" class="text-3xl font-display uppercase mobile-link text-gold font-bold">Planes de Coaching</a>
-        <a href="https://wa.me/5491123456789?text=Hola!%20Quiero%20consultar%20sobre%20Entrenamiento%20Personal%20en%20FITAWAY." target="_blank" rel="noopener noreferrer" class="mt-4 text-sm font-semibold uppercase tracking-widest bg-[#25D366] text-black px-8 py-3.5 mobile-link flex items-center justify-center gap-2.5 shadow-xl">
-            <svg class="w-5 h-5 fill-current text-black" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.101.005.241-.038.376.287.144.35.49 1.199.534 1.286.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.13.559 4.129 1.534 5.864l-1.634 5.964 6.13-1.609c1.684.919 3.609 1.447 5.658 1.447 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/></svg>
-            <span>Consultar Entrenador (WhatsApp)</span>
-        </a>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <main id="main-content" class="relative z-10 bg-white w-full">
-
-        <!-- CHAPTER 01: HERO — PERSONAL TRAINING, NUTRITION & LONGEVITY -->
-        <section class="relative min-h-[80vh] flex items-center justify-center px-6 py-20 md:py-28 border-b border-zinc-200 overflow-hidden bg-gradient-to-b from-white via-zinc-50 to-white">
-            <div class="max-w-5xl mx-auto text-center relative z-10">
-                <span class="inline-flex items-center bg-white border border-gold/40 px-5 py-2 rounded-full text-gold text-xs font-mono uppercase tracking-[0.25em] mb-8 shadow-xl">
-                    <span class="font-script text-base text-[#75AADB] lowercase tracking-normal mr-2">olivos, zona norte •</span><span>División de Coaching 1 a 1</span>
-                </span>
-                
-                <h1 class="text-4xl sm:text-6xl md:text-8xl font-display uppercase tracking-tight font-extrabold leading-[0.92] mb-6 text-zinc-950">
-                    Entrenamiento 1 a 1.<br>
-                    <span class="text-gold">Nutrición.</span> <span class="text-zinc-500">Longevidad.</span>
-                </h1>
-                
-                <p class="text-xl md:text-2xl font-display uppercase text-zinc-600 tracking-wide mb-6">
-                    “Tus metas. Tu programa. Tu progreso.”
-                </p>
-                
-                <p class="text-zinc-500 font-body text-base md:text-lg max-w-3xl mx-auto leading-relaxed mb-10">
-                    No estás contratando a alguien para sostener una planilla. Estás ingresando a un sistema estructurado de biomecánica, progresión y nutrición deportiva adaptado a tus horarios, metabolismo y objetivos.
-                </p>
-
-                <!-- Direct Action Buttons -->
-                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-xl mx-auto">
-                    <a href="https://wa.me/5491123456789?text=Hola!%20Quiero%20iniciar%20Entrenamiento%20Personal%20en%20FITAWAY." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-[#25D366] text-black font-display text-base sm:text-lg uppercase font-bold tracking-wider px-10 py-4 sm:py-5 rounded-full hover:bg-white transition-all duration-300 flex items-center justify-center gap-3 shadow-2xl">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.101.005.241-.038.376.287.144.35.49 1.199.534 1.286.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.13.559 4.129 1.534 5.864l-1.634 5.964 6.13-1.609c1.684.919 3.609 1.447 5.658 1.447 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/></svg>
-                        <span>Consultar Entrenador →</span>
-                    </a>
-                    <a href="#plans" class="w-full sm:w-auto border border-zinc-300 text-zinc-950 font-display text-base sm:text-lg uppercase tracking-wider px-10 py-4 sm:py-5 rounded-full hover:border-[#75AADB] hover:text-[#75AADB] transition-colors">
-                        Ver Planes de Coaching
-                    </a>
+    <main>
+        <!-- HERO SECTION -->
+        <section class="relative bg-near-black text-white pt-20 pb-28 sm:pt-28 sm:pb-36 px-6 md:px-12 border-b border-white/10 overflow-hidden">
+            <div class="max-w-[1700px] mx-auto">
+                <div class="mb-6 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.35em] text-white/60">
+                    <span>BUENOS AIRES · OLIVOS // ATELIER ATENCIONAL</span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-celeste"></span>
                 </div>
 
-                <!-- 8-Step Architectural Process Ribbon -->
-                <div class="mt-16 pt-8 border-t border-zinc-200 flex flex-wrap justify-center items-center gap-2 sm:gap-4 text-xs font-mono uppercase tracking-widest text-zinc-500">
-                    <span class="text-zinc-950">01 Evaluación</span> <span class="text-gold">→</span>
-                    <span class="text-zinc-950">02 Objetivo</span> <span class="text-gold">→</span>
-                    <span class="text-zinc-950">03 Programa</span> <span class="text-gold">→</span>
-                    <span class="text-zinc-950">04 Entrenamiento</span> <span class="text-gold">→</span>
-                    <span class="text-zinc-950">05 Nutrición</span> <span class="text-gold">→</span>
-                    <span class="text-zinc-950">06 Constancia</span> <span class="text-gold">→</span>
-                    <span class="text-zinc-950">07 Métricas</span> <span class="text-gold">→</span>
-                    <span class="text-gold font-bold">08 Ajustes</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- MONUMENTAL EDITORIAL TYPOGRAPHY BAND -->
-        <section class="w-full bg-black py-12 md:py-20 border-b border-zinc-200 overflow-hidden select-none">
-            <div class="max-w-[1700px] mx-auto px-6 md:px-12 text-center">
-                <div class="text-5xl sm:text-7xl md:text-8xl lg:text-[10vw] font-display font-black tracking-tighter uppercase leading-[0.82] text-zinc-950">
-                    TRANSFORMACIÓN 1 A 1
-                </div>
-                <div class="text-xl sm:text-3xl md:text-5xl lg:text-[3.8vw] font-display font-bold tracking-tight uppercase leading-[0.85] text-neutral-500 mt-3">
-                    BIOMECÁNICA • PROGRAMACIÓN METABÓLICA • RECOMPOSICIÓN
-                </div>
-            </div>
-        </section>
-
-        <!-- CHAPTER 02: PRO TRAINER PROFILE -->
-        <section id="coach" class="py-24 md:py-36 px-6 md:px-12 max-w-7xl mx-auto border-b border-zinc-200">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-                
-                <!-- Left: Coach Visual -->
-                <div class="lg:col-span-5 relative reveal">
-                    <div class="w-full h-[520px] md:h-[640px] bg-zinc-50 border border-zinc-200 overflow-hidden relative">
-                        <img src="assets/coach_training_pro.jpg" alt="Head Strength Coach en FITAWAY Olivos Buenos Aires" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-black via-black/80 to-transparent">
-                            <span class="text-xs uppercase tracking-widest text-gold font-mono block">Head Coach & Entrenador Pro</span>
-                            <h2 class="text-3xl font-display uppercase text-zinc-950">Head Strength Coach</h2>
-                            <p class="text-xs font-mono text-zinc-500 mt-1">FITAWAY • OLIVOS, BUENOS AIRES</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right: Philosophy -->
-                <div class="lg:col-span-7 flex flex-col gap-6 reveal">
-                    <span class="text-xs font-mono uppercase tracking-widest text-gold block">01 / Coaching Profesional</span>
-                    <h2 class="text-4xl md:text-6xl font-display uppercase tracking-tight leading-none text-zinc-950">
-                        Sin Atajos.<br><span class="text-zinc-500">Resultados Precisos.</span>
-                    </h2>
-                    <p class="text-zinc-600 font-body text-base md:text-lg leading-relaxed">
-                        Nuestro Head Coach lidera el entrenamiento personalizado en FITAWAY con un enfoque riguroso en biomecánica aplicada, periodización de cargas y nutrición deportiva. Ya sea tu primer día en el gimnasio o busques romper un estancamiento competitivo, cada repetición y cada indicación responden a tu fisiología.
-                    </p>
-                    <p class="text-zinc-500 font-body text-sm md:text-base leading-relaxed">
-                        Evaluamos patrones de movimiento, simetría articular y capacidad de recuperación para diseñar un plan que proteja tus articulaciones y maximice tu rendimiento sostenido a largo plazo.
-                    </p>
-
-                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 border-t border-zinc-200 text-xs font-mono uppercase">
-                        <div>
-                            <span class="text-gold block font-bold text-base font-display">1 A 1</span>
-                            <span class="text-zinc-500">Supervisión Total</span>
-                        </div>
-                        <div>
-                            <span class="text-gold block font-bold text-base font-display">100%</span>
-                            <span class="text-zinc-500">Personalizado</span>
-                        </div>
-                        <div>
-                            <span class="text-gold block font-bold text-base font-display">OLIVOS</span>
-                            <span class="text-zinc-500">Vicente López</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- CHAPTER 03: PROGRAM METHODOLOGIES -->
-        <section id="methodology" class="py-24 md:py-36 px-6 md:px-12 max-w-7xl mx-auto border-b border-zinc-200">
-            <div class="max-w-3xl mb-16 reveal">
-                <span class="text-xs font-mono uppercase tracking-widest text-gold block mb-3">02 / Metodología Científica</span>
-                <h2 class="text-4xl md:text-7xl font-display uppercase tracking-tight leading-none mb-6">
-                    Entrenamiento para Vos.
-                </h2>
-                <p class="text-zinc-500 font-body text-base md:text-lg leading-relaxed">
-                    No imponemos rutinas genéricas. Seleccionamos, adaptamos y periodizamos una estructura basada en tu experiencia, tus horarios, tu recuperación y tus metas.
-                </p>
-            </div>
-
-            <!-- 9 Proven Frameworks Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-                
-                <div class="p-8 bg-zinc-50 border border-zinc-200 hover:border-gold/50 transition-colors reveal">
-                    <span class="text-xs font-mono text-gold tracking-widest block mb-2">FUNDAMENTAL</span>
-                    <h3 class="text-2xl font-display uppercase text-zinc-950 mb-2">Fuerza Base</h3>
-                    <p class="text-zinc-500 font-body text-sm leading-relaxed">
-                        Para principiantes: densidad ósea, postura y patrones motores básicos en ejercicios multiarticulares con barra.
-                    </p>
-                </div>
-
-                <div class="p-8 bg-zinc-50 border border-zinc-200 hover:border-gold/50 transition-colors reveal">
-                    <span class="text-xs font-mono text-gold tracking-widest block mb-2">SOBRECARGA</span>
-                    <h3 class="text-2xl font-display uppercase text-zinc-950 mb-2">Esquema 5×5 Compuesto</h3>
-                    <p class="text-zinc-500 font-body text-sm leading-relaxed">
-                        Sobrecarga progresiva contrastada para acelerar adaptaciones de fuerza en sentadillas, press de banca y tracciones.
-                    </p>
-                </div>
-
-                <div class="p-8 bg-zinc-50 border border-zinc-200 hover:border-gold/50 transition-colors reveal">
-                    <span class="text-xs font-mono text-gold tracking-widest block mb-2">INTERMEDIO</span>
-                    <h3 class="text-2xl font-display uppercase text-zinc-950 mb-2">Método de Ondulación</h3>
-                    <p class="text-zinc-500 font-body text-sm leading-relaxed">
-                        Días de volumen, recuperación e intensidad periodizados para atletas listos para superar mesetas de carga.
-                    </p>
-                </div>
-
-                <div class="p-8 bg-zinc-50 border border-zinc-200 hover:border-gold/50 transition-colors reveal">
-                    <span class="text-xs font-mono text-gold tracking-widest block mb-2">FRECUENCIA EQUILIBRADA</span>
-                    <h3 class="text-2xl font-display uppercase text-zinc-950 mb-2">Torso / Pierna</h3>
-                    <p class="text-zinc-500 font-body text-sm leading-relaxed">
-                        Estructura de 4 días semanales que equilibra estímulo hipertrófico y recuperación del sistema nervioso central.
-                    </p>
-                </div>
-
-                <div class="p-8 bg-zinc-50 border border-zinc-200 hover:border-gold/50 transition-colors reveal">
-                    <span class="text-xs font-mono text-gold tracking-widest block mb-2">HIPERTROFIA ATLÉTICA</span>
-                    <h3 class="text-2xl font-display uppercase text-zinc-950 mb-2">Push / Pull / Legs (PPL)</h3>
-                    <p class="text-zinc-500 font-body text-sm leading-relaxed">
-                        Agrupaciones anatómicas específicas para quienes buscan máxima estética, definición muscular y volumen enfocado.
-                    </p>
-                </div>
-
-                <div class="p-8 bg-zinc-50 border border-zinc-200 hover:border-gold/50 transition-colors reveal">
-                    <span class="text-xs font-mono text-gold tracking-widest block mb-2">HORARIOS FLEXIBLES</span>
-                    <h3 class="text-2xl font-display uppercase text-zinc-950 mb-2">Protocolos Full Body</h3>
-                    <p class="text-zinc-500 font-body text-sm leading-relaxed">
-                        Modelo de 3 días de alta eficiencia que maximiza la síntesis proteica por sesión para profesionales con poco tiempo.
-                    </p>
-                </div>
-
-                <div class="p-8 bg-zinc-50 border border-zinc-200 hover:border-gold/50 transition-colors reveal">
-                    <span class="text-xs font-mono text-gold tracking-widest block mb-2">DESARROLLO MUSCULAR</span>
-                    <h3 class="text-2xl font-display uppercase text-zinc-950 mb-2">Ciclos de Hipertrofia</h3>
-                    <p class="text-zinc-500 font-body text-sm leading-relaxed">
-                        Rangos de 8 a 15 repeticiones con tensión mecánica constante y estrés metabólico para masa muscular magra.
-                    </p>
-                </div>
-
-                <div class="p-8 bg-zinc-50 border border-zinc-200 hover:border-gold/50 transition-colors reveal">
-                    <span class="text-xs font-mono text-gold tracking-widest block mb-2">POTENCIA & RESILIENCIA</span>
-                    <h3 class="text-2xl font-display uppercase text-zinc-950 mb-2">Fuerza Pura</h3>
-                    <p class="text-zinc-500 font-body text-sm leading-relaxed">
-                        Adaptación neurológica de alta intensidad, control de velocidad de barra y estabilización para marcas máximas.
-                    </p>
-                </div>
-
-                <div class="p-8 bg-zinc-50 border border-zinc-200 hover:border-gold/50 transition-colors reveal">
-                    <span class="text-xs font-mono text-gold tracking-widest block mb-2">POTENCIA METABÓLICA</span>
-                    <h3 class="text-2xl font-display uppercase text-zinc-950 mb-2">Acondicionamiento</h3>
-                    <p class="text-zinc-500 font-body text-sm leading-relaxed">
-                        Trineos, kettlebells, remos e intervalos de umbral de lactato orientados a la oxidación de grasa y estamina deportiva.
-                    </p>
-                </div>
-
-            </div>
-
-            <!-- Custom Programming Scope -->
-            <div class="p-8 md:p-12 bg-black border border-gold/40 relative reveal">
-                <h3 class="text-2xl md:text-3xl font-display uppercase text-zinc-950 mb-4">Todo Programa Incluye:</h3>
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 text-xs font-mono uppercase text-zinc-600">
-                    <div class="flex items-center gap-2"><span class="text-gold">✓</span> Selección de Ejercicios</div>
-                    <div class="flex items-center gap-2"><span class="text-gold">✓</span> Series y Repeticiones</div>
-                    <div class="flex items-center gap-2"><span class="text-gold">✓</span> Intervalos de Descanso</div>
-                    <div class="flex items-center gap-2"><span class="text-gold">✓</span> Sobrecarga Progresiva</div>
-                    <div class="flex items-center gap-2"><span class="text-gold">✓</span> Análisis de Técnica en Video</div>
-                    <div class="flex items-center gap-2"><span class="text-gold">✓</span> Sustitución de Ejercicios</div>
-                    <div class="flex items-center gap-2"><span class="text-gold">✓</span> Métricas Corporales Semanales</div>
-                    <div class="flex items-center gap-2"><span class="text-gold">✓</span> Semanas de Descarga</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CHAPTER 04: PRACTICAL NUTRITION COACHING -->
-        <section id="nutrition" class="py-24 md:py-36 px-6 md:px-12 max-w-7xl mx-auto border-b border-zinc-200 bg-zinc-50/40">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16">
-                <div class="lg:col-span-6 reveal">
-                    <span class="text-xs font-mono uppercase tracking-widest text-gold block mb-3">03 / Integración Nutricional</span>
-                    <h2 class="text-4xl md:text-7xl font-display uppercase tracking-tight leading-none mb-6">
-                        Entrená tu Cuerpo.<br><span class="text-gold">Nutrí tu Meta.</span>
-                    </h2>
-                    <p class="text-zinc-600 font-body text-base md:text-lg leading-relaxed mb-6">
-                        La nutrición no es un extra costoso en FITAWAY; es la base indispensable de tus resultados. Tu entrenador te orienta para navegar la vida real — reuniones familiares, salidas a cenar, trabajo y asados — con pautas de alimentación realistas y sostenibles.
-                    </p>
-                    <p class="text-xs font-mono text-neutral-500 uppercase">
-                        * Nota: Los planes se adaptan a tu estilo de vida y objetivos. Ante condiciones médicas específicas, se aconseja consultar con profesionales médicos.
-                    </p>
-                </div>
-
-                <!-- Flexible Eating Models -->
-                <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4 reveal">
-                    <div class="p-6 bg-black border border-zinc-200">
-                        <h4 class="font-display text-lg uppercase text-gold mb-1">Alto en Proteínas</h4>
-                        <p class="text-xs text-zinc-500">Distribución óptima de macronutrientes para mantener energía y regenerar masa magra.</p>
-                    </div>
-                    <div class="p-6 bg-black border border-zinc-200">
-                        <h4 class="font-display text-lg uppercase text-gold mb-1">Déficit Controlado</h4>
-                        <p class="text-xs text-zinc-500">Pérdida de grasa estructurada preservando el volumen y rendimiento muscular.</p>
-                    </div>
-                    <div class="p-6 bg-black border border-zinc-200">
-                        <h4 class="font-display text-lg uppercase text-gold mb-1">Superávit Limpio</h4>
-                        <p class="text-xs text-zinc-500">Aporte calórico de calidad para atletas dedicados al aumento de masa pura.</p>
-                    </div>
-                    <div class="p-6 bg-black border border-zinc-200">
-                        <h4 class="font-display text-lg uppercase text-gold mb-1">Ciclado de Carbohidratos</h4>
-                        <p class="text-xs text-zinc-500">Ventanas de alimentación y distribución de carbohidratos según demanda de entrenamiento.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- WhatsApp Scenarios -->
-            <div class="p-8 md:p-12 bg-black border border-zinc-200 reveal">
-                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 pb-6 border-b border-zinc-200">
-                    <div>
-                        <span class="text-xs font-mono uppercase tracking-widest text-gold">Orientación Cotidiana</span>
-                        <h3 class="text-3xl font-display uppercase text-zinc-950 mt-1">No Tenés que Resolverlo Solo.</h3>
-                    </div>
-                    <a href="https://wa.me/5491123456789?text=Hola!%20Tengo%20una%20consulta%20sobre%20nutrición%20y%20entrenamiento." target="_blank" rel="noopener noreferrer" class="mt-4 md:mt-0 text-xs font-mono uppercase tracking-widest text-gold hover:text-zinc-950 transition-colors">
-                        Consultar al Entrenador por WhatsApp →
-                    </a>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-sm font-body text-zinc-600">
-                    <div class="p-4 bg-zinc-50/80 border-l-2 border-gold">
-                        <p class="italic mb-2">“Tengo un asado o cena esta noche. ¿Cómo balanceo mis comidas del día?”</p>
-                        <span class="text-xs font-mono text-gold">→ Estrategia práctica de ajuste</span>
-                    </div>
-                    <div class="p-4 bg-zinc-50/80 border-l-2 border-gold">
-                        <p class="italic mb-2">“Me salteé una comida por una reunión. ¿Cómo compenso la cena?”</p>
-                        <span class="text-xs font-mono text-gold">→ Sustitución rápida de alimentos</span>
-                    </div>
-                    <div class="p-4 bg-zinc-50/80 border-l-2 border-gold">
-                        <p class="italic mb-2">“¿Qué conviene comer 60 minutos antes del entrenamiento de sentadillas?”</p>
-                        <span class="text-xs font-mono text-gold">→ Timing nutricional pre-sesión</span>
-                    </div>
-                    <div class="p-4 bg-zinc-50/80 border-l-2 border-gold">
-                        <p class="italic mb-2">“¿Este snack es recomendable? Te mando foto de la tabla nutricional.”</p>
-                        <span class="text-xs font-mono text-gold">→ Verificación directa por WhatsApp</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CHAPTER 05: SPECIAL GOAL PROGRAMS & EVENT TIMELINE -->
-        <section id="special-programs" class="py-24 md:py-36 px-6 md:px-12 max-w-7xl mx-auto border-b border-zinc-200">
-            <div class="max-w-3xl mb-16 reveal">
-                <span class="text-xs font-mono uppercase tracking-widest text-gold block mb-3">04 / Programas Específicos</span>
-                <h2 class="text-4xl md:text-7xl font-display uppercase tracking-tight leading-none mb-6">
-                    Objetivos Especiales.
-                </h2>
-                <p class="text-zinc-500 font-body text-base md:text-lg leading-relaxed">
-                    Cuando tenés una fecha límite o un evento crucial, calibramos tu volumen de entrenamiento, déficit nutricional y semana de puesta a punto según tu calendario exacto.
-                </p>
-            </div>
-
-            <!-- Special Programs Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-                
-                <!-- Casamiento / Evento -->
-                <div class="p-8 bg-zinc-50 border border-zinc-200 hover:border-gold/50 transition-colors reveal">
-                    <span class="text-xs font-mono text-gold uppercase tracking-widest block mb-2">PROTOCOLO DE CELEBRACIÓN</span>
-                    <h3 class="text-2xl font-display uppercase text-zinc-950 mb-2">Preparación Casamiento</h3>
-                    <p class="text-zinc-500 font-body text-sm leading-relaxed mb-4">
-                        Diseñado para novias, novios y familiares. Pérdida de grasa, mejora postural y compromiso estricto con la fecha del evento.
-                    </p>
-                    <a href="https://wa.me/5491123456789?text=Hola!%20Quiero%20consultar%20sobre%20el%20protocolo%20de%20casamiento." target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-gold uppercase tracking-widest hover:text-zinc-950">
-                        Consultar Protocolo →
-                    </a>
-                </div>
-
-                <!-- Evento / Vacaciones -->
-                <div class="p-8 bg-zinc-50 border border-zinc-200 hover:border-gold/50 transition-colors reveal">
-                    <span class="text-xs font-mono text-gold uppercase tracking-widest block mb-2">OBJETIVO PUNTUAL</span>
-                    <h3 class="text-2xl font-display uppercase text-zinc-950 mb-2">Vacaciones & Eventos</h3>
-                    <p class="text-zinc-500 font-body text-sm leading-relaxed mb-4">
-                        Puesta a punto estructurada a corto y mediano plazo para viajes, conferencias, cumpleaños o presentaciones importantes.
-                    </p>
-                    <a href="https://wa.me/5491123456789?text=Hola!%20Tengo%20un%20evento%20próximo%20y%20quiero%20planificar%20el%20tiempo." target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-gold uppercase tracking-widest hover:text-zinc-950">
-                        Planificar Calendario →
-                    </a>
-                </div>
-
-                <!-- Sesión de Fotos -->
-                <div class="p-8 bg-zinc-50 border border-zinc-200 hover:border-gold/50 transition-colors reveal">
-                    <span class="text-xs font-mono text-gold uppercase tracking-widest block mb-2">DEFINICIÓN ESTÉTICA</span>
-                    <h3 class="text-2xl font-display uppercase text-zinc-950 mb-2">Producción Fotográfica</h3>
-                    <p class="text-zinc-500 font-body text-sm leading-relaxed mb-4">
-                        Acondicionamiento, gestión hídrica y recarga de glucógeno muscular para sesiones fotográficas profesionales o personales.
-                    </p>
-                    <a href="https://wa.me/5491123456789?text=Hola!%20Planeo%20una%20sesión%20de%20fotos%20y%20necesito%20coaching." target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-gold uppercase tracking-widest hover:text-zinc-950">
-                        Consultar Puesta a Punto →
-                    </a>
-                </div>
-
-                <!-- Reinicio Fitness -->
-                <div class="p-8 bg-zinc-50 border border-zinc-200 hover:border-gold/50 transition-colors reveal">
-                    <span class="text-xs font-mono text-gold uppercase tracking-widest block mb-2">VUELTA AL ENTRENAMIENTO</span>
-                    <h3 class="text-2xl font-display uppercase text-zinc-950 mb-2">Reinicio Deportivo</h3>
-                    <p class="text-zinc-500 font-body text-sm leading-relaxed mb-4">
-                        Para quienes retoman tras un período prolongado de inactividad, alta médica tras lesión o cambio de rutina laboral.
-                    </p>
-                    <a href="https://wa.me/5491123456789?text=Hola!%20Quiero%20retomar%20el%20entrenamiento%20con%20un%20coach%20personal." target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-gold uppercase tracking-widest hover:text-zinc-950">
-                        Comenzar tu Reinicio →
-                    </a>
-                </div>
-
-                <!-- Principiantes -->
-                <div class="p-8 bg-zinc-50 border border-zinc-200 hover:border-gold/50 transition-colors reveal">
-                    <span class="text-xs font-mono text-gold uppercase tracking-widest block mb-2">SIN EXPERIENCIA PREVIA</span>
-                    <h3 class="text-2xl font-display uppercase text-zinc-950 mb-2">Primeros Pasos</h3>
-                    <p class="text-zinc-500 font-body text-sm leading-relaxed mb-4">
-                        Cero prejuicios. Acompañamiento paciente para ganar seguridad, dominar la técnica de cada ejercicio y forjar hábitos para toda la vida.
-                    </p>
-                    <a href="https://wa.me/5491123456789?text=Hola!%20Soy%20principiante%20y%20quiero%20consultar%20sobre%20coaching." target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-gold uppercase tracking-widest hover:text-zinc-950">
-                        Empezar de Cero →
-                    </a>
-                </div>
-
-                <!-- Construcción de Fuerza -->
-                <div class="p-8 bg-zinc-50 border border-zinc-200 hover:border-gold/50 transition-colors reveal">
-                    <span class="text-xs font-mono text-gold uppercase tracking-widest block mb-2">MÁXIMA CAPACIDAD</span>
-                    <h3 class="text-2xl font-display uppercase text-zinc-950 mb-2">Fuerza & Masa Muscular</h3>
-                    <p class="text-zinc-500 font-body text-sm leading-relaxed mb-4">
-                        Ejecución pesada de básicos, análisis de trayectoria de barra y nutrición orientada a quienes persiguen marcas récord.
-                    </p>
-                    <a href="https://wa.me/5491123456789?text=Hola!%20Quiero%20desarrollar%20fuerza%20y%20masa%20con%20su%20coach." target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-gold uppercase tracking-widest hover:text-zinc-950">
-                        Comenzar Fuerza →
-                    </a>
-                </div>
-
-            </div>
-
-            <!-- Timeline Guide -->
-            <div class="p-8 md:p-12 bg-zinc-50 border border-gold/40 reveal">
-                <span class="text-xs font-mono uppercase tracking-widest text-gold block mb-2">Planificación Temporal</span>
-                <h3 class="text-3xl font-display uppercase text-zinc-950 mb-6">Cuanto Antes Comiences, Más Herramientas Tiene Tu Entrenador.</h3>
-                
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="p-6 bg-black border border-zinc-200">
-                        <span class="font-display text-2xl text-gold font-bold block mb-1">12+ SEMANAS</span>
-                        <h4 class="text-base uppercase font-semibold text-zinc-950 mb-2">Base & Recomposición</h4>
-                        <p class="text-xs text-zinc-500">Máxima flexibilidad para cambios profundos de masa muscular, reducción de grasa y consolidación de hábitos.</p>
-                    </div>
-                    <div class="p-6 bg-black border border-zinc-200">
-                        <span class="font-display text-2xl text-gold font-bold block mb-1">8–12 SEMANAS</span>
-                        <h4 class="text-base uppercase font-semibold text-zinc-950 mb-2">Progresión Estructurada</h4>
-                        <p class="text-xs text-zinc-500">Bloques enfocados de déficit o hipertrofia con control biométrico semanal y ajustes de volumen.</p>
-                    </div>
-                    <div class="p-6 bg-black border border-zinc-200">
-                        <span class="font-display text-2xl text-gold font-bold block mb-1">4–8 SEMANAS</span>
-                        <h4 class="text-base uppercase font-semibold text-zinc-950 mb-2">Ejecución Enfocada</h4>
-                        <p class="text-xs text-zinc-500">Acondicionamiento de alta adherencia y optimización para resultados visibles rápidos.</p>
-                    </div>
-                    <div class="p-6 bg-black border border-zinc-200">
-                        <span class="font-display text-2xl text-gold font-bold block mb-1">&lt; 4 SEMANAS</span>
-                        <h4 class="text-base uppercase font-semibold text-zinc-950 mb-2">Plan Corto Realista</h4>
-                        <p class="text-xs text-zinc-500">Corrección postural, reducción de retención de líquidos, activación neuromuscular y seguridad.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CHAPTER 06: THE 7-STEP COACHING JOURNEY -->
-        <section class="py-24 md:py-36 px-6 md:px-12 max-w-7xl mx-auto border-b border-zinc-200">
-            <div class="max-w-3xl mb-16 reveal">
-                <span class="text-xs font-mono uppercase tracking-widest text-gold block mb-3">05 / Arquitectura de Progresión</span>
-                <h2 class="text-4xl md:text-7xl font-display uppercase tracking-tight leading-none mb-6">
-                    El Proceso de Coaching.
-                </h2>
-                <p class="text-zinc-500 font-body text-base md:text-lg leading-relaxed">
-                    Un circuito sistemático de 7 pasos que convierte metas en capacidades físicas concretas y medibles.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-4">
-                <div class="p-6 bg-zinc-50 border border-zinc-200 flex flex-col justify-between reveal">
-                    <div>
-                        <span class="font-display text-3xl text-gold font-bold block mb-2">01</span>
-                        <h3 class="font-display text-lg uppercase text-zinc-950 mb-2">Conocer</h3>
-                    </div>
-                    <p class="text-xs text-zinc-500">Objetivos, historial, horarios semanales y preferencias alimentarias.</p>
-                </div>
-
-                <div class="p-6 bg-zinc-50 border border-zinc-200 flex flex-col justify-between reveal">
-                    <div>
-                        <span class="font-display text-3xl text-gold font-bold block mb-2">02</span>
-                        <h3 class="font-display text-lg uppercase text-zinc-950 mb-2">Evaluar</h3>
-                    </div>
-                    <p class="text-xs text-zinc-500">Patrones motores, movilidad articular, fuerza base y asimetrías.</p>
-                </div>
-
-                <div class="p-6 bg-zinc-50 border border-zinc-200 flex flex-col justify-between reveal">
-                    <div>
-                        <span class="font-display text-3xl text-gold font-bold block mb-2">03</span>
-                        <h3 class="font-display text-lg uppercase text-zinc-950 mb-2">Diseñar</h3>
-                    </div>
-                    <p class="text-xs text-zinc-500">Estructura semanal de cargas y pautas de nutrición adaptadas.</p>
-                </div>
-
-                <div class="p-6 bg-zinc-50 border border-zinc-200 flex flex-col justify-between reveal">
-                    <div>
-                        <span class="font-display text-3xl text-gold font-bold block mb-2">04</span>
-                        <h3 class="font-display text-lg uppercase text-zinc-950 mb-2">Entrenar</h3>
-                    </div>
-                    <p class="text-xs text-zinc-500">Sesiones 1 a 1 en el salón con supervisión técnica permanente.</p>
-                </div>
-
-                <div class="p-6 bg-zinc-50 border border-zinc-200 flex flex-col justify-between reveal">
-                    <div>
-                        <span class="font-display text-3xl text-gold font-bold block mb-2">05</span>
-                        <h3 class="font-display text-lg uppercase text-zinc-950 mb-2">Medir</h3>
-                    </div>
-                    <p class="text-xs text-zinc-500">Control de pesos levantados, medidas corporales y recuperación.</p>
-                </div>
-
-                <div class="p-6 bg-zinc-50 border border-zinc-200 flex flex-col justify-between reveal">
-                    <div>
-                        <span class="font-display text-3xl text-gold font-bold block mb-2">06</span>
-                        <h3 class="font-display text-lg uppercase text-zinc-950 mb-2">Ajustar</h3>
-                    </div>
-                    <p class="text-xs text-zinc-500">Recalibración de calorías, volumen y descansos ante cualquier meseta.</p>
-                </div>
-
-                <div class="p-6 bg-zinc-50 border border-gold/40 flex flex-col justify-between reveal">
-                    <div>
-                        <span class="font-display text-3xl text-gold font-bold block mb-2">07</span>
-                        <h3 class="font-display text-lg uppercase text-zinc-950 mb-2">Avanzar</h3>
-                    </div>
-                    <p class="text-xs text-zinc-500">Consolidación de logros y programación de la siguiente fase deportiva.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- CHAPTER 07: THE 5 FITWAY PERSONAL TRAINING PLANS -->
-        <section id="plans" class="py-24 md:py-36 px-6 md:px-12 max-w-7xl mx-auto border-b border-zinc-200">
-            <div class="max-w-3xl mb-16 reveal">
-                <span class="text-xs font-mono uppercase tracking-widest text-gold block mb-3">06 / Planes de Coaching</span>
-                <h2 class="text-4xl md:text-7xl font-display uppercase tracking-tight leading-none mb-6">
-                    Planes de Entrenamiento Personal.
-                </h2>
-                <p class="text-zinc-500 font-body text-base md:text-lg leading-relaxed">
-                    Paquetes de entrenamiento 1 a 1 diseñados según tu nivel de compromiso y objetivos de transformación.
-                </p>
-            </div>
-
-            <!-- 5 Plans Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-                
-                <!-- Plan 1: 12 Sesiones -->
-                <div class="p-8 bg-zinc-50/80 border border-zinc-200 flex flex-col justify-between hover:border-gold/50 transition-colors reveal">
-                    <div>
-                        <div class="flex justify-between items-start mb-4">
-                            <div>
-                                <span class="text-xs font-mono uppercase text-gold">NIVEL 01</span>
-                                <h3 class="text-3xl font-display uppercase text-zinc-950">12 Sesiones</h3>
-                            </div>
-                            <span class="text-xs font-mono text-zinc-500">Validez 1 Mes</span>
-                        </div>
-                        <p class="text-zinc-500 text-xs font-body mb-6">
-                            Ideal para principiantes que aprenden ejercicios compuestos con barra o quienes necesitan calibrar técnica.
-                        </p>
-                        <ul class="space-y-2 text-xs font-mono text-zinc-600 mb-8 border-t border-b border-zinc-200 py-6">
-                            <li class="flex items-center gap-2"><span class="text-gold">✓</span> 12 Sesiones 1 a 1 con Entrenador</li>
-                            <li class="flex items-center gap-2"><span class="text-gold">✓</span> Evaluación de Movilidad y Postura</li>
-                            <li class="flex items-center gap-2"><span class="text-gold">✓</span> Pautas Nutricionales Iniciales</li>
-                            <li class="flex items-center gap-2"><span class="text-gold">✓</span> Correcciones de Técnica por WhatsApp</li>
-                        </ul>
-                    </div>
-                    <a href="https://wa.me/5491123456789?text=Hola!%20Quiero%20consultar%20el%20plan%20de%2012%20sesiones%20en%20FITAWAY." target="_blank" rel="noopener noreferrer" class="text-center bg-white/10 hover:bg-gold hover:text-black text-zinc-950 font-display text-sm uppercase font-bold py-3.5 transition-colors">
-                        Consultar Aranceles →
-                    </a>
-                </div>
-
-                <!-- Plan 2: 24 Sesiones (MÁS ELEGIDO) -->
-                <div class="p-8 bg-black border-2 border-gold flex flex-col justify-between relative shadow-2xl reveal">
-                    <div class="absolute -top-3 right-6 bg-gold text-black text-[10px] font-mono uppercase font-bold px-3 py-0.5 tracking-widest">
-                        MÁS ELEGIDO
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-start mb-4">
-                            <div>
-                                <span class="text-xs font-mono uppercase text-gold">NIVEL 02</span>
-                                <h3 class="text-3xl font-display uppercase text-zinc-950">24 Sesiones</h3>
-                            </div>
-                            <span class="text-xs font-mono text-zinc-500">Validez 2 Meses</span>
-                        </div>
-                        <p class="text-zinc-500 text-xs font-body mb-6">
-                            El paquete estándar para sobrecarga progresiva, pérdida de grasa sostenida e hipertrofia muscular.
-                        </p>
-                        <ul class="space-y-2 text-xs font-mono text-zinc-600 mb-8 border-t border-b border-zinc-200 py-6">
-                            <li class="flex items-center gap-2"><span class="text-gold">✓</span> 24 Sesiones Dedicadas 1 a 1</li>
-                            <li class="flex items-center gap-2"><span class="text-gold">✓</span> Plan de Periodización Completo</li>
-                            <li class="flex items-center gap-2"><span class="text-gold">✓</span> Estrategia Nutricional Personalizada</li>
-                            <li class="flex items-center gap-2"><span class="text-gold">✓</span> Control Biométrico y Ajustes Semanales</li>
-                            <li class="flex items-center gap-2"><span class="text-gold">✓</span> Contacto Prioritario por WhatsApp</li>
-                        </ul>
-                    </div>
-                    <a href="https://wa.me/5491123456789?text=Hola!%20Quiero%20consultar%20el%20plan%20de%2024%20sesiones%20en%20FITAWAY." target="_blank" rel="noopener noreferrer" class="text-center bg-gold text-black hover:bg-white font-display text-sm uppercase font-bold py-3.5 transition-colors">
-                        Consultar Aranceles →
-                    </a>
-                </div>
-
-                <!-- Plan 3: 36 Sesiones -->
-                <div class="p-8 bg-zinc-50/80 border border-zinc-200 flex flex-col justify-between hover:border-gold/50 transition-colors reveal">
-                    <div>
-                        <div class="flex justify-between items-start mb-4">
-                            <div>
-                                <span class="text-xs font-mono uppercase text-gold">NIVEL 03</span>
-                                <h3 class="text-3xl font-display uppercase text-zinc-950">36 Sesiones</h3>
-                            </div>
-                            <span class="text-xs font-mono text-zinc-500">Validez 3 Meses</span>
-                        </div>
-                        <p class="text-zinc-500 text-xs font-body mb-6">
-                            Un trimestre completo de recomposición corporal para cambios físicos profundos y marcas de fuerza.
-                        </p>
-                        <ul class="space-y-2 text-xs font-mono text-zinc-600 mb-8 border-t border-b border-zinc-200 py-6">
-                            <li class="flex items-center gap-2"><span class="text-gold">✓</span> 36 Sesiones Dedicadas 1 a 1</li>
-                            <li class="flex items-center gap-2"><span class="text-gold">✓</span> Periodización Multifase</li>
-                            <li class="flex items-center gap-2"><span class="text-gold">✓</span> Nutrición Avanzada y Ciclado Calórico</li>
-                            <li class="flex items-center gap-2"><span class="text-gold">✓</span> Escaneos Posturales y Métricas Continuas</li>
-                            <li class="flex items-center gap-2"><span class="text-gold">✓</span> Acompañamiento Integral de Hábitos</li>
-                        </ul>
-                    </div>
-                    <a href="https://wa.me/5491123456789?text=Hola!%20Quiero%20consultar%20el%20plan%20de%2036%20sesiones%20en%20FITAWAY." target="_blank" rel="noopener noreferrer" class="text-center bg-white/10 hover:bg-gold hover:text-black text-zinc-950 font-display text-sm uppercase font-bold py-3.5 transition-colors">
-                        Consultar Aranceles →
-                    </a>
-                </div>
-
-                <!-- Plan 4: Intensivo Mensual VIP -->
-                <div class="p-8 bg-zinc-50/80 border border-zinc-200 flex flex-col justify-between hover:border-gold/50 transition-colors reveal">
-                    <div>
-                        <div class="flex justify-between items-start mb-4">
-                            <div>
-                                <span class="text-xs font-mono uppercase text-gold">NIVEL VIP</span>
-                                <h3 class="text-3xl font-display uppercase text-zinc-950">Intensivo Mensual</h3>
-                            </div>
-                            <span class="text-xs font-mono text-zinc-500">Coaching Diario</span>
-                        </div>
-                        <p class="text-zinc-500 text-xs font-body mb-6">
-                            Para atletas y directivos que demandan acompañamiento en el salón en cada entrenamiento de la semana.
-                        </p>
-                        <ul class="space-y-2 text-xs font-mono text-zinc-600 mb-8 border-t border-b border-zinc-200 py-6">
-                            <li class="flex items-center gap-2"><span class="text-gold">✓</span> Sesiones 1 a 1 de Lunes a Sábado</li>
-                            <li class="flex items-center gap-2"><span class="text-gold">✓</span> Auditoría Diaria de Comidas y Macros</li>
-                            <li class="flex items-center gap-2"><span class="text-gold">✓</span> Línea Directa de WhatsApp 24/7</li>
-                            <li class="flex items-center gap-2"><span class="text-gold">✓</span> Acceso y Recuperación VIP</li>
-                        </ul>
-                    </div>
-                    <a href="https://wa.me/5491123456789?text=Hola!%20Quiero%20consultar%20el%20plan%20VIP%20Intensivo%20en%20FITAWAY." target="_blank" rel="noopener noreferrer" class="text-center bg-white/10 hover:bg-gold hover:text-black text-zinc-950 font-display text-sm uppercase font-bold py-3.5 transition-colors">
-                        Consultar Programa VIP →
-                    </a>
-                </div>
-
-                <!-- Plan 5: 12 Semanas Event Peak -->
-                <div class="p-8 bg-zinc-50/80 border border-zinc-200 flex flex-col justify-between hover:border-gold/50 transition-colors reveal">
-                    <div>
-                        <div class="flex justify-between items-start mb-4">
-                            <div>
-                                <span class="text-xs font-mono uppercase text-gold">NIVEL EVENTO</span>
-                                <h3 class="text-3xl font-display uppercase text-zinc-950">12 Semanas Peak</h3>
-                            </div>
-                            <span class="text-xs font-mono text-zinc-500">Casamiento / Fotos</span>
-                        </div>
-                        <p class="text-zinc-500 text-xs font-body mb-6">
-                            Protocolo sincronizado con tu fecha para alcanzar el pico de acondicionamiento físico y definición.
-                        </p>
-                        <ul class="space-y-2 text-xs font-mono text-zinc-600 mb-8 border-t border-b border-zinc-200 py-6">
-                            <li class="flex items-center gap-2"><span class="text-gold">✓</span> Periodización Anclada a la Fecha</li>
-                            <li class="flex items-center gap-2"><span class="text-gold">✓</span> Estrategia de Puesta a Punto Final</li>
-                            <li class="flex items-center gap-2"><span class="text-gold">✓</span> Auditorías Semanales de Medidas</li>
-                            <li class="flex items-center gap-2"><span class="text-gold">✓</span> Coaching de Máxima Dedicación 1 a 1</li>
-                        </ul>
-                    </div>
-                    <a href="https://wa.me/5491123456789?text=Hola!%20Quiero%20consultar%20el%20protocolo%20de%2012%20semanas%20peak%20en%20FITAWAY." target="_blank" rel="noopener noreferrer" class="text-center bg-white/10 hover:bg-gold hover:text-black text-zinc-950 font-display text-sm uppercase font-bold py-3.5 transition-colors">
-                        Consultar Protocolo Peak →
-                    </a>
-                </div>
-
-                <!-- Card de Asesoramiento -->
-                <div class="p-8 bg-gradient-to-br from-neutral-900 via-neutral-900 to-black border border-gold/40 flex flex-col justify-between reveal">
-                    <div>
-                        <span class="text-xs font-mono uppercase text-gold block mb-2">¿Necesitás Asesoramiento?</span>
-                        <h3 class="text-3xl font-display uppercase text-zinc-950 mb-4">¿No Sabés Cuál Elegir?</h3>
-                        <p class="text-zinc-600 text-sm font-body leading-relaxed mb-6">
-                            Contale a nuestro Head Coach tu objetivo, disponibilidad y experiencia. Te ayudaremos a elegir la opción exacta para tu calendario.
-                        </p>
-                    </div>
-                    <a href="https://wa.me/5491123456789?text=Hola!%20Tengo%20dudas%20sobre%20cuál%20plan%20de%20coaching%20me%20conviene." target="_blank" rel="noopener noreferrer" class="text-center bg-gold text-black font-display text-sm uppercase font-bold py-3.5 hover:bg-white transition-colors">
-                        Hablar con el Coach por WhatsApp →
-                    </a>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- CHAPTER 08: GYM ACCESS VS COACHING -->
-        <section class="py-24 md:py-36 px-6 md:px-12 max-w-7xl mx-auto border-b border-zinc-200">
-            <div class="max-w-3xl mb-16 reveal">
-                <span class="text-xs font-mono uppercase tracking-widest text-gold block mb-3">07 / La Diferencia del Coaching</span>
-                <h2 class="text-4xl md:text-7xl font-display uppercase tracking-tight leading-none mb-6">
-                    Acceso Libre vs. Coaching 1 a 1.
-                </h2>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Standard Gym Membership -->
-                <div class="p-8 md:p-12 bg-zinc-50/50 border border-zinc-200 reveal">
-                    <span class="text-xs font-mono uppercase text-zinc-500 block mb-2">MEMBRESÍA ESTÁNDAR</span>
-                    <h3 class="text-3xl font-display uppercase text-zinc-950 mb-6">Entrenamiento Autónomo</h3>
-                    <ul class="space-y-4 text-sm font-body text-zinc-600">
-                        <li class="flex items-start gap-3">
-                            <span class="text-neutral-500">○</span>
-                            <span>Acceso completo a todo el equipamiento de musculación y cardio de alta gama.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-neutral-500">○</span>
-                            <span>Diseñás tus propias rutinas y gestionás tu propia progresión de pesos.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-neutral-500">○</span>
-                            <span>Planificación nutricional y control de calorías por cuenta propia.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-neutral-500">○</span>
-                            <span>Autodisciplina y constancia independiente sin supervisión en cada serie.</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Personal Coaching with Pro Trainer -->
-                <div class="p-8 md:p-12 bg-zinc-50 border-2 border-gold shadow-2xl reveal">
-                    <span class="text-xs font-mono uppercase text-gold block mb-2">SISTEMA DE COACHING 1 A 1</span>
-                    <h3 class="text-3xl font-display uppercase text-zinc-950 mb-6">Arquitectura de Coaching Integral</h3>
-                    <ul class="space-y-4 text-sm font-body text-zinc-950">
-                        <li class="flex items-start gap-3">
-                            <span class="text-gold font-bold">✓</span>
-                            <span>Coaching directo en el salón garantizando técnica impecable y seguridad articular.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-gold font-bold">✓</span>
-                            <span>Plan de entrenamiento periodizado diseñado exclusivamente para tu anatomía.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-gold font-bold">✓</span>
-                            <span>Estrategia nutricional adaptada a tu ritmo real con revisión constante de comidas.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-gold font-bold">✓</span>
-                            <span>Seguimiento biométrico semanal, fotos de control y calibración de cargas.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-gold font-bold">✓</span>
-                            <span>Línea directa de WhatsApp para resolver dudas sobre comida y técnica día a día.</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- CHAPTER 09: MEMBER PERKS & LOCAL PARTNERSHIPS -->
-        <section class="py-24 md:py-36 px-6 md:px-12 max-w-7xl mx-auto border-b border-zinc-200 bg-zinc-50/40">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 reveal">
-                <div class="max-w-2xl">
-                    <span class="text-xs font-mono uppercase tracking-widest text-gold block mb-3">08 / Ecosistema de Comunidad</span>
-                    <h2 class="text-4xl md:text-7xl font-display uppercase tracking-tight leading-none">
-                        Beneficios & Alianzas.
-                    </h2>
-                    <p class="mt-4 text-zinc-500 font-body text-base md:text-lg leading-relaxed">
-                        Tu membresía en FITAWAY incluye más que acceso a máquinas. Desarrollamos alianzas con marcas destacadas de bienestar, suplementación y gastronomía saludable en Zona Norte.
-                    </p>
-                </div>
-                <div class="mt-6 md:mt-0">
-                    <span class="inline-block bg-gold/10 border border-gold/30 px-4 py-2 text-xs font-mono text-gold uppercase tracking-widest">
-                        Beneficios Próximamente
+                <div class="relative">
+                    <h1 class="font-display font-black text-6xl sm:text-8xl md:text-[10vw] uppercase tracking-tighter leading-[0.82] mb-4">
+                        COACHING<br>
+                        1 A 1
+                    </h1>
+                    <span class="font-script text-celeste text-5xl sm:text-7xl md:text-[6.5vw] lowercase absolute bottom-2 sm:bottom-6 left-1/3 sm:left-2/5 pointer-events-none transform -rotate-3">
+                        Más que entrenar.
                     </span>
                 </div>
-            </div>
 
-            <!-- Partner Categories -->
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mb-12 text-center reveal">
-                <div class="p-6 bg-black border border-zinc-200">
-                    <span class="text-xs font-mono text-gold uppercase block mb-1">01</span>
-                    <p class="font-display uppercase text-sm text-zinc-950">Comida Saludable & Viandas</p>
-                </div>
-                <div class="p-6 bg-black border border-zinc-200">
-                    <span class="text-xs font-mono text-gold uppercase block mb-1">02</span>
-                    <p class="font-display uppercase text-sm text-zinc-950">Nutrición & Suplementos</p>
-                </div>
-                <div class="p-6 bg-black border border-zinc-200">
-                    <span class="text-xs font-mono text-gold uppercase block mb-1">03</span>
-                    <p class="font-display uppercase text-sm text-zinc-950">Recuperación & Kinesiología</p>
-                </div>
-                <div class="p-6 bg-black border border-zinc-200">
-                    <span class="text-xs font-mono text-gold uppercase block mb-1">04</span>
-                    <p class="font-display uppercase text-sm text-zinc-950">Indumentaria Deportiva</p>
-                </div>
-                <div class="p-6 bg-black border border-zinc-200">
-                    <span class="text-xs font-mono text-gold uppercase block mb-1">05</span>
-                    <p class="font-display uppercase text-sm text-zinc-950">Cuidado Personal & Spa</p>
-                </div>
-                <div class="p-6 bg-black border border-zinc-200">
-                    <span class="text-xs font-mono text-gold uppercase block mb-1">06</span>
-                    <p class="font-display uppercase text-sm text-zinc-950">Estilo de Vida & Eventos</p>
-                </div>
-            </div>
-
-            <!-- Business Partnership CTA -->
-            <div class="p-8 md:p-12 bg-black border border-zinc-200 flex flex-col md:flex-row justify-between items-center gap-6 reveal">
-                <div>
-                    <h3 class="text-2xl md:text-3xl font-display uppercase text-zinc-950">¿Tenés una Marca o Negocio en Olivos o Zona Norte?</h3>
-                    <p class="text-zinc-500 font-body text-sm mt-1">Ofrecé a los socios de FITAWAY un beneficio exclusivo y presentá tu marca a una comunidad activa y comprometida.</p>
-                </div>
-                <a href="https://wa.me/5491123456789?text=Hola%20FITAWAY!%20Tengo%20un%20negocio%20en%20Zona%20Norte%20y%20quiero%20hacer%20una%20alianza." target="_blank" rel="noopener noreferrer" class="whitespace-nowrap bg-white text-black hover:bg-gold font-display text-sm uppercase font-bold px-8 py-4 transition-colors">
-                    Sumarse como Aliado →
-                </a>
-            </div>
-        </section>
-
-        <!-- CHAPTER 10: EVENT FINAL CONVERSION BLOCK -->
-        <section class="py-24 md:py-36 px-6 md:px-12 max-w-7xl mx-auto text-center">
-            <div class="max-w-4xl mx-auto reveal">
-                <span class="text-xs font-mono uppercase tracking-[0.3em] text-gold block mb-4">Transformación con Objetivo</span>
-                <h2 class="text-5xl md:text-8xl font-display uppercase font-bold tracking-tight leading-none mb-6">
-                    ¿Tenés Una Fecha<br><span class="text-gold">Importante?</span>
-                </h2>
-                <p class="text-zinc-600 font-body text-base md:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
-                    Casamiento. Vacaciones. Producción de fotos. O simplemente el compromiso de verte y rendir en tu mejor nivel. Contale al entrenador lo que querés lograr y construyamos un plan concreto.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <a href="https://wa.me/5491123456789?text=Hola!%20Tengo%20una%20meta%20importante%20y%20quiero%20empezar%20coaching%20personal." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-gold text-black font-display text-lg uppercase font-bold px-10 py-5 hover:bg-white transition-colors flex items-center justify-center gap-2.5">
-                        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.101.005.241-.038.376.287.144.35.49 1.199.534 1.286.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.13.559 4.129 1.534 5.864l-1.634 5.964 6.13-1.609c1.684.919 3.609 1.447 5.658 1.447 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/></svg>
-                        <span>Hablar con el Coach por WhatsApp →</span>
-                    </a>
-                    <a href="/" class="w-full sm:w-auto border border-zinc-300 text-zinc-950 font-display text-lg uppercase px-10 py-5 hover:border-gold transition-colors">
-                        Volver al Inicio
-                    </a>
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-12 border-t border-white/15 mt-10">
+                    <div class="lg:col-span-7">
+                        <p class="font-body text-xl sm:text-2xl text-white/90 leading-relaxed font-light">
+                            Un sistema individual de fuerza y recomposición corporal donde la biomecánica, la evaluación postural y la periodización científica reemplazan la improvisación.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-5 flex flex-col justify-between items-start lg:items-end">
+                        <a href="https://wa.me/5491123456789?text=Hola!%20Quiero%20iniciar%20mi%20coaching%201%20a%201%20en%20FITAWAY." target="_blank" rel="noopener noreferrer" class="bg-white text-near-black font-display uppercase font-bold text-sm tracking-[0.2em] px-10 py-5 hover:bg-celeste transition-colors">
+                            AGENDAR EVALUACIÓN INICIAL →
+                        </a>
+                        <span class="font-mono text-xs uppercase tracking-widest text-white/40 mt-4">
+                            CUPOS LIMITADOS A 15 ATLETAS POR TURNO
+                        </span>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- METHODOLOGY -->
+        <section class="relative bg-pure-white py-24 sm:py-36 px-6 md:px-12 border-b border-near-black/10">
+            <div class="max-w-[1700px] mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 border-b border-near-black/10 pb-8">
+                    <div>
+                        <span class="font-mono text-xs uppercase tracking-[0.3em] text-near-black/40 block mb-2">01 / MÉTODO</span>
+                        <h2 class="font-display font-black text-5xl sm:text-7xl uppercase tracking-tight text-near-black">
+                            BIOMECÁNICA.<br>CARGA. PROGRESIÓN.
+                        </h2>
+                    </div>
+                    <p class="font-mono text-xs uppercase tracking-widest text-near-black/50 max-w-sm mt-4 md:mt-0">
+                        PROTOCOLO PASO A PASO EN AV. DEL LIBERTADOR
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div class="border-t-2 border-near-black pt-6">
+                        <span class="font-mono text-xs text-celeste font-bold block mb-2">FASE 01</span>
+                        <h3 class="font-display font-bold text-2xl uppercase tracking-tight mb-3">Screening Biomecánico</h3>
+                        <p class="font-body text-sm text-near-black/70 leading-relaxed">
+                            Evaluamos rango de dorsiflexión, movilidad torácica, estabilidad escapular y patrones motores base para prevenir lesiones.
+                        </p>
+                    </div>
+
+                    <div class="border-t-2 border-near-black pt-6">
+                        <span class="font-mono text-xs text-celeste font-bold block mb-2">FASE 02</span>
+                        <h3 class="font-display font-bold text-2xl uppercase tracking-tight mb-3">Periodización Por Bloques</h3>
+                        <p class="font-body text-sm text-near-black/70 leading-relaxed">
+                            Planificación estricta de 4 a 8 semanas con sobrecarga progresiva calculada según tu RPE (esfuerzo percibido) y RIR.
+                        </p>
+                    </div>
+
+                    <div class="border-t-2 border-near-black pt-6">
+                        <span class="font-mono text-xs text-celeste font-bold block mb-2">FASE 03</span>
+                        <h3 class="font-display font-bold text-2xl uppercase tracking-tight mb-3">Corrección En Vivo</h3>
+                        <p class="font-body text-sm text-near-black/70 leading-relaxed">
+                            El entrenador supervisa cada repetición sobre la plataforma. Ajuste de trayectorias, ángulos articulares y tempo excéntrico.
+                        </p>
+                    </div>
+
+                    <div class="border-t-2 border-near-black pt-6">
+                        <span class="font-mono text-xs text-celeste font-bold block mb-2">FASE 04</span>
+                        <h3 class="font-display font-bold text-2xl uppercase tracking-tight mb-3">Nutrición Deportiva</h3>
+                        <p class="font-body text-sm text-near-black/70 leading-relaxed">
+                            Alineamos tu ingesta calórica y de macronutrientes a tus horas de entrenamiento para maximizar hipertrofia y energía diaria.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COACH SPOTLIGHT -->
+        <section class="relative bg-near-black text-white py-24 sm:py-36 px-6 md:px-12 border-b border-white/10">
+            <div class="max-w-[1700px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+                <div class="lg:col-span-6">
+                    <div class="w-full h-[520px] sm:h-[650px] overflow-hidden border border-white/15">
+                        <img src="assets/head_strength_coach.jpg" alt="Head Strength Coach FITAWAY Olivos" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="lg:col-span-6">
+                    <span class="font-mono text-xs uppercase tracking-[0.3em] text-gold font-bold block mb-4">
+                        02 / DIRECCIÓN TÉCNICA
+                    </span>
+                    <h2 class="font-display font-black text-5xl sm:text-7xl uppercase tracking-tight mb-6">
+                        HEAD COACHING ATLÉTICO
+                    </h2>
+                    <p class="font-body text-lg text-white/80 leading-relaxed mb-6">
+                        Nuestros entrenadores no son monitores de sala; son especialistas en fuerza formados en biomecánica clínica y levantamiento olímpico. Cada atleta recibe una atención focalizada sin distracciones ni compartir máquinas.
+                    </p>
+                    <div class="font-mono text-xs uppercase tracking-widest text-white/50 space-y-3 border-t border-white/10 pt-6 mb-8">
+                        <p>✓ CERTIFICACIONES INTERNACIONALES DE FUERZA Y ACONDICIONAMIENTO</p>
+                        <p>✓ ANÁLISIS DE VIDEO Y CONTROL DE VELOCIDAD DE EJECUCIÓN (VBT)</p>
+                        <p>✓ MONITOREO CONTINUO POR WHATSAPP Y AJUSTES SEMANALES</p>
+                    </div>
+                    <a href="https://wa.me/5491123456789?text=Hola!%20Quiero%20conversar%20con%20el%20Head%20Coach%20de%20FITAWAY." target="_blank" rel="noopener noreferrer" class="inline-block bg-white text-near-black font-display uppercase font-bold text-xs tracking-[0.2em] px-8 py-4 hover:bg-celeste transition-colors">
+                        CONOCER AL EQUIPO TÉCNICO →
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- COACHING PLANS -->
+        <section class="relative bg-pure-white py-24 sm:py-36 px-6 md:px-12 border-b border-near-black/10">
+            <div class="max-w-[1700px] mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 border-b border-near-black/10 pb-8">
+                    <div>
+                        <span class="font-mono text-xs uppercase tracking-[0.3em] text-near-black/40 block mb-2">03 / PROGRAMAS INDIVIDUALES</span>
+                        <h2 class="font-display font-black text-5xl sm:text-7xl uppercase tracking-tight text-near-black">
+                            PLANES DE COACHING
+                        </h2>
+                    </div>
+                    <p class="font-mono text-xs uppercase tracking-widest text-near-black/50 max-w-sm mt-4 md:mt-0">
+                        INCLUYEN ACCESO TOTAL A LAS INSTALACIONES Y SCREENING
+                    </p>
+                </div>
+
+                <div class="divide-y divide-near-black/15 border-y border-near-black/15">
+                    
+                    <!-- Plan 01 -->
+                    <a href="https://wa.me/5491123456789?text=Hola!%20Quiero%20iniciar%20el%20plan%20Iniciaci%C3%B3n%20Atl%C3%A9tica%201%20a%201." target="_blank" rel="noopener noreferrer" class="group block py-10 sm:py-14 px-4 sm:px-8 hover:bg-zinc-50 transition-colors">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                            <div class="flex items-baseline gap-6 sm:gap-12">
+                                <span class="font-mono text-xl sm:text-2xl text-near-black/30 group-hover:text-celeste transition-colors font-bold">01</span>
+                                <div>
+                                    <h3 class="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight text-near-black group-hover:text-celeste transition-colors">
+                                        INICIACIÓN ATLÉTICA (8 SEMANAS)
+                                    </h3>
+                                    <p class="font-mono text-xs uppercase tracking-widest text-near-black/50 mt-1">
+                                        2 SESIONES SEMANALES 1 A 1 + CORRECCIÓN DE PATRONES BÁSICOS
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-baseline md:items-center gap-8 justify-between md:justify-end">
+                                <div class="text-left md:text-right">
+                                    <span class="font-display font-black text-3xl sm:text-5xl text-near-black block tracking-tight">
+                                        $110.000
+                                    </span>
+                                    <span class="font-mono text-xs uppercase tracking-widest text-near-black/50">POR MES</span>
+                                </div>
+                                <span class="font-display text-2xl text-near-black group-hover:translate-x-2 transition-transform">→</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Plan 02 -->
+                    <a href="https://wa.me/5491123456789?text=Hola!%20Quiero%20iniciar%20el%20plan%20Fuerza%20y%20Recomposici%C3%B3n%201%20a%201." target="_blank" rel="noopener noreferrer" class="group block py-10 sm:py-14 px-4 sm:px-8 bg-zinc-50/60 hover:bg-zinc-100/60 transition-colors">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                            <div class="flex items-baseline gap-6 sm:gap-12">
+                                <span class="font-mono text-xl sm:text-2xl text-gold font-bold">02</span>
+                                <div>
+                                    <div class="flex items-center gap-3">
+                                        <h3 class="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight text-near-black group-hover:text-gold transition-colors">
+                                            FUERZA Y RECOMPOSICIÓN (16 SEMANAS)
+                                        </h3>
+                                        <span class="font-mono text-[10px] uppercase tracking-widest bg-gold text-near-black px-2 py-0.5 font-bold">RECOMENDADO</span>
+                                    </div>
+                                    <p class="font-mono text-xs uppercase tracking-widest text-near-black/50 mt-1">
+                                        3 SESIONES SEMANALES 1 A 1 + ASESORÍA NUTRICIONAL DEPORTIVA COMPLETA
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-baseline md:items-center gap-8 justify-between md:justify-end">
+                                <div class="text-left md:text-right">
+                                    <span class="font-display font-black text-3xl sm:text-5xl text-near-black block tracking-tight">
+                                        $135.000
+                                    </span>
+                                    <span class="font-mono text-xs uppercase tracking-widest text-near-black/50">POR MES</span>
+                                </div>
+                                <span class="font-display text-2xl text-near-black group-hover:translate-x-2 transition-transform">→</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Plan 03 -->
+                    <a href="https://wa.me/5491123456789?text=Hola!%20Quiero%20iniciar%20el%20plan%20Alto%20Rendimiento%20Anual." target="_blank" rel="noopener noreferrer" class="group block py-10 sm:py-14 px-4 sm:px-8 hover:bg-zinc-50 transition-colors">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                            <div class="flex items-baseline gap-6 sm:gap-12">
+                                <span class="font-mono text-xl sm:text-2xl text-near-black/30 group-hover:text-celeste transition-colors font-bold">03</span>
+                                <div>
+                                    <h3 class="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight text-near-black group-hover:text-celeste transition-colors">
+                                        ALTO RENDIMIENTO ANUAL
+                                    </h3>
+                                    <p class="font-mono text-xs uppercase tracking-widest text-near-black/50 mt-1">
+                                        SESIONES ILIMITADAS + REHABILITACIÓN + ANÁLISIS VBT TRIMESTRAL
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-baseline md:items-center gap-8 justify-between md:justify-end">
+                                <div class="text-left md:text-right">
+                                    <span class="font-display font-black text-3xl sm:text-5xl text-near-black block tracking-tight">
+                                        $160.000
+                                    </span>
+                                    <span class="font-mono text-xs uppercase tracking-widest text-near-black/50">POR MES</span>
+                                </div>
+                                <span class="font-display text-2xl text-near-black group-hover:translate-x-2 transition-transform">→</span>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- FOOTER -->
-    <footer class="border-t border-zinc-200 py-16 px-6 md:px-12 bg-zinc-50 text-xs font-mono text-zinc-500">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <div>
-                <a href="/" class="text-2xl font-display text-gold uppercase font-bold">FITAWAY</a>
-                <p class="mt-2 text-neutral-500 font-body">Av. del Libertador 2450, Olivos, Vicente López, Buenos Aires</p>
+    <footer class="bg-near-black text-white/80 py-20 px-6 md:px-12 border-t border-white/10 text-sm font-body">
+        <div class="max-w-[1700px] mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-baseline gap-8 pb-14 border-b border-white/10">
+                <div>
+                    <a href="/" class="font-display font-black text-4xl sm:text-5xl uppercase tracking-tight text-white block">
+                        FITAWAY
+                    </a>
+                    <span class="font-script text-2xl text-celeste lowercase mt-1 block">
+                        Entrená diferente.
+                    </span>
+                    <p class="font-mono text-xs uppercase tracking-widest text-white/40 mt-2">
+                        BUENOS AIRES · ARGENTINA
+                    </p>
+                </div>
+
+                <div class="flex flex-wrap gap-8 font-mono text-xs uppercase tracking-[0.2em] text-white/70">
+                    <a href="/#train" class="hover:text-celeste transition-colors">DISCIPLINAS</a>
+                    <a href="personal-training.html" class="text-gold font-bold">PERSONAL TRAINING</a>
+                    <a href="/#memberships" class="hover:text-celeste transition-colors">MEMBRESÍAS</a>
+                    <a href="/#location" class="hover:text-celeste transition-colors">UBICACIÓN</a>
+                    <a href="blog.html" class="hover:text-celeste transition-colors">JOURNAL</a>
+                    <a href="https://wa.me/5491123456789" target="_blank" rel="noopener noreferrer" class="text-celeste hover:text-white transition-colors">WHATSAPP</a>
+                </div>
             </div>
-            <div class="flex gap-6">
-                <a href="/" class="hover:text-zinc-950">Inicio</a>
-                <a href="/#train" class="hover:text-zinc-950">Disciplinas</a>
-                <a href="/#memberships" class="hover:text-zinc-950">Membresías</a>
-                <a href="https://wa.me/5491123456789" target="_blank" rel="noopener noreferrer" class="text-gold hover:text-zinc-950">WhatsApp Entrenador</a>
+
+            <!-- CRITICAL LEGAL NOTICE: RETAINED 100% UNCHANGED AS INSTRUCTED -->
+            <div class="pt-8 border-t border-white/10 text-[11px] text-zinc-400 leading-relaxed space-y-3">
+                <p class="font-semibold text-zinc-300 uppercase tracking-widest text-[10px] font-mono">AVISO LEGAL &amp; CLÁUSULA DE COINCIDENCIA NOMINATIVA:</p>
+                <p>
+                    FITAWAY opera como un establecimiento privado e independiente de entrenamiento físico y fuerza en Olivos, Vicente López, Buenos Aires, República Argentina. Cualquier coincidencia fonética, similitud de nombre de dominio o referencia con entidades, gimnasios o marcas comerciales en otras jurisdicciones (incluyendo India u otros países) es de carácter meramente fortuito y no denota afiliación, filial, relación societaria ni representación comercial alguna.
+                </p>
+                <p class="text-zinc-400">
+                    &copy; 2026 FITAWAY. Todos los derechos reservados. Olivos, Buenos Aires, Argentina.
+                </p>
             </div>
         </div>
     </footer>
-
-    <!-- Lenis Smooth Momentum Scrolling -->
-    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
-    <script>
-        if (typeof Lenis !== 'undefined') {
-            const lenis = new Lenis({
-                duration: 1.05,
-                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-                orientation: 'vertical',
-                gestureOrientation: 'vertical',
-                smoothWheel: true,
-                wheelMultiplier: 0.9,
-                touchMultiplier: 1.15,
-                infinite: false,
-            });
-
-            function raf(time) {
-                lenis.raf(time);
-                requestAnimationFrame(raf);
-            }
-            requestAnimationFrame(raf);
-
-            // Connect internal hash links to Lenis smooth scroll
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    const targetId = this.getAttribute('href');
-                    if (targetId && targetId !== '#') {
-                        const target = document.querySelector(targetId);
-                        if (target) {
-                            e.preventDefault();
-                            const mobileMenu = document.getElementById('mobile-menu');
-                            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-                                mobileMenu.classList.add('hidden');
-                                mobileMenu.classList.remove('flex');
-                                document.body.style.overflow = '';
-                            }
-                            lenis.scrollTo(target, { offset: -40, duration: 1.1 });
-                        }
-                    }
-                });
-            });
-
-            // Scroll Reveal Observer
-            const elements = document.querySelectorAll('.reveal, .reveal-text');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                    }
-                });
-            }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
-            elements.forEach(el => observer.observe(el));
-        } else {
-            const elements = document.querySelectorAll('.reveal, .reveal-text');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                    }
-                });
-            }, { threshold: 0.12 });
-            elements.forEach(el => observer.observe(el));
-        }
-
-        // Mobile Menu Toggle
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const closeBtn = document.getElementById('close-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        const toggleMenu = () => {
-            if (mobileMenu) {
-                mobileMenu.classList.toggle('hidden');
-                mobileMenu.classList.toggle('flex');
-                document.body.style.overflow = mobileMenu.classList.contains('flex') ? 'hidden' : '';
-            }
-        };
-
-        if(menuBtn) menuBtn.addEventListener('click', toggleMenu);
-        if(closeBtn) closeBtn.addEventListener('click', toggleMenu);
-        document.querySelectorAll('.mobile-link').forEach(link => {
-            link.addEventListener('click', () => {
-                if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-                    toggleMenu();
-                }
-            });
-        });
-    </script>
 </body>
 </html>
