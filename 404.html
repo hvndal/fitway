@@ -21,7 +21,7 @@
     <meta name="theme-color" content="#050505"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -30,6 +30,7 @@
                     fontFamily: {
                         'display': ['Oswald', 'Arial Narrow', 'sans-serif'],
                         'body': ['Inter', 'system-ui', 'sans-serif'],
+                        'script': ['Satisfy', 'cursive'],
                     },
                     colors: {
                         black: '#050505',
@@ -68,6 +69,7 @@
         .border-white\/10, .border-white\/20 {
             border-color: var(--border-hairline) !important;
         }
+        .font-script { font-family: 'Satisfy', cursive; }
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between p-6 md:p-12">
@@ -82,7 +84,7 @@
     </header>
 
     <main class="max-w-4xl mx-auto my-auto text-center py-16">
-        <span class="text-xs uppercase tracking-[0.3em] font-mono text-gold block mb-4">Error 404 • Fuera de Ruta</span>
+        <div class="flex items-center justify-center gap-2 mb-4"><span class="font-script text-xl text-[#75AADB] lowercase tracking-normal">olivos, zona norte</span><span class="text-white/20">•</span><span class="text-xs uppercase tracking-[0.3em] font-mono text-gold">Error 404 • Fuera de Ruta</span></div>
         <h1 class="text-6xl md:text-[8vw] font-display uppercase font-bold tracking-tighter leading-none mb-6">
             ¿Perdiste la Forma?
         </h1>
@@ -90,10 +92,10 @@
             La página que buscás no existe o ha sido reubicada. Volvé al santuario principal y continuá con tu entrenamiento.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/" class="bg-white text-black font-display text-lg uppercase font-bold px-8 py-4 hover:bg-gold transition-colors">
+            <a href="/" class="bg-white text-black font-display text-lg uppercase font-bold px-8 py-4 rounded-full hover:bg-gold transition-colors">
                 Volver al Inicio
             </a>
-            <a href="personal-training.html" class="border border-white/20 text-white font-display text-lg uppercase px-8 py-4 hover:border-gold hover:text-gold transition-colors">
+            <a href="personal-training.html" class="border border-white/20 text-white font-display text-lg uppercase px-8 py-4 rounded-full hover:border-[#75AADB] hover:text-[#75AADB] transition-colors">
                 Explorar Coaching
             </a>
         </div>

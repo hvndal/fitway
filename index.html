@@ -32,7 +32,7 @@
     <meta name="geo.region" content="AR-B"/>
     <meta name="geo.placename" content="Olivos, Vicente López, Buenos Aires"/>
 
-    <!-- Schema.org LocalBusiness & FAQPage Structured Data for Google & AI Search -->
+    <!-- Schema.org LocalBusiness & FAQPage Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -146,10 +146,10 @@
     }
     </script>
 
-    <!-- Fonts -->
+    <!-- Google Fonts: Oswald, Inter, Satisfy (Vice City Cursive Script) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 
     <!-- Tailwind CSS -->
@@ -161,12 +161,14 @@
                     fontFamily: {
                         'display': ['Oswald', 'Arial Narrow', 'sans-serif'],
                         'body': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                        'script': ['Satisfy', 'cursive'],
                         'mono': ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace']
                     },
                     colors: {
                         black: '#050505',
                         white: '#F4F4F4',
                         gold: '#D19E00',
+                        celeste: '#75AADB',
                         neutral: {
                             900: '#111111',
                             800: '#1C1B1B',
@@ -259,9 +261,6 @@
         }
         #hero-section .text-neutral-400, #hero-section .text-neutral-300 {
             color: #D0C6AB !important;
-        }
-        #hero-section .bg-black\/60 {
-            background-color: rgba(5, 5, 5, 0.75) !important;
         }
 
         footer {
@@ -379,26 +378,154 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
+
+        /* Pulse breathing glow for the Sol de Mayo */
+        @keyframes sunPulse {
+            0%, 100% {
+                filter: drop-shadow(0 0 45px rgba(246, 180, 14, 0.6)) drop-shadow(0 0 90px rgba(117, 170, 219, 0.3));
+            }
+            50% {
+                filter: drop-shadow(0 0 65px rgba(246, 180, 14, 0.85)) drop-shadow(0 0 120px rgba(117, 170, 219, 0.5));
+            }
+        }
+        .animate-sun-pulse {
+            animation: sunPulse 4.5s ease-in-out infinite;
+        }
+            .font-script { font-family: 'Satisfy', cursive; }
     </style>
 </head>
 <body class="antialiased selection:bg-white selection:text-black min-h-screen bg-black">
 
-    <!-- SCREEN 01: THE OPENING INTRO (ELEGANT EDITORIAL CANVAS) -->
-    <section id="intro-screen" class="relative w-full min-h-[100dvh] bg-[#FAFAF8] flex flex-col items-center justify-center text-center px-6 select-none z-20">
-        <div class="flex flex-col items-center justify-center max-w-5xl mx-auto py-12">
-            <span class="text-xs font-mono uppercase tracking-[0.35em] text-neutral-500 mb-4 font-semibold">
-                Santuario de Alto Rendimiento • Olivos, Buenos Aires
-            </span>
-            <h1 class="text-7xl sm:text-9xl md:text-[15vw] lg:text-[17vw] font-display font-black tracking-tight uppercase leading-[0.82] text-gold select-none drop-shadow-sm">
-                FITAWAY
-            </h1>
-            <p class="font-mono uppercase text-xs sm:text-sm md:text-base tracking-[0.4em] text-neutral-800 font-bold mt-4 sm:mt-6">
-                ENTRENAMIENTO • BIOMECÁNICA • OLIVOS
-            </p>
-            <a href="#hero-section" class="mt-12 sm:mt-16 inline-flex flex-col items-center gap-2 text-neutral-400 hover:text-black font-mono text-[11px] sm:text-xs uppercase tracking-[0.35em] transition-colors cursor-pointer group">
-                <span>Deslizá para ingresar al sitio</span>
+    <!-- ========================================================================= -->
+    <!-- SCREEN 01: THE SOL DE MAYO PORTAL (ARGENTINE SUN SCROLL EXPANSION) -->
+    <!-- ========================================================================= -->
+    <section id="intro-screen" class="relative w-full h-[100dvh] bg-[#050505] flex flex-col items-center justify-center text-center px-6 select-none z-30 overflow-hidden">
+        <!-- Ethereal atmospheric background inspired by Argentine Flag -->
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(117,170,219,0.22)_0%,_rgba(246,180,14,0.1)_45%,_rgba(5,5,5,1)_85%)] pointer-events-none"></div>
+
+        <!-- Center Interactive Expanding Sun Portal -->
+        <div id="sol-portal-wrapper" class="relative flex flex-col items-center justify-center max-w-4xl mx-auto z-10 will-change-transform">
+            
+            <!-- Cursive Vice City Kicker -->
+            <div id="intro-kicker" class="transition-all duration-300">
+                <span class="font-script text-3xl sm:text-4xl md:text-5xl text-[#75AADB] tracking-wide block mb-2 drop-shadow-[0_0_25px_rgba(117,170,219,0.7)] lowercase">
+                    santuario de fuerza
+                </span>
+            </div>
+
+            <!-- Expanding Sol de Mayo Graphic -->
+            <div id="sol-de-mayo-box" class="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 my-4 relative flex items-center justify-center will-change-transform transition-transform duration-75 cursor-pointer animate-sun-pulse" onclick="scrollToHero()" title="Tocar o scrollear para ingresar">
+                
+    <svg viewBox="0 0 360 360" width="100%" height="100%" class="sol-de-mayo-svg select-none pointer-events-none drop-shadow-[0_0_55px_rgba(246,180,14,0.65)]" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="sunGoldGradient" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#FFF9C4"/>
+          <stop offset="40%" stop-color="#F6B40E"/>
+          <stop offset="85%" stop-color="#D18A00"/>
+          <stop offset="100%" stop-color="#9C5E00"/>
+        </radialGradient>
+        <radialGradient id="sunCenterGradient" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#FFFFE0"/>
+          <stop offset="50%" stop-color="#FFD43F"/>
+          <stop offset="85%" stop-color="#F6B40E"/>
+          <stop offset="100%" stop-color="#D99100"/>
+        </radialGradient>
+        <radialGradient id="skyHalo" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#75AADB" stop-opacity="0.55"/>
+          <stop offset="35%" stop-color="#75AADB" stop-opacity="0.25"/>
+          <stop offset="70%" stop-color="#F6B40E" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#050505" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      
+      <!-- Celestial Sky Aura -->
+      <circle cx="180" cy="180" r="176.4" fill="url(#skyHalo)"/>
+
+      <!-- 32 Rays -->
+      <g id="sun-rays" class="origin-center transition-transform duration-700">
+        <polygon points="180,180 262.5186074728631,173.17948530244618 345.6,180 262.5186074728631,186.82051469755382" fill="url(#sunGoldGradient)"/>
+<path d="M 262.2636519774176 189.40912128406868 Q 290.8457056177617 207.73970515525534 342.418042434775 212.30695732587083 Q 320.86999952322014 200.92750081419064 259.6024191600946 202.788042124338 Z" fill="url(#sunGoldGradient)"/>
+<polygon points="180,180 258.8473504704675,205.2771700114404 332.9944505838691,243.37237639965886 253.62715452055465,217.87983787196515" fill="url(#sunGoldGradient)"/>
+<path d="M 252.40098950304096 220.17383127087274 Q 271.79255310541276 248.04696091957362 317.6913677973015 272.00243058804614 Q 302.1383014619802 253.24310460365848 244.82243962337378 231.5159326934305 Z" fill="url(#sunGoldGradient)"/>
+<polygon points="180,180 243.17229911195523,233.5266347243096 297.0968829644923,297.09688296449224 233.52663472430956,243.17229911195523" fill="url(#sunGoldGradient)"/>
+<path d="M 231.5159326934305 244.82243962337378 Q 238.76481648433065 277.9946837311236 272.00243058804614 317.6913677973015 Q 264.8121541896135 294.4081096676159 220.17383127087274 252.40098950304096 Z" fill="url(#sunGoldGradient)"/>
+<polygon points="180,180 217.87983787196518,253.62715452055465 243.3723763996589,332.9944505838691 205.27717001144043,258.8473504704675" fill="url(#sunGoldGradient)"/>
+<path d="M 202.788042124338 259.6024191600946 Q 196.79066925789715 293.02360426863015 212.30695732587085 342.418042434775 Q 214.57412526597042 318.15551714677554 189.4091212840687 262.2636519774176 Z" fill="url(#sunGoldGradient)"/>
+<polygon points="180,180 186.8205146975538,262.5186074728631 180,345.6 173.17948530244618,262.5186074728631" fill="url(#sunGoldGradient)"/>
+<path d="M 170.59087871593132 262.2636519774176 Q 152.2602948447447 290.8457056177617 147.6930426741292 342.418042434775 Q 159.07249918580936 320.86999952322014 157.211957875662 259.6024191600946 Z" fill="url(#sunGoldGradient)"/>
+<polygon points="180,180 154.7228299885596,258.8473504704675 116.62762360034114,332.9944505838691 142.12016212803485,253.62715452055465" fill="url(#sunGoldGradient)"/>
+<path d="M 139.82616872912726 252.40098950304096 Q 111.95303908042641 271.79255310541276 87.99756941195386 317.6913677973015 Q 106.75689539634152 302.1383014619802 128.4840673065695 244.82243962337378 Z" fill="url(#sunGoldGradient)"/>
+<polygon points="180,180 126.47336527569044,243.17229911195523 62.90311703550775,297.0968829644923 116.82770088804482,233.5266347243096" fill="url(#sunGoldGradient)"/>
+<path d="M 115.17756037662623 231.5159326934305 Q 82.00531626887638 238.76481648433062 42.308632202698504 272.00243058804614 Q 65.59189033238415 264.8121541896136 107.59901049695905 220.17383127087274 Z" fill="url(#sunGoldGradient)"/>
+<polygon points="180,180 106.37284547944533,217.87983787196515 27.00554941613092,243.3723763996589 101.15264952953245,205.2771700114404" fill="url(#sunGoldGradient)"/>
+<path d="M 100.3975808399054 202.78804212433803 Q 66.97639573136986 196.79066925789712 17.581957565225053 212.30695732587083 Q 41.84448285322449 214.57412526597048 97.73634802258239 189.40912128406868 Z" fill="url(#sunGoldGradient)"/>
+<polygon points="180,180 97.48139252713695,186.82051469755385 14.400000000000006,180.00000000000003 97.48139252713693,173.1794853024462" fill="url(#sunGoldGradient)"/>
+<path d="M 97.73634802258239 170.5908787159313 Q 69.15429438223826 152.26029484474464 17.581957565225025 147.69304267412923 Q 39.13000047677983 159.07249918580942 100.3975808399054 157.211957875662 Z" fill="url(#sunGoldGradient)"/>
+<polygon points="180,180 101.15264952953247,154.7228299885596 27.00554941613089,116.62762360034122 106.37284547944533,142.12016212803485" fill="url(#sunGoldGradient)"/>
+<path d="M 107.59901049695904 139.82616872912726 Q 88.20744689458726 111.95303908042636 42.308632202698504 87.99756941195386 Q 57.86169853801982 106.75689539634159 115.1775603766262 128.48406730656953 Z" fill="url(#sunGoldGradient)"/>
+<polygon points="180,180 116.8277008880448,126.47336527569043 62.903117035507705,62.90311703550775 126.47336527569041,116.82770088804482" fill="url(#sunGoldGradient)"/>
+<path d="M 128.4840673065695 115.17756037662622 Q 121.23518351566943 82.00531626887636 87.99756941195375 42.30863220269859 Q 95.18784581038645 65.59189033238415 139.82616872912723 107.59901049695905 Z" fill="url(#sunGoldGradient)"/>
+<polygon points="180,180 142.1201621280348,106.37284547944535 116.62762360034118,27.00554941613089 154.7228299885596,101.15264952953245" fill="url(#sunGoldGradient)"/>
+<path d="M 157.21195787566197 100.3975808399054 Q 163.20933074210288 66.97639573136986 147.6930426741291 17.581957565225053 Q 145.42587473402955 41.84448285322446 170.59087871593135 97.73634802258238 Z" fill="url(#sunGoldGradient)"/>
+<polygon points="180,180 173.17948530244612,97.48139252713695 179.99999999999997,14.400000000000006 186.82051469755385,97.48139252713695" fill="url(#sunGoldGradient)"/>
+<path d="M 189.40912128406862 97.73634802258238 Q 207.7397051552553 69.15429438223825 212.30695732587085 17.581957565225053 Q 200.92750081419058 39.13000047677983 202.78804212433806 100.39758083990542 Z" fill="url(#sunGoldGradient)"/>
+<polygon points="180,180 205.27717001144038,101.15264952953245 243.3723763996589,27.005549416130947 217.87983787196515,106.37284547944533" fill="url(#sunGoldGradient)"/>
+<path d="M 220.1738312708727 107.59901049695902 Q 248.04696091957362 88.20744689458726 272.0024305880461 42.308632202698476 Q 253.24310460365848 57.86169853801984 231.51593269343053 115.17756037662623 Z" fill="url(#sunGoldGradient)"/>
+<polygon points="180,180 233.52663472430953,116.82770088804475 297.09688296449224,62.903117035507705 243.17229911195523,126.47336527569045" fill="url(#sunGoldGradient)"/>
+<path d="M 244.82243962337373 128.48406730656944 Q 277.99468373112364 121.2351835156694 317.6913677973015 87.99756941195388 Q 294.40810966761586 95.18784581038645 252.400989503041 139.82616872912732 Z" fill="url(#sunGoldGradient)"/>
+<polygon points="180,180 253.62715452055465,142.1201621280348 332.99445058386914,116.62762360034117 258.8473504704675,154.7228299885596" fill="url(#sunGoldGradient)"/>
+<path d="M 259.6024191600946 157.21195787566197 Q 293.02360426863015 163.20933074210285 342.418042434775 147.6930426741291 Q 318.15551714677554 145.42587473402955 262.2636519774176 170.59087871593135 Z" fill="url(#sunGoldGradient)"/>
+
+      </g>
+
+      <!-- Face -->
+      <g id="sun-face">
+        
+    <!-- Sun disk -->
+    <circle cx="180" cy="180" r="79.2" fill="url(#sunCenterGradient)" stroke="#F6B40E" stroke-width="3.5"/>
+    <circle cx="180" cy="180" r="73.656" fill="none" stroke="#FFFFFF" stroke-opacity="0.4" stroke-width="1.5"/>
+
+    <!-- Eyes (serene) -->
+    <path d="M 146.736 170.496 Q 159.408 159.408 172.08 170.496" stroke="#7A5200" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <circle cx="159.408" cy="172.08" r="5.5440000000000005" fill="#7A5200"/>
+    <path d="M 148.32 162.576 Q 159.408 154.656 170.496 162.576" stroke="#7A5200" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+
+    <path d="M 187.92 170.496 Q 200.592 159.408 213.264 170.496" stroke="#7A5200" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <circle cx="200.592" cy="172.08" r="5.5440000000000005" fill="#7A5200"/>
+    <path d="M 189.504 162.576 Q 200.592 154.656 211.68 162.576" stroke="#7A5200" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+
+    <!-- Nose -->
+    <path d="M 180 173.664 L 175.248 192.672 Q 180 197.424 184.752 192.672" stroke="#7A5200" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+    <!-- Mouth (serene smile) -->
+    <path d="M 160.2 210.096 Q 180 221.184 199.8 210.096" stroke="#7A5200" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+    <path d="M 168.912 215.64 Q 180 221.184 191.088 215.64" stroke="#9E6E05" stroke-width="1.4" fill="none"/>
+  
+      </g>
+    </svg>
+  
+            </div>
+
+            <!-- Brand & Location -->
+            <div id="intro-titles" class="transition-all duration-300">
+                <h1 class="text-6xl sm:text-8xl md:text-9xl font-display font-black tracking-tight uppercase leading-[0.85] text-white drop-shadow-[0_4px_30px_rgba(0,0,0,0.9)] select-none">
+                    FIT<span class="text-gold">AWAY</span>
+                </h1>
+                <p class="font-mono uppercase text-xs sm:text-sm md:text-base tracking-[0.4em] text-neutral-300 font-semibold mt-4">
+                    OLIVOS • BUENOS AIRES
+                </p>
+            </div>
+
+            <!-- Scroll to enter CTA -->
+            <div id="intro-cta" class="mt-8 sm:mt-10 inline-flex flex-col items-center gap-1.5 cursor-pointer group transition-all duration-300" onclick="scrollToHero()">
+                <span class="font-script text-xl sm:text-2xl text-gold/90 group-hover:text-white transition-colors">
+                    deslizá para ingresar
+                </span>
+                <span class="text-neutral-400 font-mono text-[10px] sm:text-xs uppercase tracking-[0.3em]">
+                    Scroll to Enter
+                </span>
                 <span class="text-gold text-lg animate-bounce group-hover:translate-y-1 transition-transform">↓</span>
-            </a>
+            </div>
         </div>
     </section>
 
@@ -416,21 +543,21 @@
             <a href="#memberships" class="hover:text-gold transition-colors">Membresías</a>
             <a href="#facility" class="hover:text-gold transition-colors">Instalaciones</a>
             <a href="#reviews" class="hover:text-gold transition-colors">Reseñas</a>
-            <a href="#location" class="hover:text-gold transition-colors">Horarios y Ubicación</a>
+            <a href="#location" class="hover:text-gold transition-colors">Horarios & Ubicación</a>
         </div>
         
         <div class="hidden lg:flex items-center gap-3">
-            <a href="https://wa.me/5491123456789?text=Hola!%20Quiero%20consultar%20sobre%20Entrenamiento%20Personal%20en%20FITAWAY." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase bg-[#25D366] text-black hover:bg-white px-4 py-2.5 transition-all font-mono shadow-md" title="Atención directa por WhatsApp">
+            <a href="https://wa.me/5491123456789?text=Hola!%20Quiero%20consultar%20sobre%20Entrenamiento%20Personal%20en%20FITAWAY." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase bg-[#25D366] text-black hover:bg-white px-5 py-2.5 rounded-full transition-all font-mono shadow-md" title="Atención directa por WhatsApp">
                 <svg class="w-4 h-4 fill-current text-black" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.101.005.241-.038.376.287.144.35.49 1.199.534 1.286.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.13.559 4.129 1.534 5.864l-1.634 5.964 6.13-1.609c1.684.919 3.609 1.447 5.658 1.447 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/></svg>
                 <span>Consultar Coach</span>
             </a>
-            <a href="https://wa.me/5491123456789?text=Hola%20FITAWAY!%20Quiero%20consultar%20por%20membresías%20en%20Olivos." target="_blank" rel="noopener noreferrer" class="text-xs font-semibold tracking-widest uppercase bg-gold text-black px-4 py-2.5 hover:bg-white transition-all font-mono">
+            <a href="https://wa.me/5491123456789?text=Hola%20FITAWAY!%20Quiero%20consultar%20por%20membresías%20en%20Olivos." target="_blank" rel="noopener noreferrer" class="text-xs font-semibold tracking-widest uppercase bg-gold text-black px-5 py-2.5 rounded-full hover:bg-white transition-all font-mono">
                 Membresías
             </a>
         </div>
 
         <!-- Mobile Menu Button -->
-        <button id="mobile-menu-btn" class="lg:hidden text-white uppercase text-xs font-semibold tracking-widest flex items-center gap-2 border border-white/20 px-3 py-1.5" aria-label="Abrir Menú">
+        <button id="mobile-menu-btn" class="lg:hidden text-white uppercase text-xs font-semibold tracking-widest flex items-center gap-2 border border-white/20 px-3.5 py-1.5 rounded-full" aria-label="Abrir Menú">
             <span class="material-symbols-outlined text-base">menu</span>
             <span>Menú</span>
         </button>
@@ -442,28 +569,28 @@
             <span class="material-symbols-outlined text-lg">close</span>
             <span>Cerrar</span>
         </button>
-        <span class="text-xs text-gold uppercase tracking-[0.2em] font-mono">FITAWAY • OLIVOS, BUENOS AIRES</span>
+        <span class="font-script text-2xl text-[#75AADB]">olivos, buenos aires</span>
+        <span class="text-xs text-gold uppercase tracking-[0.2em] font-mono">FITAWAY • SANTUARIO</span>
         <a href="personal-training.html" class="text-2xl sm:text-3xl font-display uppercase mobile-link text-gold font-bold">Entrenamiento 1 a 1</a>
         <a href="#train" class="text-2xl sm:text-3xl font-display uppercase mobile-link hover:text-gold">Disciplinas & Servicios</a>
         <a href="#memberships" class="text-2xl sm:text-3xl font-display uppercase mobile-link hover:text-gold">Membresías</a>
         <a href="#facility" class="text-2xl sm:text-3xl font-display uppercase mobile-link hover:text-gold">Instalaciones</a>
         <a href="#reviews" class="text-2xl sm:text-3xl font-display uppercase mobile-link hover:text-gold">Reseñas en Google (5.0 ★)</a>
         <a href="#location" class="text-2xl sm:text-3xl font-display uppercase mobile-link hover:text-gold">Horarios & Ubicación</a>
-        <a href="https://wa.me/5491123456789?text=Hola!%20Quiero%20consultar%20sobre%20Entrenamiento%20Personal%20en%20FITAWAY." target="_blank" rel="noopener noreferrer" class="mt-2 text-sm font-semibold uppercase tracking-widest bg-[#25D366] text-black px-8 py-3.5 mobile-link flex items-center justify-center gap-2.5 shadow-xl">
+        <a href="https://wa.me/5491123456789?text=Hola!%20Quiero%20consultar%20sobre%20Entrenamiento%20Personal%20en%20FITAWAY." target="_blank" rel="noopener noreferrer" class="mt-2 text-sm font-semibold uppercase tracking-widest bg-[#25D366] text-black px-8 py-3.5 rounded-full mobile-link flex items-center justify-center gap-2.5 shadow-xl">
             <svg class="w-5 h-5 fill-current text-black" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.101.005.241-.038.376.287.144.35.49 1.199.534 1.286.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.13.559 4.129 1.534 5.864l-1.634 5.964 6.13-1.609c1.684.919 3.609 1.447 5.658 1.447 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/></svg>
             <span>Consultar por WhatsApp</span>
-        </a>
-        <a href="https://wa.me/5491123456789?text=Hola%20FITAWAY!%20Quiero%20conocer%20las%20instalaciones." target="_blank" rel="noopener noreferrer" class="text-xs font-semibold uppercase tracking-widest bg-gold text-black px-6 py-2.5 mobile-link">
-            Visitar FITAWAY
         </a>
     </div>
 
     <!-- MAIN CONTENT -->
     <main id="main-content" class="relative z-10 bg-black w-full">
 
-        <!-- SCREEN 02: CINEMATIC VIDEO (HERO - ENHANCED CLARITY) -->
-        <section id="hero-section" class="relative w-full min-h-[100dvh] flex flex-col justify-between overflow-hidden bg-black pt-24 pb-10">
-            <!-- Enhanced video clarity: opacity-90 with subtle high-contrast vignette -->
+        <!-- ========================================================================= -->
+        <!-- SCREEN 02: CINEMATIC VIDEO (HERO - REDESIGNED VICE CITY / ZONA NORTE STYLE) -->
+        <!-- ========================================================================= -->
+        <section id="hero-section" class="relative w-full min-h-[100dvh] flex flex-col justify-between overflow-hidden bg-black pt-20 pb-8">
+            <!-- Clear vibrant video background -->
             <video id="hero-video" class="absolute inset-0 w-full h-full object-cover opacity-90 z-0" 
                    playsinline webkit-playsinline muted loop autoplay preload="auto"
                    poster="assets/hero_landing_powerlifter.jpg">
@@ -471,36 +598,44 @@
                 <source src="https://cdn.coverr.co/videos/coverr-a-man-lifting-weights-in-a-gym-2509/1080p.mp4" type="video/mp4">
             </video>
             <!-- Clean subtle gradient vignette to keep video crisp and text readable -->
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/45 pointer-events-none z-1"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-black/40 pointer-events-none z-1"></div>
             
-            <!-- TOP METADATA STRIP (CLEANED LUXURY METADATA - NO TECH DOTS) -->
-            <div class="relative z-10 w-full max-w-7xl mx-auto px-6 pt-2 pb-4 border-b border-white/10 flex flex-wrap items-center justify-between gap-3 text-[10px] sm:text-xs font-mono uppercase tracking-[0.25em] text-neutral-300 select-none">
+            <!-- TOP STRIP: LUXURY MINIMALIST EDITORIAL BAR -->
+            <div class="relative z-10 w-full max-w-7xl mx-auto px-6 pt-3 pb-3 border-b border-white/10 flex flex-wrap items-center justify-between gap-3 text-[10px] sm:text-xs font-mono uppercase tracking-[0.25em] text-neutral-300 select-none">
                 <div class="flex items-center gap-2">
-                    <span class="text-gold font-bold">OLIVOS // BUENOS AIRES</span>
-                    <span class="text-neutral-400 hidden md:inline">• Av. del Libertador 2450</span>
+                    <span class="font-script text-base text-[#75AADB] normal-case">olivos</span>
+                    <span class="text-white font-bold tracking-widest">// Av. del Libertador 2450</span>
                 </div>
                 <div class="hidden sm:flex items-center gap-4 text-neutral-300">
                     <span class="text-gold font-bold">5.0 ★ GOOGLE (140+ RESEÑAS)</span>
                     <span class="text-white/20">|</span>
-                    <span>ZONA NORTE</span>
+                    <span class="font-script text-sm text-[#75AADB] normal-case">buenos aires</span>
                 </div>
                 <div class="flex items-center gap-2">
                     <span class="text-neutral-400">PUERTAS:</span>
-                    <span class="text-gold font-bold">06:00 – 22:00 ART</span>
+                    <span class="text-gold font-bold font-mono">06:00 – 22:00 ART</span>
                 </div>
             </div>
 
-            <!-- CENTER HERO DISPLAY (MASSIVE TYPOGRAPHY & OLIVOS MANIFESTO) -->
-            <div class="relative z-10 text-center px-4 sm:px-6 w-full max-w-7xl mx-auto py-8 sm:py-12 flex flex-col items-center justify-center my-auto">
+            <!-- CENTER HERO DISPLAY: VICE CITY CURSIVE TYPOGRAPHY & MANIFESTO -->
+            <div class="relative z-10 text-center px-4 sm:px-6 w-full max-w-7xl mx-auto py-6 sm:py-10 flex flex-col items-center justify-center my-auto">
                 <h1 class="sr-only">FITAWAY Olivos Buenos Aires - Entrenamiento Personal 1 a 1, Biomecánica y Nutrición Deportiva</h1>
                 
-                <span class="inline-flex items-center gap-2 text-[10px] sm:text-xs uppercase tracking-[0.35em] font-mono text-gold mb-6 sm:mb-8 bg-black/85 backdrop-blur-md border border-gold/40 px-5 py-2 shadow-2xl">
-                    <span>OLIVOS, ZONA NORTE</span>
-                    <span class="text-white/30">•</span>
-                    <span class="text-white">SEDE DE ENTRENAMIENTO 1 A 1</span>
-                </span>
+                <!-- VICE CITY CURSIVE ACCENT (REPLACES ROBOTIC BOXES) -->
+                <div class="mb-5 sm:mb-7 flex flex-col items-center select-none reveal">
+                    <span class="font-script text-3xl sm:text-5xl md:text-6xl text-[#75AADB] tracking-wide lowercase drop-shadow-[0_0_22px_rgba(117,170,219,0.7)] -rotate-1 mb-1">
+                        olivos, zona norte
+                    </span>
+                    <div class="flex items-center gap-3">
+                        <span class="h-[1px] w-8 sm:w-16 bg-gradient-to-r from-transparent via-[#75AADB] to-gold"></span>
+                        <span class="text-[10px] sm:text-xs uppercase tracking-[0.35em] font-mono text-neutral-200 font-semibold">
+                            Santuario de Alto Rendimiento
+                        </span>
+                        <span class="h-[1px] w-8 sm:w-16 bg-gradient-to-l from-transparent via-[#75AADB] to-gold"></span>
+                    </div>
+                </div>
                 
-                <div class="text-6xl sm:text-8xl md:text-9xl lg:text-[11.5vw] xl:text-[12.8vw] font-display font-black tracking-tight uppercase leading-[0.82] text-white drop-shadow-2xl select-none flex flex-col items-center">
+                <div class="text-6xl sm:text-8xl md:text-9xl lg:text-[11.5vw] xl:text-[12.5vw] font-display font-black tracking-tight uppercase leading-[0.82] text-white drop-shadow-2xl select-none flex flex-col items-center">
                     <span class="reveal-text-mask"><span class="reveal-text block text-white">ENTRENAMIENTO 1 A 1</span></span>
                     <span class="reveal-text-mask"><span class="reveal-text reveal-delay-1 block text-white">NUTRICIÓN</span></span>
                     <span class="reveal-text-mask"><span class="reveal-text reveal-delay-2 block text-white">LONGEVIDAD</span></span>
@@ -508,50 +643,64 @@
 
                 <!-- BESPOKE MANIFESTO -->
                 <div class="mt-8 sm:mt-10 max-w-3xl mx-auto space-y-3 reveal reveal-delay-3 px-2">
-                    <p class="text-gold font-display text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] font-bold">
-                        DISEÑADO PARA PERSONAS EXIGENTES. ARRAIGADO EN OLIVOS, ZONA NORTE.
+                    <p class="font-script text-xl sm:text-2xl md:text-3xl text-gold font-normal tracking-wide">
+                        diseñado para personas exigentes • zona norte
                     </p>
                     <p class="text-neutral-200 font-body text-xs sm:text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
                         Sin circuitos improvisados ni gimnasios comerciales masivos. Biomecánica aplicada, sobrecarga progresiva y nutrición deportiva personalizada en Av. del Libertador 2450.
                     </p>
                 </div>
 
-                <!-- CALL TO ACTIONS -->
+                <!-- CALL TO ACTIONS (ROUNDED LUXURY PILLS) -->
                 <div class="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-2xl reveal reveal-delay-4">
-                    <a href="https://wa.me/5491123456789?text=Hola!%20Quiero%20consultar%20sobre%20Entrenamiento%20Personal%20en%20FITAWAY." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-[#25D366] text-black font-display text-sm sm:text-base uppercase font-bold tracking-wider px-8 sm:px-10 py-4 hover:bg-white transition-all flex items-center justify-center gap-2.5 shadow-2xl group">
+                    <a href="https://wa.me/5491123456789?text=Hola!%20Quiero%20consultar%20sobre%20Entrenamiento%20Personal%20en%20FITAWAY." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-[#25D366] text-black font-display text-sm sm:text-base uppercase font-bold tracking-wider px-8 sm:px-10 py-4 rounded-full hover:bg-white transition-all flex items-center justify-center gap-2.5 shadow-[0_4px_25px_rgba(37,211,102,0.35)] group">
                         <svg class="w-5 h-5 fill-current text-black group-hover:scale-110 transition-transform" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.101.005.241-.038.376.287.144.35.49 1.199.534 1.286.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.13.559 4.129 1.534 5.864l-1.634 5.964 6.13-1.609c1.684.919 3.609 1.447 5.658 1.447 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/></svg>
                         <span>Consultar al Entrenador →</span>
                     </a>
-                    <a href="personal-training.html" class="w-full sm:w-auto bg-white text-black font-display text-sm sm:text-base uppercase font-bold tracking-wider px-8 sm:px-10 py-4 hover:bg-gold transition-colors text-center">
+                    <a href="personal-training.html" class="w-full sm:w-auto bg-white text-black font-display text-sm sm:text-base uppercase font-bold tracking-wider px-8 sm:px-10 py-4 rounded-full hover:bg-gold hover:text-black transition-all text-center shadow-lg">
                         Explorar Coaching 1 a 1
                     </a>
-                    <a href="#train" class="w-full sm:w-auto border border-white/40 text-white font-display text-sm sm:text-base uppercase tracking-wider px-8 py-4 hover:border-gold hover:text-gold transition-colors text-center">
-                        Ver Instalaciones & Disciplinas ↓
+                    <a href="#train" class="w-full sm:w-auto border border-white/40 text-white font-display text-sm sm:text-base uppercase tracking-wider px-8 py-4 rounded-full hover:border-[#75AADB] hover:text-[#75AADB] transition-all text-center">
+                        Ver Disciplinas ↓
                     </a>
                 </div>
             </div>
 
-            <!-- BOTTOM HERO SPECIFICATION DOCK -->
-            <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 pt-6 border-t border-white/10 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 text-left select-none">
-                <div class="p-3.5 sm:p-4 bg-black/60 backdrop-blur-md border border-white/10 hover:border-gold/50 transition-colors">
-                    <span class="text-[10px] font-mono uppercase tracking-[0.25em] text-gold block mb-1">01 / UBICACIÓN</span>
-                    <p class="text-xs sm:text-sm font-display uppercase font-bold text-white">Av. del Libertador 2450</p>
-                    <p class="text-[11px] text-neutral-400 font-body">Olivos, Vicente López</p>
-                </div>
-                <div class="p-3.5 sm:p-4 bg-black/60 backdrop-blur-md border border-white/10 hover:border-gold/50 transition-colors">
-                    <span class="text-[10px] font-mono uppercase tracking-[0.25em] text-gold block mb-1">02 / COACHING</span>
-                    <p class="text-xs sm:text-sm font-display uppercase font-bold text-white">1 a 1 con Entrenador Pro</p>
-                    <p class="text-[11px] text-neutral-400 font-body">Biomecánica y sobrecarga</p>
-                </div>
-                <div class="p-3.5 sm:p-4 bg-black/60 backdrop-blur-md border border-white/10 hover:border-gold/50 transition-colors">
-                    <span class="text-[10px] font-mono uppercase tracking-[0.25em] text-gold block mb-1">03 / NUTRICIÓN</span>
-                    <p class="text-xs sm:text-sm font-display uppercase font-bold text-white">Nutrición Deportiva Real</p>
-                    <p class="text-[11px] text-neutral-400 font-body">Planes sostenibles para tu día</p>
-                </div>
-                <div class="p-3.5 sm:p-4 bg-black/60 backdrop-blur-md border border-white/10 hover:border-gold/50 transition-colors">
-                    <span class="text-[10px] font-mono uppercase tracking-[0.25em] text-gold block mb-1">04 / VALORACIÓN</span>
-                    <p class="text-xs sm:text-sm font-display uppercase font-bold text-white">5.0 ★ Verificado Google</p>
-                    <p class="text-[11px] text-neutral-400 font-body">140+ reseñas de socios</p>
+            <!-- BOTTOM HERO FLOATING DOCK (ORGANIC LUXURY - NO ROBOTIC BOXES) -->
+            <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 pt-4 pb-2 select-none">
+                <div class="bg-black/45 backdrop-blur-xl border border-white/10 rounded-2xl p-4 sm:p-6 shadow-2xl grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 divide-y lg:divide-y-0 lg:divide-x divide-white/10">
+                    <div class="flex flex-col justify-center pt-2 lg:pt-0 lg:px-4 group">
+                        <div class="flex items-baseline gap-2 mb-1">
+                            <span class="font-script text-lg sm:text-xl text-[#75AADB] group-hover:scale-105 transition-transform">ubicación</span>
+                            <span class="text-[9px] font-mono uppercase tracking-widest text-neutral-400">// Olivos</span>
+                        </div>
+                        <p class="text-xs sm:text-sm font-display uppercase font-bold text-white tracking-tight">Av. del Libertador 2450</p>
+                        <p class="text-[11px] text-neutral-300 font-body">Vicente López, Buenos Aires</p>
+                    </div>
+                    <div class="flex flex-col justify-center pt-4 lg:pt-0 lg:px-4 group">
+                        <div class="flex items-baseline gap-2 mb-1">
+                            <span class="font-script text-lg sm:text-xl text-gold group-hover:scale-105 transition-transform">coaching</span>
+                            <span class="text-[9px] font-mono uppercase tracking-widest text-neutral-400">// 1 a 1</span>
+                        </div>
+                        <p class="text-xs sm:text-sm font-display uppercase font-bold text-white tracking-tight">Entrenadores Certificados</p>
+                        <p class="text-[11px] text-neutral-300 font-body">Biomecánica y sobrecarga</p>
+                    </div>
+                    <div class="flex flex-col justify-center pt-4 lg:pt-0 lg:px-4 group">
+                        <div class="flex items-baseline gap-2 mb-1">
+                            <span class="font-script text-lg sm:text-xl text-[#75AADB] group-hover:scale-105 transition-transform">nutrición</span>
+                            <span class="text-[9px] font-mono uppercase tracking-widest text-neutral-400">// Deportiva</span>
+                        </div>
+                        <p class="text-xs sm:text-sm font-display uppercase font-bold text-white tracking-tight">Planes Sostenibles</p>
+                        <p class="text-[11px] text-neutral-300 font-body">Adaptados a tu ritmo diario</p>
+                    </div>
+                    <div class="flex flex-col justify-center pt-4 lg:pt-0 lg:px-4 group">
+                        <div class="flex items-baseline gap-2 mb-1">
+                            <span class="font-script text-lg sm:text-xl text-gold group-hover:scale-105 transition-transform">valoración</span>
+                            <span class="text-[9px] font-mono uppercase tracking-widest text-neutral-400">// Google</span>
+                        </div>
+                        <p class="text-xs sm:text-sm font-display uppercase font-bold text-white tracking-tight">5.0 ★ Socios Reales</p>
+                        <p class="text-[11px] text-neutral-300 font-body">Comunidad activa en Zona Norte</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -573,22 +722,22 @@
                 </div>
             </div>
             
-            <!-- Massive Marquee Ribbon Beneath -->
+            <!-- Marquee Ribbon -->
             <div class="mt-12 md:mt-16 border-t border-white/10 pt-6 overflow-hidden flex whitespace-nowrap">
                 <div class="flex items-center gap-10 md:gap-16 text-neutral-500 font-display text-4xl sm:text-6xl md:text-8xl uppercase tracking-tight font-black select-none">
                     <span class="text-white">ENTRENAMIENTO 1 A 1</span>
+                    <span class="text-gold">★</span>
+                    <span class="font-script text-4xl sm:text-6xl md:text-8xl text-[#75AADB] normal-case">buenos aires</span>
                     <span class="text-gold">★</span>
                     <span class="text-white/80">NUTRICIÓN</span>
                     <span class="text-gold">★</span>
                     <span class="text-white">LONGEVIDAD</span>
                     <span class="text-gold">★</span>
-                    <span class="text-white/80">OLIVOS BUENOS AIRES</span>
+                    <span class="text-white/80">OLIVOS ZONA NORTE</span>
                     <span class="text-gold">★</span>
                     <span class="text-white">BIOMECÁNICA</span>
                     <span class="text-gold">★</span>
                     <span class="text-white/80">RENDIMIENTO</span>
-                    <span class="text-gold">★</span>
-                    <span class="text-white">SALUD METABÓLICA</span>
                 </div>
             </div>
         </section>
@@ -596,7 +745,7 @@
         <!-- SECTION 03: BRAND PHILOSOPHY -->
         <section class="py-section px-6 md:px-12 max-w-7xl mx-auto">
             <div class="max-w-4xl">
-                <span class="text-xs font-mono uppercase tracking-widest text-neutral-500 block mb-4">01 / El Propósito</span>
+                <span class="font-script text-3xl text-[#75AADB] block mb-1">el propósito</span>
                 <h2 class="text-4xl md:text-7xl font-display font-semibold leading-[1.1] tracking-tight uppercase">
                     <span class="reveal-text-mask"><span class="reveal-text block">El entrenamiento no es solo lo que hacés.</span></span>
                     <span class="reveal-text-mask"><span class="reveal-text reveal-delay-2 block text-neutral-500">Es en quién te convertís.</span></span>
@@ -614,7 +763,7 @@
                 <!-- Flagship Header -->
                 <div class="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 lg:mb-24 reveal">
                     <div class="max-w-2xl">
-                        <span class="text-xs font-mono uppercase tracking-[0.3em] text-gold block mb-4">01 / Coaching de Élite</span>
+                        <span class="font-script text-3xl text-gold block mb-2">coaching de élite</span>
                         <h2 class="text-5xl sm:text-7xl md:text-8xl font-display uppercase tracking-tight leading-[0.9] text-white">
                             <span class="reveal-text-mask"><span class="reveal-text block">Entrenamiento</span></span>
                             <span class="reveal-text-mask"><span class="reveal-text reveal-delay-2 block text-neutral-400">1 a 1.</span></span>
@@ -632,10 +781,10 @@
                     
                     <!-- Left: Coach Visual -->
                     <div class="lg:col-span-5 relative reveal">
-                        <div class="img-wrapper w-full h-[520px] md:h-[660px] bg-neutral-900 border border-white/10 relative">
+                        <div class="img-wrapper w-full h-[520px] md:h-[660px] bg-neutral-900 border border-white/10 rounded-2xl overflow-hidden relative">
                             <img src="assets/head_strength_coach.jpg" alt="Head Strength Coach en FITAWAY Olivos" class="w-full h-full object-cover" loading="lazy">
                             <div class="absolute bottom-0 inset-x-0 p-8 bg-gradient-to-t from-black via-black/70 to-transparent">
-                                <span class="text-[11px] uppercase tracking-[0.25em] text-gold font-mono block mb-1">COACHING PROFESIONAL</span>
+                                <span class="font-script text-xl text-[#75AADB] block mb-1">coaching profesional</span>
                                 <h3 class="text-2xl md:text-3xl font-display uppercase text-white tracking-tight">Fuerza & Transformación Física</h3>
                                 <p class="text-neutral-400 text-xs font-body mt-2 leading-relaxed">Programación personalizada y supervisión biomecánica en cada repetición.</p>
                             </div>
@@ -647,8 +796,9 @@
                         
                         <!-- Pillar 1 -->
                         <div class="py-8 first:pt-0 group transition-all duration-500">
-                            <div class="flex items-baseline gap-4 mb-2">
-                                <span class="font-mono text-xs text-gold uppercase tracking-[0.25em]">01 / EVALUACIÓN</span>
+                            <div class="flex items-baseline gap-3 mb-2">
+                                <span class="font-script text-xl text-gold">01</span>
+                                <span class="font-mono text-xs text-neutral-400 uppercase tracking-[0.25em]">/ EVALUACIÓN</span>
                             </div>
                             <h4 class="text-2xl md:text-3xl font-display uppercase text-white tracking-tight mb-2 group-hover:text-gold transition-colors duration-300">
                                 Evaluación Biomecánica y Movilidad
@@ -660,8 +810,9 @@
 
                         <!-- Pillar 2 -->
                         <div class="py-8 group transition-all duration-500">
-                            <div class="flex items-baseline gap-4 mb-2">
-                                <span class="font-mono text-xs text-gold uppercase tracking-[0.25em]">02 / PLANIFICACIÓN</span>
+                            <div class="flex items-baseline gap-3 mb-2">
+                                <span class="font-script text-xl text-[#75AADB]">02</span>
+                                <span class="font-mono text-xs text-neutral-400 uppercase tracking-[0.25em]">/ PLANIFICACIÓN</span>
                             </div>
                             <h4 class="text-2xl md:text-3xl font-display uppercase text-white tracking-tight mb-2 group-hover:text-gold transition-colors duration-300">
                                 Periodización & Nutrición Integrada
@@ -673,8 +824,9 @@
 
                         <!-- Pillar 3 -->
                         <div class="py-8 group transition-all duration-500">
-                            <div class="flex items-baseline gap-4 mb-2">
-                                <span class="font-mono text-xs text-gold uppercase tracking-[0.25em]">03 / EJECUCIÓN</span>
+                            <div class="flex items-baseline gap-3 mb-2">
+                                <span class="font-script text-xl text-gold">03</span>
+                                <span class="font-mono text-xs text-neutral-400 uppercase tracking-[0.25em]">/ EJECUCIÓN</span>
                             </div>
                             <h4 class="text-2xl md:text-3xl font-display uppercase text-white tracking-tight mb-2 group-hover:text-gold transition-colors duration-300">
                                 Ejecución 1 a 1 & Sobrecarga Progresiva
@@ -686,8 +838,9 @@
 
                         <!-- Pillar 4 -->
                         <div class="py-8 group transition-all duration-500">
-                            <div class="flex items-baseline gap-4 mb-2">
-                                <span class="font-mono text-xs text-gold uppercase tracking-[0.25em]">04 / SEGUIMIENTO</span>
+                            <div class="flex items-baseline gap-3 mb-2">
+                                <span class="font-script text-xl text-[#75AADB]">04</span>
+                                <span class="font-mono text-xs text-neutral-400 uppercase tracking-[0.25em]">/ SEGUIMIENTO</span>
                             </div>
                             <h4 class="text-2xl md:text-3xl font-display uppercase text-white tracking-tight mb-2 group-hover:text-gold transition-colors duration-300">
                                 Monitoreo Semanal de Métricas y Hábitos
@@ -699,11 +852,11 @@
 
                         <!-- Direct PT Call to Action -->
                         <div class="pt-8 flex flex-col sm:flex-row gap-4 items-center">
-                            <a href="https://wa.me/5491123456789?text=Hola!%20Quiero%20consultar%20sobre%20Entrenamiento%20Personal%20en%20FITAWAY." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto text-center bg-gold text-black font-display text-base sm:text-lg uppercase font-bold tracking-wider px-8 sm:px-10 py-4 hover:bg-white transition-all duration-300 shadow-xl flex items-center justify-center gap-2.5">
+                            <a href="https://wa.me/5491123456789?text=Hola!%20Quiero%20consultar%20sobre%20Entrenamiento%20Personal%20en%20FITAWAY." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto text-center bg-gold text-black font-display text-base sm:text-lg uppercase font-bold tracking-wider px-8 sm:px-10 py-4 rounded-full hover:bg-white transition-all duration-300 shadow-xl flex items-center justify-center gap-2.5">
                                 <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.101.005.241-.038.376.287.144.35.49 1.199.534 1.286.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.13.559 4.129 1.534 5.864l-1.634 5.964 6.13-1.609c1.684.919 3.609 1.447 5.658 1.447 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/></svg>
                                 <span>Consultar al Entrenador</span>
                             </a>
-                            <a href="personal-training.html" class="w-full sm:w-auto text-center border border-white/20 text-white font-display text-base sm:text-lg uppercase tracking-wider px-8 sm:px-10 py-4 hover:border-gold hover:text-gold transition-all duration-300">
+                            <a href="personal-training.html" class="w-full sm:w-auto text-center border border-white/20 text-white font-display text-base sm:text-lg uppercase tracking-wider px-8 sm:px-10 py-4 rounded-full hover:border-gold hover:text-gold transition-all duration-300">
                                 Ver Sistema de Coaching
                             </a>
                         </div>
@@ -720,7 +873,7 @@
             <div class="max-w-7xl mx-auto">
                 <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 md:mb-24 reveal">
                     <div>
-                        <span class="text-xs uppercase tracking-[0.3em] text-gold font-mono block mb-3">02 / Disciplinas & Programas</span>
+                        <span class="font-script text-3xl text-[#75AADB] block mb-1">disciplinas & arte</span>
                         <h2 class="text-5xl sm:text-7xl md:text-8xl font-display uppercase tracking-tight leading-none">Entrená a Tu Medida</h2>
                     </div>
                     <p class="mt-6 md:mt-0 text-neutral-400 font-body max-w-md text-base md:text-lg leading-relaxed">
@@ -732,13 +885,13 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     
                     <!-- Box 01: Gym Access -->
-                    <div class="bg-black border border-white/10 p-8 flex flex-col justify-between group hover:border-gold/60 transition-all duration-500 reveal shadow-2xl">
+                    <div class="bg-black border border-white/10 rounded-2xl p-8 flex flex-col justify-between group hover:border-gold/60 transition-all duration-500 reveal shadow-2xl">
                         <div>
                             <div class="flex items-center justify-between mb-4">
-                                <span class="text-[11px] font-mono uppercase tracking-[0.25em] text-gold font-bold">01 / ACCESO</span>
-                                <span class="text-[10px] font-mono uppercase text-neutral-500 border border-white/10 px-2.5 py-0.5">Musculación</span>
+                                <span class="font-script text-xl text-gold">acceso libre</span>
+                                <span class="text-[10px] font-mono uppercase text-neutral-400 border border-white/10 px-2.5 py-0.5 rounded-full">Musculación</span>
                             </div>
-                            <div class="img-wrapper w-full h-[260px] md:h-[300px] bg-neutral-900 border border-white/10 overflow-hidden relative mb-6">
+                            <div class="img-wrapper w-full h-[260px] md:h-[300px] bg-neutral-900 border border-white/10 rounded-xl overflow-hidden relative mb-6">
                                 <img src="assets/heavy_weights_area.jpg" alt="Membresía y Acceso a Musculación en FITAWAY" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
                             </div>
                             <h3 class="text-2xl md:text-3xl font-display uppercase tracking-tight text-white mb-3 group-hover:text-gold transition-colors duration-300">
@@ -748,9 +901,9 @@
                                 Acceso irrestricto a un ecosistema de fuerza de primer nivel. Líneas biomecánicas, jaulas de potencia, sector de cardio y mancuernas de peso libre.
                             </p>
                             <div class="flex flex-wrap gap-1.5 mb-6">
-                                <span class="text-[10px] font-mono uppercase bg-white/5 border border-white/10 text-neutral-300 px-2.5 py-1">Biomecánica</span>
-                                <span class="text-[10px] font-mono uppercase bg-white/5 border border-white/10 text-neutral-300 px-2.5 py-1">Racks de Potencia</span>
-                                <span class="text-[10px] font-mono uppercase bg-white/5 border border-white/10 text-neutral-300 px-2.5 py-1">Peso Libre</span>
+                                <span class="text-[10px] font-mono uppercase bg-white/5 border border-white/10 text-neutral-300 px-2.5 py-1 rounded-full">Biomecánica</span>
+                                <span class="text-[10px] font-mono uppercase bg-white/5 border border-white/10 text-neutral-300 px-2.5 py-1 rounded-full">Racks de Potencia</span>
+                                <span class="text-[10px] font-mono uppercase bg-white/5 border border-white/10 text-neutral-300 px-2.5 py-1 rounded-full">Peso Libre</span>
                             </div>
                         </div>
                         <div class="pt-4 border-t border-white/10">
@@ -762,13 +915,13 @@
                     </div>
 
                     <!-- Box 02: Personal Training -->
-                    <div class="bg-black border border-white/10 p-8 flex flex-col justify-between group hover:border-gold/60 transition-all duration-500 reveal shadow-2xl">
+                    <div class="bg-black border border-white/10 rounded-2xl p-8 flex flex-col justify-between group hover:border-gold/60 transition-all duration-500 reveal shadow-2xl">
                         <div>
                             <div class="flex items-center justify-between mb-4">
-                                <span class="text-[11px] font-mono uppercase tracking-[0.25em] text-gold font-bold">02 / COACHING</span>
-                                <span class="text-[10px] font-mono uppercase bg-gold/10 text-gold border border-gold/30 px-2.5 py-0.5 font-semibold">Insignia</span>
+                                <span class="font-script text-xl text-[#75AADB]">coaching 1 a 1</span>
+                                <span class="text-[10px] font-mono uppercase bg-gold/10 text-gold border border-gold/30 px-2.5 py-0.5 rounded-full font-semibold">Insignia</span>
                             </div>
-                            <div class="img-wrapper w-full h-[260px] md:h-[300px] bg-neutral-900 border border-white/10 overflow-hidden relative mb-6">
+                            <div class="img-wrapper w-full h-[260px] md:h-[300px] bg-neutral-900 border border-white/10 rounded-xl overflow-hidden relative mb-6">
                                 <img src="assets/head_strength_coach.jpg" alt="Entrenamiento Personal 1 a 1 en FITAWAY" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
                             </div>
                             <h3 class="text-2xl md:text-3xl font-display uppercase tracking-tight text-white mb-3 group-hover:text-gold transition-colors duration-300">
@@ -778,9 +931,9 @@
                                 Coaching personalizado exclusivo con análisis postural, plan de sobrecarga progresiva y seguimiento nutricional continuo.
                             </p>
                             <div class="flex flex-wrap gap-1.5 mb-6">
-                                <span class="text-[10px] font-mono uppercase bg-white/5 border border-white/10 text-neutral-300 px-2.5 py-1">Coach Dedicado</span>
-                                <span class="text-[10px] font-mono uppercase bg-white/5 border border-white/10 text-neutral-300 px-2.5 py-1">Periodización</span>
-                                <span class="text-[10px] font-mono uppercase bg-white/5 border border-white/10 text-neutral-300 px-2.5 py-1">Nutrición</span>
+                                <span class="text-[10px] font-mono uppercase bg-white/5 border border-white/10 text-neutral-300 px-2.5 py-1 rounded-full">Coach Dedicado</span>
+                                <span class="text-[10px] font-mono uppercase bg-white/5 border border-white/10 text-neutral-300 px-2.5 py-1 rounded-full">Periodización</span>
+                                <span class="text-[10px] font-mono uppercase bg-white/5 border border-white/10 text-neutral-300 px-2.5 py-1 rounded-full">Nutrición</span>
                             </div>
                         </div>
                         <div class="pt-4 border-t border-white/10 flex flex-col gap-2">
@@ -796,13 +949,13 @@
                     </div>
 
                     <!-- Box 03: Strength & Conditioning -->
-                    <div class="bg-black border border-white/10 p-8 flex flex-col justify-between group hover:border-gold/60 transition-all duration-500 reveal shadow-2xl">
+                    <div class="bg-black border border-white/10 rounded-2xl p-8 flex flex-col justify-between group hover:border-gold/60 transition-all duration-500 reveal shadow-2xl">
                         <div>
                             <div class="flex items-center justify-between mb-4">
-                                <span class="text-[11px] font-mono uppercase tracking-[0.25em] text-gold font-bold">03 / FUERZA</span>
-                                <span class="text-[10px] font-mono uppercase text-neutral-500 border border-white/10 px-2.5 py-0.5">Alta Tensión</span>
+                                <span class="font-script text-xl text-gold">fuerza pura</span>
+                                <span class="text-[10px] font-mono uppercase text-neutral-400 border border-white/10 px-2.5 py-0.5 rounded-full">Alta Tensión</span>
                             </div>
-                            <div class="img-wrapper w-full h-[260px] md:h-[300px] bg-neutral-900 border border-white/10 overflow-hidden relative mb-6">
+                            <div class="img-wrapper w-full h-[260px] md:h-[300px] bg-neutral-900 border border-white/10 rounded-xl overflow-hidden relative mb-6">
                                 <img src="assets/strength_training_zone.jpg" alt="Fuerza y Acondicionamiento en FITAWAY" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
                             </div>
                             <h3 class="text-2xl md:text-3xl font-display uppercase tracking-tight text-white mb-3 group-hover:text-gold transition-colors duration-300">
@@ -812,8 +965,8 @@
                                 Protocolos atléticos de alta demanda para maximizar tensión mecánica, tasa de desarrollo de fuerza y resiliencia articular.
                             </p>
                             <div class="flex flex-wrap gap-1.5 mb-6">
-                                <span class="text-[10px] font-mono uppercase bg-white/5 border border-white/10 text-neutral-300 px-2.5 py-1">Sobrecarga</span>
-                                <span class="text-[10px] font-mono uppercase bg-white/5 border border-white/10 text-neutral-300 px-2.5 py-1">Barras Olímpicas</span>
+                                <span class="text-[10px] font-mono uppercase bg-white/5 border border-white/10 text-neutral-300 px-2.5 py-1 rounded-full">Sobrecarga</span>
+                                <span class="text-[10px] font-mono uppercase bg-white/5 border border-white/10 text-neutral-300 px-2.5 py-1 rounded-full">Barras Olímpicas</span>
                             </div>
                         </div>
                         <div class="pt-4 border-t border-white/10">
@@ -825,13 +978,13 @@
                     </div>
 
                     <!-- Box 04: Functional Movement -->
-                    <div class="bg-black border border-white/10 p-8 flex flex-col justify-between group hover:border-gold/60 transition-all duration-500 reveal shadow-2xl">
+                    <div class="bg-black border border-white/10 rounded-2xl p-8 flex flex-col justify-between group hover:border-gold/60 transition-all duration-500 reveal shadow-2xl">
                         <div>
                             <div class="flex items-center justify-between mb-4">
-                                <span class="text-[11px] font-mono uppercase tracking-[0.25em] text-gold font-bold">04 / FUNCIONAL</span>
-                                <span class="text-[10px] font-mono uppercase text-neutral-500 border border-white/10 px-2.5 py-0.5">Agilidad</span>
+                                <span class="font-script text-xl text-[#75AADB]">movimiento</span>
+                                <span class="text-[10px] font-mono uppercase text-neutral-400 border border-white/10 px-2.5 py-0.5 rounded-full">Agilidad</span>
                             </div>
-                            <div class="img-wrapper w-full h-[260px] md:h-[300px] bg-neutral-900 border border-white/10 overflow-hidden relative mb-6">
+                            <div class="img-wrapper w-full h-[260px] md:h-[300px] bg-neutral-900 border border-white/10 rounded-xl overflow-hidden relative mb-6">
                                 <img src="assets/functional_crossfit_training.jpg" alt="Movimiento Funcional en FITAWAY" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
                             </div>
                             <h3 class="text-2xl md:text-3xl font-display uppercase tracking-tight text-white mb-3 group-hover:text-gold transition-colors duration-300">
@@ -841,8 +994,8 @@
                                 Agilidad de alto impacto, empuje de trineos, circuitos con kettlebells y acondicionamiento para una capacidad física integral.
                             </p>
                             <div class="flex flex-wrap gap-1.5 mb-6">
-                                <span class="text-[10px] font-mono uppercase bg-white/5 border border-white/10 text-neutral-300 px-2.5 py-1">Trineos & Sogas</span>
-                                <span class="text-[10px] font-mono uppercase bg-white/5 border border-white/10 text-neutral-300 px-2.5 py-1">Capacidad Metabólica</span>
+                                <span class="text-[10px] font-mono uppercase bg-white/5 border border-white/10 text-neutral-300 px-2.5 py-1 rounded-full">Trineos & Sogas</span>
+                                <span class="text-[10px] font-mono uppercase bg-white/5 border border-white/10 text-neutral-300 px-2.5 py-1 rounded-full">Capacidad Metabólica</span>
                             </div>
                         </div>
                         <div class="pt-4 border-t border-white/10">
@@ -854,13 +1007,13 @@
                     </div>
 
                     <!-- Box 05: Cardio Dinámico -->
-                    <div class="bg-black border border-white/10 p-8 flex flex-col justify-between group hover:border-gold/60 transition-all duration-500 reveal shadow-2xl">
+                    <div class="bg-black border border-white/10 rounded-2xl p-8 flex flex-col justify-between group hover:border-gold/60 transition-all duration-500 reveal shadow-2xl">
                         <div>
                             <div class="flex items-center justify-between mb-4">
-                                <span class="text-[11px] font-mono uppercase tracking-[0.25em] text-gold font-bold">05 / CARDIO</span>
-                                <span class="text-[10px] font-mono uppercase text-neutral-500 border border-white/10 px-2.5 py-0.5">Alto Consumo</span>
+                                <span class="font-script text-xl text-gold">energía</span>
+                                <span class="text-[10px] font-mono uppercase text-neutral-400 border border-white/10 px-2.5 py-0.5 rounded-full">Cardio</span>
                             </div>
-                            <div class="img-wrapper w-full h-[260px] md:h-[300px] bg-neutral-900 border border-white/10 overflow-hidden relative mb-6">
+                            <div class="img-wrapper w-full h-[260px] md:h-[300px] bg-neutral-900 border border-white/10 rounded-xl overflow-hidden relative mb-6">
                                 <img src="assets/bhangra_fitness_class.jpg" alt="Clases Dinámicas y Cardio en FITAWAY" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
                             </div>
                             <h3 class="text-2xl md:text-3xl font-display uppercase tracking-tight text-white mb-3 group-hover:text-gold transition-colors duration-300">
@@ -870,8 +1023,8 @@
                                 Ritmo constante, alta demanda cardiovascular y motivación en grupo para optimizar el acondicionamiento aeróbico.
                             </p>
                             <div class="flex flex-wrap gap-1.5 mb-6">
-                                <span class="text-[10px] font-mono uppercase bg-white/5 border border-white/10 text-neutral-300 px-2.5 py-1">Cardio Intenso</span>
-                                <span class="text-[10px] font-mono uppercase bg-white/5 border border-white/10 text-neutral-300 px-2.5 py-1">Energía Grupal</span>
+                                <span class="text-[10px] font-mono uppercase bg-white/5 border border-white/10 text-neutral-300 px-2.5 py-1 rounded-full">Cardio Intenso</span>
+                                <span class="text-[10px] font-mono uppercase bg-white/5 border border-white/10 text-neutral-300 px-2.5 py-1 rounded-full">Energía Grupal</span>
                             </div>
                         </div>
                         <div class="pt-4 border-t border-white/10">
@@ -883,13 +1036,13 @@
                     </div>
 
                     <!-- Box 06: Studio & Yoga -->
-                    <div class="bg-black border border-white/10 p-8 flex flex-col justify-between group hover:border-gold/60 transition-all duration-500 reveal shadow-2xl">
+                    <div class="bg-black border border-white/10 rounded-2xl p-8 flex flex-col justify-between group hover:border-gold/60 transition-all duration-500 reveal shadow-2xl">
                         <div>
                             <div class="flex items-center justify-between mb-4">
-                                <span class="text-[11px] font-mono uppercase tracking-[0.25em] text-gold font-bold">06 / ESTUDIO</span>
-                                <span class="text-[10px] font-mono uppercase text-neutral-500 border border-white/10 px-2.5 py-0.5">Recuperación</span>
+                                <span class="font-script text-xl text-[#75AADB]">recuperación</span>
+                                <span class="text-[10px] font-mono uppercase text-neutral-400 border border-white/10 px-2.5 py-0.5 rounded-full">Estudio</span>
                             </div>
-                            <div class="img-wrapper w-full h-[260px] md:h-[300px] bg-neutral-900 border border-white/10 overflow-hidden relative mb-6">
+                            <div class="img-wrapper w-full h-[260px] md:h-[300px] bg-neutral-900 border border-white/10 rounded-xl overflow-hidden relative mb-6">
                                 <img src="assets/studio_yoga_dance_class.jpg" alt="Estudio y Yoga en FITAWAY Olivos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
                             </div>
                             <h3 class="text-2xl md:text-3xl font-display uppercase tracking-tight text-white mb-3 group-hover:text-gold transition-colors duration-300">
@@ -899,8 +1052,8 @@
                                 Espacio privado dedicado a la movilidad articular, posturas de elongación y recuperación activa con instructores especializados.
                             </p>
                             <div class="flex flex-wrap gap-1.5 mb-6">
-                                <span class="text-[10px] font-mono uppercase bg-white/5 border border-white/10 text-neutral-300 px-2.5 py-1">Movilidad Activa</span>
-                                <span class="text-[10px] font-mono uppercase bg-white/5 border border-white/10 text-neutral-300 px-2.5 py-1">Recuperación</span>
+                                <span class="text-[10px] font-mono uppercase bg-white/5 border border-white/10 text-neutral-300 px-2.5 py-1 rounded-full">Movilidad Activa</span>
+                                <span class="text-[10px] font-mono uppercase bg-white/5 border border-white/10 text-neutral-300 px-2.5 py-1 rounded-full">Recuperación</span>
                             </div>
                         </div>
                         <div class="pt-4 border-t border-white/10">
@@ -920,7 +1073,7 @@
             <div class="px-6 md:px-12 max-w-7xl mx-auto">
                 <div class="flex flex-col md:flex-row gap-8 md:gap-24 justify-between items-start md:items-end mb-20 md:mb-24 reveal">
                     <div>
-                        <span class="text-xs uppercase tracking-widest text-neutral-500 font-mono block mb-3">03 / Opciones de Membresía</span>
+                        <span class="font-script text-3xl text-gold block mb-1">membresías exclusivas</span>
                         <h2 class="text-5xl md:text-8xl font-display uppercase tracking-tight m-0 leading-none">Membresías</h2>
                     </div>
                     <p class="text-neutral-300 font-body max-w-sm text-base md:text-lg m-0 leading-relaxed">
@@ -933,7 +1086,7 @@
                     <!-- Tier 1 -->
                     <a href="https://wa.me/5491123456789?text=Hola%20FITAWAY!%20Quiero%20consultar%20por%20la%20membresía%20mensual." target="_blank" rel="noopener noreferrer" class="premium-list-item py-12 md:py-14 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 group block">
                         <div class="w-full md:w-1/3">
-                            <span class="text-xs font-mono text-neutral-500 block mb-1">NIVEL 01 / ACCESO FLEXIBLE</span>
+                            <span class="font-script text-lg text-neutral-400 block mb-1">nivel 01 // flexible</span>
                             <h3 class="text-3xl md:text-5xl font-display uppercase text-white group-hover:text-gold transition-colors">Pase Mensual</h3>
                         </div>
                         <div class="w-full md:w-1/3 text-neutral-400 font-body text-sm md:text-base leading-relaxed">
@@ -948,7 +1101,7 @@
                     <!-- Tier 2 -->
                     <a href="https://wa.me/5491123456789?text=Hola%20FITAWAY!%20Quiero%20consultar%20por%20planes%20trimestrales%20y%20semestrales." target="_blank" rel="noopener noreferrer" class="premium-list-item py-12 md:py-14 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 group block">
                         <div class="w-full md:w-1/3">
-                            <span class="text-xs font-mono text-neutral-500 block mb-1">NIVEL 02 / MÁS ELEGIDO</span>
+                            <span class="font-script text-lg text-[#75AADB] block mb-1">nivel 02 // más elegido</span>
                             <h3 class="text-3xl md:text-5xl font-display uppercase text-white group-hover:text-gold transition-colors">Trimestral & Semestral</h3>
                         </div>
                         <div class="w-full md:w-1/3 text-neutral-400 font-body text-sm md:text-base leading-relaxed">
@@ -963,7 +1116,7 @@
                     <!-- Tier 3 -->
                     <a href="https://wa.me/5491123456789?text=Hola%20FITAWAY!%20Quiero%20consultar%20por%20el%20Pase%20Anual%20VIP." target="_blank" rel="noopener noreferrer" class="premium-list-item py-12 md:py-14 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 group block">
                         <div class="w-full md:w-1/3">
-                            <span class="text-xs font-mono text-gold block mb-1">NIVEL 03 / VIP EXCLUSIVO</span>
+                            <span class="font-script text-lg text-gold block mb-1">nivel 03 // vip elite</span>
                             <h3 class="text-3xl md:text-5xl font-display uppercase text-white group-hover:text-gold transition-colors">Pase Anual Élite</h3>
                         </div>
                         <div class="w-full md:w-1/3 text-neutral-400 font-body text-sm md:text-base leading-relaxed">
@@ -983,8 +1136,8 @@
         <section id="facility" class="py-24 md:py-36 px-6 md:px-12 max-w-[1600px] mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 md:mb-24 reveal">
                 <div>
-                    <span class="text-xs uppercase tracking-widest text-neutral-500 font-mono block mb-3">04 / Las Instalaciones</span>
-                    <h2 class="text-5xl md:text-8xl font-display uppercase tracking-tight">El Espacio</h2>
+                    <span class="font-script text-3xl text-[#75AADB] block mb-1">el espacio</span>
+                    <h2 class="text-5xl md:text-8xl font-display uppercase tracking-tight">Las Instalaciones</h2>
                 </div>
                 <p class="mt-4 md:mt-0 text-neutral-400 font-body max-w-sm text-base md:text-lg leading-relaxed">
                     Diseñado con maquinaria de fuerza biomecánica de alta gama, sector de cardio y vestuarios de máxima higiene.
@@ -992,25 +1145,25 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-                <div class="md:col-span-2 img-wrapper h-[480px] md:h-[680px] bg-neutral-900 relative reveal">
+                <div class="md:col-span-2 img-wrapper h-[480px] md:h-[680px] bg-neutral-900 rounded-2xl overflow-hidden relative reveal">
                     <img src="assets/heavy_weights_area.jpg" alt="Zona de Pesos Libres y Fuerza en FITAWAY Olivos" class="w-full h-full object-cover" loading="lazy">
                     <div class="absolute bottom-0 inset-x-0 p-8 bg-gradient-to-t from-black/85 via-black/40 to-transparent">
-                        <span class="text-xs font-mono uppercase text-gold">Zona de Fuerza</span>
+                        <span class="font-script text-xl text-gold">zona de fuerza</span>
                         <h4 class="text-3xl font-display uppercase text-white">Racks de Competición & Mancuernas</h4>
                     </div>
                 </div>
                 <div class="flex flex-col gap-8 md:gap-12">
-                    <div class="img-wrapper h-[320px] md:h-[320px] bg-neutral-900 relative reveal">
+                    <div class="img-wrapper h-[320px] md:h-[320px] bg-neutral-900 rounded-2xl overflow-hidden relative reveal">
                         <img src="assets/cardio_speed_blur.jpg" alt="Cardio de Alto Rendimiento en FITAWAY" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105" loading="lazy">
                         <div class="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-black/85 via-black/40 to-transparent">
-                            <span class="text-xs font-mono uppercase text-gold">Cardio de Alta Demanda</span>
+                            <span class="font-script text-lg text-[#75AADB]">cardio de alta demanda</span>
                             <h4 class="text-2xl font-display uppercase text-white">Cintas & Remos de Agua</h4>
                         </div>
                     </div>
-                    <div class="img-wrapper h-[320px] md:h-[320px] bg-neutral-900 relative reveal">
+                    <div class="img-wrapper h-[320px] md:h-[320px] bg-neutral-900 rounded-2xl overflow-hidden relative reveal">
                         <img src="assets/premium_spa_amenities.jpg" alt="Vestuarios y Comodidades en FITAWAY" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105" loading="lazy">
                         <div class="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-black/85 via-black/40 to-transparent">
-                            <span class="text-xs font-mono uppercase text-gold">Recuperación & Confort</span>
+                            <span class="font-script text-lg text-gold">recuperación & confort</span>
                             <h4 class="text-2xl font-display uppercase text-white">Vestuarios Impecables</h4>
                         </div>
                     </div>
@@ -1023,12 +1176,13 @@
             <div class="max-w-7xl mx-auto">
                 <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 md:mb-24 reveal">
                     <div>
-                        <div class="flex items-center gap-2 text-gold text-xs font-mono uppercase tracking-widest mb-3">
+                        <div class="flex items-center gap-2 text-gold text-xs font-mono uppercase tracking-widest mb-2">
                             <span class="flex text-gold">★★★★★</span>
                             <span>5.0 / 5.0 Calificación Promedio</span>
                             <span class="text-neutral-500">•</span>
                             <span class="text-white font-bold">100% Recomendado</span>
                         </div>
+                        <span class="font-script text-3xl text-[#75AADB] block mb-1">comunidad real</span>
                         <h2 class="text-4xl md:text-8xl font-display uppercase tracking-tight text-white">Reseñas en <span class="text-neutral-400">Google</span></h2>
                     </div>
                     <div class="mt-6 md:mt-0 flex items-center gap-3 bg-neutral-900 border border-white/10 px-5 py-3 rounded-full">
@@ -1040,12 +1194,12 @@
                 <!-- Editorial Review Grid -->
                 <div id="google-reviews-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
                     
-                    <!-- Review 1: Santiago Rossi -->
-                    <div class="p-10 bg-neutral-900/90 border border-white/10 flex flex-col justify-between reveal group hover:border-gold/50 transition-colors">
+                    <!-- Review 1 -->
+                    <div class="p-8 md:p-10 bg-neutral-900/90 border border-white/10 rounded-2xl flex flex-col justify-between reveal group hover:border-gold/50 transition-colors">
                         <div>
                             <div class="flex items-center justify-between mb-6">
                                 <div class="text-gold text-base tracking-widest">★★★★★</div>
-                                <span class="text-[10px] font-mono uppercase bg-white/10 text-neutral-300 px-2.5 py-1 rounded">Verificado Google</span>
+                                <span class="text-[10px] font-mono uppercase bg-white/10 text-neutral-300 px-3 py-1 rounded-full">Verificado Google</span>
                             </div>
                             <blockquote class="text-neutral-200 font-body text-base leading-relaxed italic mb-8">
                                 "Sin dudas el mejor gimnasio de Olivos. El equipamiento biomecánico es de primer nivel, las instalaciones siempre limpias y la vibra para entrenar es inigualable. La ubicación sobre Libertador es perfecta."
@@ -1060,17 +1214,17 @@
                                     <span>Santiago Rossi</span>
                                     <span class="material-symbols-outlined text-xs text-blue-400">verified</span>
                                 </div>
-                                <div class="text-xs font-mono text-neutral-500">Google Local Guide • Olivos</div>
+                                <div class="text-xs font-mono text-neutral-400">Google Local Guide • Olivos</div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Review 2: Valeria M. -->
-                    <div class="p-10 bg-neutral-900/90 border border-white/10 flex flex-col justify-between reveal group hover:border-gold/50 transition-colors">
+                    <!-- Review 2 -->
+                    <div class="p-8 md:p-10 bg-neutral-900/90 border border-white/10 rounded-2xl flex flex-col justify-between reveal group hover:border-gold/50 transition-colors">
                         <div>
                             <div class="flex items-center justify-between mb-6">
                                 <div class="text-gold text-base tracking-widest">★★★★★</div>
-                                <span class="text-[10px] font-mono uppercase bg-white/10 text-neutral-300 px-2.5 py-1 rounded">Verificado Google</span>
+                                <span class="text-[10px] font-mono uppercase bg-white/10 text-neutral-300 px-3 py-1 rounded-full">Verificado Google</span>
                             </div>
                             <blockquote class="text-neutral-200 font-body text-base leading-relaxed italic mb-8">
                                 "Excelente ambiente para entrenar con seriedad. El orden y la higiene son constantes. Los entrenadores están siempre atentos para corregir posturas. El mejor lugar de Zona Norte."
@@ -1083,17 +1237,17 @@
                                     <span>Valeria M.</span>
                                     <span class="material-symbols-outlined text-xs text-blue-400">verified</span>
                                 </div>
-                                <div class="text-xs font-mono text-neutral-500">Socia • Vicente López</div>
+                                <div class="text-xs font-mono text-neutral-400">Socia • Vicente López</div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Review 3: Lucas Benítez -->
-                    <div class="p-10 bg-neutral-900/90 border border-white/10 flex flex-col justify-between reveal group hover:border-gold/50 transition-colors">
+                    <!-- Review 3 -->
+                    <div class="p-8 md:p-10 bg-neutral-900/90 border border-white/10 rounded-2xl flex flex-col justify-between reveal group hover:border-gold/50 transition-colors">
                         <div>
                             <div class="flex items-center justify-between mb-6">
                                 <div class="text-gold text-base tracking-widest">★★★★★</div>
-                                <span class="text-[10px] font-mono uppercase bg-white/10 text-neutral-300 px-2.5 py-1 rounded">Verificado Google</span>
+                                <span class="text-[10px] font-mono uppercase bg-white/10 text-neutral-300 px-3 py-1 rounded-full">Verificado Google</span>
                             </div>
                             <blockquote class="text-neutral-200 font-body text-base leading-relaxed italic mb-8">
                                 "Un espacio increíble con máquinas de nivel competitivo y un equipo de profesionales que sabe lo que hace. Recomendado al 100% para quienes buscan resultados reales."
@@ -1108,17 +1262,17 @@
                                     <span>Lucas Benítez</span>
                                     <span class="material-symbols-outlined text-xs text-blue-400">verified</span>
                                 </div>
-                                <div class="text-xs font-mono text-neutral-500">Socio • San Isidro</div>
+                                <div class="text-xs font-mono text-neutral-400">Socio • San Isidro</div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Review 4: Matías Fernández -->
-                    <div class="p-10 bg-neutral-900/90 border border-white/10 flex flex-col justify-between reveal group hover:border-gold/50 transition-colors">
+                    <!-- Review 4 -->
+                    <div class="p-8 md:p-10 bg-neutral-900/90 border border-white/10 rounded-2xl flex flex-col justify-between reveal group hover:border-gold/50 transition-colors">
                         <div>
                             <div class="flex items-center justify-between mb-6">
                                 <div class="text-gold text-base tracking-widest">★★★★★</div>
-                                <span class="text-[10px] font-mono uppercase bg-white/10 text-neutral-300 px-2.5 py-1 rounded">Verificado Google</span>
+                                <span class="text-[10px] font-mono uppercase bg-white/10 text-neutral-300 px-3 py-1 rounded-full">Verificado Google</span>
                             </div>
                             <blockquote class="text-neutral-200 font-body text-base leading-relaxed italic mb-8">
                                 "El trato del equipo es impecable, siempre dispuestos y con una calidad humana y técnica excelente. Las instalaciones están súper cuidadas."
@@ -1133,17 +1287,17 @@
                                     <span>Matías Fernández</span>
                                     <span class="material-symbols-outlined text-xs text-blue-400">verified</span>
                                 </div>
-                                <div class="text-xs font-mono text-neutral-500">Socio • La Lucila</div>
+                                <div class="text-xs font-mono text-neutral-400">Socio • La Lucila</div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Review 5: Agustín Gómez -->
-                    <div class="p-10 bg-neutral-900/90 border border-white/10 flex flex-col justify-between reveal group hover:border-gold/50 transition-colors">
+                    <!-- Review 5 -->
+                    <div class="p-8 md:p-10 bg-neutral-900/90 border border-white/10 rounded-2xl flex flex-col justify-between reveal group hover:border-gold/50 transition-colors">
                         <div>
                             <div class="flex items-center justify-between mb-6">
                                 <div class="text-gold text-base tracking-widest">★★★★★</div>
-                                <span class="text-[10px] font-mono uppercase bg-white/10 text-neutral-300 px-2.5 py-1 rounded">Verificado Google</span>
+                                <span class="text-[10px] font-mono uppercase bg-white/10 text-neutral-300 px-3 py-1 rounded-full">Verificado Google</span>
                             </div>
                             <blockquote class="text-neutral-200 font-body text-base leading-relaxed italic mb-8">
                                 "Mi experiencia en FITAWAY viene siendo impecable. Un ambiente motivador y limpio, con equipamiento moderno que te permite progresar sin molestias en articulaciones."
@@ -1158,26 +1312,26 @@
                                     <span>Agustín Gómez</span>
                                     <span class="material-symbols-outlined text-xs text-blue-400">verified</span>
                                 </div>
-                                <div class="text-xs font-mono text-neutral-500">Socio • Martínez</div>
+                                <div class="text-xs font-mono text-neutral-400">Socio • Martínez</div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Review CTA Box -->
-                    <div class="p-10 bg-black border border-white/10 hover:border-gold/50 transition-colors flex flex-col justify-between reveal">
+                    <div class="p-8 md:p-10 bg-black border border-white/10 rounded-2xl hover:border-gold/50 transition-colors flex flex-col justify-between reveal">
                         <div>
-                            <span class="text-[11px] font-mono uppercase tracking-[0.25em] text-gold font-bold block mb-3">06 / REPUTACIÓN COMPROBADA</span>
+                            <span class="font-script text-2xl text-gold block mb-2">excelencia probada</span>
                             <h3 class="text-3xl font-display uppercase text-white mb-4">5.0 ★ en Google por Socios Reales</h3>
                             <p class="text-neutral-400 font-body text-sm leading-relaxed mb-6">
                                 Comprobá por qué FITAWAY es calificado con 5.0 estrellas por personas y atletas de toda Zona Norte.
                             </p>
                         </div>
                         <div class="pt-4 flex flex-col gap-3">
-                            <a href="https://maps.google.com/?q=Av.+del+Libertador+2450,+Olivos,+Buenos+Aires" target="_blank" rel="noopener noreferrer" class="w-full text-center bg-white text-black font-display uppercase text-xs tracking-wider font-bold py-3.5 hover:bg-neutral-200 transition-colors flex items-center justify-center gap-2">
+                            <a href="https://maps.google.com/?q=Av.+del+Libertador+2450,+Olivos,+Buenos+Aires" target="_blank" rel="noopener noreferrer" class="w-full text-center bg-white text-black font-display uppercase text-xs tracking-wider font-bold py-3.5 rounded-full hover:bg-neutral-200 transition-colors flex items-center justify-center gap-2">
                                 <svg viewBox="0 0 24 24" width="16" height="16"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
                                 <span>Ver en Google Maps ↗</span>
                             </a>
-                            <a href="https://wa.me/5491123456789?text=Hola%20FITAWAY!%20Vi%20sus%20reseñas%20en%20Google%20y%20quiero%20conocer%20el%20gimnasio." target="_blank" rel="noopener noreferrer" class="w-full text-center border border-white/20 text-white font-display uppercase text-xs tracking-wider font-bold py-3.5 hover:border-gold hover:text-gold transition-colors">
+                            <a href="https://wa.me/5491123456789?text=Hola%20FITAWAY!%20Vi%20sus%20reseñas%20en%20Google%20y%20quiero%20conocer%20el%20gimnasio." target="_blank" rel="noopener noreferrer" class="w-full text-center border border-white/20 text-white font-display uppercase text-xs tracking-wider font-bold py-3.5 rounded-full hover:border-gold hover:text-gold transition-colors">
                                 Agendar Visita Inicial →
                             </a>
                         </div>
@@ -1194,18 +1348,18 @@
                 
                 <!-- Left Details -->
                 <div class="lg:col-span-6 reveal">
-                    <span class="text-xs uppercase tracking-widest text-gold font-mono block mb-3">07 / Ubicación & Contacto</span>
-                    <h2 class="text-5xl md:text-8xl font-display uppercase tracking-tight mb-8">Horarios & Ubicación</h2>
+                    <span class="font-script text-3xl text-gold block mb-1">ubicación & contacto</span>
+                    <h2 class="text-5xl md:text-8xl font-display uppercase tracking-tight mb-8">Horarios & Sede</h2>
                     
                     <address class="not-italic space-y-8 text-neutral-300 font-body text-base">
                         <div class="border-b border-white/10 pb-6">
-                            <span class="text-xs uppercase font-mono tracking-widest text-neutral-500 block mb-1">Dirección Oficial</span>
+                            <span class="text-xs uppercase font-mono tracking-widest text-neutral-400 block mb-1">Dirección Oficial</span>
                             <p class="text-xl text-white font-medium">Av. del Libertador 2450, Olivos, Vicente López, Buenos Aires (B1636)</p>
                             <p class="text-neutral-400 text-sm mt-1">Ubicación estratégica sobre Libertador con rápida llegada desde Vicente López, La Lucila, Martínez y San Isidro.</p>
                         </div>
 
                         <div class="border-b border-white/10 pb-6">
-                            <span class="text-xs uppercase font-mono tracking-widest text-neutral-500 block mb-2">Horarios de Apertura</span>
+                            <span class="text-xs uppercase font-mono tracking-widest text-neutral-400 block mb-2">Horarios de Apertura</span>
                             <div class="flex justify-between text-base py-1.5">
                                 <span class="text-white font-semibold">Lunes a Viernes:</span>
                                 <span class="text-gold font-mono font-bold">06:00 – 22:00 ART</span>
@@ -1221,7 +1375,7 @@
                         </div>
 
                         <div class="border-b border-white/10 pb-6">
-                            <span class="text-xs uppercase font-mono tracking-widest text-neutral-500 block mb-2">Contacto Directo</span>
+                            <span class="text-xs uppercase font-mono tracking-widest text-neutral-400 block mb-2">Contacto Directo</span>
                             <div class="flex flex-col sm:flex-row gap-6 mt-2">
                                 <a href="https://wa.me/5491123456789" target="_blank" rel="noopener noreferrer" class="text-xl font-bold text-white hover:text-gold transition-colors flex items-center gap-2">
                                     <span class="material-symbols-outlined text-gold">call</span>
@@ -1237,7 +1391,7 @@
                 </div>
 
                 <!-- Right Map / Directions Card -->
-                <div class="lg:col-span-6 bg-black border border-white/10 p-6 sm:p-8 flex flex-col justify-between reveal">
+                <div class="lg:col-span-6 bg-black border border-white/10 rounded-2xl p-6 sm:p-8 flex flex-col justify-between reveal">
                     <div>
                         <div class="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-gold mb-3">
                             <span class="material-symbols-outlined text-sm">location_on</span>
@@ -1249,7 +1403,7 @@
                         </p>
                         
                         <!-- Interactive Google Map Embed -->
-                        <div class="w-full h-64 sm:h-72 border border-white/10 overflow-hidden relative mb-6 bg-neutral-900">
+                        <div class="w-full h-64 sm:h-72 border border-white/10 rounded-xl overflow-hidden relative mb-6 bg-neutral-900">
                             <iframe 
                                 title="FITAWAY Olivos Google Map"
                                 src="https://maps.google.com/maps?q=Av.+del+Libertador+2450,+Olivos,+Buenos+Aires&t=&z=16&ie=UTF8&iwloc=&output=embed" 
@@ -1262,10 +1416,10 @@
                     </div>
 
                     <div class="flex flex-col sm:flex-row gap-3">
-                        <a href="https://maps.google.com/?q=Av.+del+Libertador+2450,+Olivos,+Buenos+Aires" target="_blank" rel="noopener noreferrer" class="flex-1 text-center bg-white text-black font-display uppercase text-xs sm:text-sm font-bold py-3.5 px-4 hover:bg-gold transition-colors flex items-center justify-center gap-2">
+                        <a href="https://maps.google.com/?q=Av.+del+Libertador+2450,+Olivos,+Buenos+Aires" target="_blank" rel="noopener noreferrer" class="flex-1 text-center bg-white text-black font-display uppercase text-xs sm:text-sm font-bold py-3.5 px-4 rounded-full hover:bg-gold transition-colors flex items-center justify-center gap-2">
                             <span>Abrir en Google Maps →</span>
                         </a>
-                        <a href="https://wa.me/5491123456789?text=Hola%20FITAWAY!%20Por%20favor%20envíenme%20la%20ubicación%20exacta." target="_blank" rel="noopener noreferrer" class="flex-1 text-center border border-white/20 text-neutral-300 font-display uppercase text-xs sm:text-sm py-3.5 px-4 hover:border-white transition-colors flex items-center justify-center gap-2">
+                        <a href="https://wa.me/5491123456789?text=Hola%20FITAWAY!%20Por%20favor%20envíenme%20la%20ubicación%20exacta." target="_blank" rel="noopener noreferrer" class="flex-1 text-center border border-white/20 text-neutral-300 font-display uppercase text-xs sm:text-sm py-3.5 px-4 rounded-full hover:border-white transition-colors flex items-center justify-center gap-2">
                             <span>Solicitar Pin de Ubicación</span>
                         </a>
                     </div>
@@ -1275,23 +1429,23 @@
 
             <!-- Geographic Reach Hub -->
             <div class="max-w-7xl mx-auto mt-16 pt-12 border-t border-white/10 grid grid-cols-1 md:grid-cols-3 gap-8 text-neutral-400 font-body text-sm reveal">
-                <div class="p-6 bg-black border border-white/10">
-                    <span class="text-xs font-mono uppercase tracking-widest text-gold block mb-2">Ubicación Privilegiada</span>
+                <div class="p-6 bg-black border border-white/10 rounded-2xl">
+                    <span class="font-script text-xl text-[#75AADB] block mb-1">corredor norte</span>
                     <h4 class="text-lg font-display uppercase text-white mb-2">Sede Olivos (Av. del Libertador)</h4>
                     <p class="leading-relaxed text-xs text-neutral-400">
                         Situado sobre el corredor neurálgico de Av. del Libertador, constituyendo el santuario de fuerza de referencia para la Zona Norte del Gran Buenos Aires.
                     </p>
                 </div>
-                <div class="p-6 bg-black border border-white/10">
-                    <span class="text-xs font-mono uppercase tracking-widest text-gold block mb-2">5 a 10 Minutos</span>
-                    <h4 class="text-lg font-display uppercase text-white mb-2">Localidades Cercanas</h4>
+                <div class="p-6 bg-black border border-white/10 rounded-2xl">
+                    <span class="font-script text-xl text-gold block mb-1">cercanía real</span>
+                    <h4 class="text-lg font-display uppercase text-white mb-2">5 a 10 Minutos de Viaje</h4>
                     <p class="leading-relaxed text-xs text-neutral-400">
                         Conexión fluida para socios que residen en La Lucila, Vicente López centro, Florida, Martínez y Acassuso.
                     </p>
                 </div>
-                <div class="p-6 bg-black border border-white/10">
-                    <span class="text-xs font-mono uppercase tracking-widest text-gold block mb-2">Acceso Rápido</span>
-                    <h4 class="text-lg font-display uppercase text-white mb-2">Corredor Norte y San Isidro</h4>
+                <div class="p-6 bg-black border border-white/10 rounded-2xl">
+                    <span class="font-script text-xl text-[#75AADB] block mb-1">conectividad</span>
+                    <h4 class="text-lg font-display uppercase text-white mb-2">Zona Norte & San Isidro</h4>
                     <p class="leading-relaxed text-xs text-neutral-400">
                         Fácil conexión desde Panamericana, Av. Maipú y tren Mitre (Ramal Tigre), facilitando entrenamientos antes o después de la jornada laboral.
                     </p>
@@ -1302,7 +1456,7 @@
         <!-- SECTION 11: FAQ SECTION -->
         <section id="faq" class="py-24 md:py-36 px-6 md:px-12 max-w-7xl mx-auto border-t border-white/10">
             <div class="mb-16 reveal">
-                <span class="text-xs uppercase tracking-widest text-neutral-500 font-mono block mb-2">08 / Preguntas Frecuentes</span>
+                <span class="font-script text-3xl text-gold block mb-1">preguntas frecuentes</span>
                 <h2 class="text-4xl md:text-7xl font-display uppercase tracking-tight text-white">Todo Lo Que Necesitás Saber</h2>
             </div>
 
@@ -1360,17 +1514,18 @@
         <!-- SECTION 12: FINAL CTA -->
         <section class="relative py-28 md:py-44 px-6 md:px-12 overflow-hidden flex flex-col items-center justify-center text-center bg-white text-black">
             <div class="relative z-10 reveal max-w-5xl mx-auto">
-                <span class="text-xs font-mono uppercase tracking-[0.3em] text-neutral-500 font-bold block mb-6">FITAWAY • Olivos, Buenos Aires</span>
+                <span class="font-script text-3xl sm:text-4xl text-[#75AADB] block mb-2">olivos, buenos aires</span>
+                <span class="text-xs font-mono uppercase tracking-[0.3em] text-neutral-500 font-bold block mb-6">FITAWAY • ALTO RENDIMIENTO</span>
                 <h2 class="text-5xl md:text-[8vw] font-display uppercase font-bold tracking-tighter leading-none mb-12">
                     <span class="reveal-text-mask"><span class="reveal-text block">Tu Próxima Serie</span></span>
                     <span class="reveal-text-mask"><span class="reveal-text reveal-delay-2 block">Empieza Acá.</span></span>
                 </h2>
                 <div class="flex flex-col sm:flex-row gap-5 justify-center items-center">
-                    <a href="https://wa.me/5491123456789?text=Hola%20FITAWAY!%20Quiero%20asociarme%20al%20gimnasio." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-black text-white font-display text-lg md:text-xl uppercase px-12 py-5 hover:bg-neutral-800 transition-colors">
+                    <a href="https://wa.me/5491123456789?text=Hola%20FITAWAY!%20Quiero%20asociarme%20al%20gimnasio." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-black text-white font-display text-lg md:text-xl uppercase px-12 py-5 rounded-full hover:bg-neutral-800 transition-colors shadow-2xl">
                         <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.101.005.241-.038.376.287.144.35.49 1.199.534 1.286.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.13.559 4.129 1.534 5.864l-1.634 5.964 6.13-1.609c1.684.919 3.609 1.447 5.658 1.447 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/></svg>
                         <span>Asociarme a FITAWAY</span>
                     </a>
-                    <a href="https://wa.me/5491123456789?text=Hola!%20Quiero%20consultar%20sobre%20Entrenamiento%20Personal%20en%20FITAWAY." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 border-2 border-black text-black font-display text-lg md:text-xl uppercase px-12 py-5 hover:bg-black hover:text-white transition-colors">
+                    <a href="https://wa.me/5491123456789?text=Hola!%20Quiero%20consultar%20sobre%20Entrenamiento%20Personal%20en%20FITAWAY." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 border-2 border-black text-black font-display text-lg md:text-xl uppercase px-12 py-5 rounded-full hover:bg-black hover:text-white transition-colors">
                         <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.101.005.241-.038.376.287.144.35.49 1.199.534 1.286.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.13.559 4.129 1.534 5.864l-1.634 5.964 6.13-1.609c1.684.919 3.609 1.447 5.658 1.447 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/></svg>
                         <span>Consultar Entrenador →</span>
                     </a>
@@ -1383,7 +1538,8 @@
             <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
                 
                 <div class="md:col-span-1">
-                    <h2 class="text-3xl font-display uppercase mb-4 tracking-tight text-gold">FITAWAY</h2>
+                    <h2 class="text-3xl font-display uppercase mb-2 tracking-tight text-gold">FITAWAY</h2>
+                    <span class="font-script text-2xl text-[#75AADB] block mb-3">olivos • buenos aires</span>
                     <p class="text-neutral-400 font-body text-xs leading-relaxed mb-6">
                         Santuario de entrenamiento de alto rendimiento en Olivos, Vicente López. Biomecánica aplicada, entrenamiento personal 1 a 1 y nutrición deportiva integral.
                     </p>
@@ -1398,7 +1554,7 @@
                 </div>
                 
                 <div class="flex flex-col gap-3">
-                    <h4 class="text-xs font-mono font-bold uppercase tracking-widest text-neutral-500 mb-2">Explorar</h4>
+                    <h4 class="text-xs font-mono font-bold uppercase tracking-widest text-neutral-400 mb-2">Explorar</h4>
                     <a href="#train" class="font-body text-xs text-neutral-300 hover:text-gold">Disciplinas & Programas</a>
                     <a href="personal-training.html" class="font-body text-xs text-neutral-300 hover:text-gold">Entrenamiento 1 a 1</a>
                     <a href="#memberships" class="font-body text-xs text-neutral-300 hover:text-gold">Membresías</a>
@@ -1406,21 +1562,21 @@
                 </div>
                 
                 <div class="flex flex-col gap-3">
-                    <h4 class="text-xs font-mono font-bold uppercase tracking-widest text-neutral-500 mb-2">Ubicación & Contacto</h4>
+                    <h4 class="text-xs font-mono font-bold uppercase tracking-widest text-neutral-400 mb-2">Ubicación & Contacto</h4>
                     <p class="font-body text-xs text-neutral-300">Av. del Libertador 2450, Olivos, Buenos Aires</p>
                     <a href="https://wa.me/5491123456789" target="_blank" rel="noopener noreferrer" class="font-body text-xs text-neutral-300 hover:text-gold">+54 9 11 2345-6789</a>
                     <a href="https://wa.me/5491123456789" target="_blank" rel="noopener noreferrer" class="font-body text-xs text-gold hover:text-white">Atención por WhatsApp</a>
                 </div>
                 
                 <div class="flex flex-col gap-3">
-                    <h4 class="text-xs font-mono font-bold uppercase tracking-widest text-neutral-500 mb-2">Horarios</h4>
+                    <h4 class="text-xs font-mono font-bold uppercase tracking-widest text-neutral-400 mb-2">Horarios</h4>
                     <p class="font-body text-xs text-neutral-300"><strong class="text-white">Lun a Vie:</strong> 06:00 – 22:00 ART</p>
                     <p class="font-body text-xs text-neutral-300"><strong class="text-white">Sábados:</strong> 08:00 – 18:00 ART</p>
                     <p class="font-body text-xs text-neutral-300"><strong class="text-white">Domingos:</strong> 09:00 – 14:00 ART</p>
                 </div>
             </div>
             
-            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 text-xs text-neutral-600 font-body">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 text-xs text-neutral-500 font-body">
                 <p>&copy; 2026 FITAWAY. Todos los derechos reservados. Olivos, Vicente López, Buenos Aires.</p>
                 <div class="flex gap-6 mt-4 md:mt-0">
                     <a href="personal-training.html" class="hover:text-white">Entrenamiento Personal</a>
@@ -1436,24 +1592,80 @@
     <!-- SCRIPTS -->
     <script>
         // ----------------------------------------------------
-        // 1. DYNAMIC NAVIGATION VISIBILITY
+        // 1. SOL DE MAYO SCROLL EXPANSION & PORTAL
         // ----------------------------------------------------
-        const navContainer = document.getElementById('nav-container');
         const introScreen = document.getElementById('intro-screen');
+        const solBox = document.getElementById('sol-de-mayo-box');
+        const introKicker = document.getElementById('intro-kicker');
+        const introTitles = document.getElementById('intro-titles');
+        const introCta = document.getElementById('intro-cta');
+        const navContainer = document.getElementById('nav-container');
 
-        function handleNavVisibility() {
-            if (!navContainer) return;
-            const threshold = introScreen ? Math.min(introScreen.offsetHeight * 0.45, 300) : 150;
-            if (window.scrollY > threshold) {
-                navContainer.classList.add('nav-visible');
+        function handleSolExpansion() {
+            if (!introScreen || !solBox) return;
+            const scrollY = window.scrollY;
+            const vh = window.innerHeight;
+            const progress = Math.min(Math.max(scrollY / (vh * 0.90), 0), 1);
+
+            if (progress <= 0) {
+                solBox.style.transform = 'scale(1) rotate(0deg)';
+                solBox.style.opacity = '1';
+                if (introKicker) {
+                    introKicker.style.opacity = '1';
+                    introKicker.style.transform = 'none';
+                }
+                if (introTitles) {
+                    introTitles.style.opacity = '1';
+                    introTitles.style.transform = 'none';
+                }
+                if (introCta) {
+                    introCta.style.opacity = '1';
+                }
             } else {
-                navContainer.classList.remove('nav-visible');
+                // Exponential organic expansion: 1 to 20x scale
+                const scale = 1 + Math.pow(progress, 1.4) * 20;
+                const rotation = progress * 32;
+                const opacity = Math.max(0, 1 - Math.pow(progress, 1.6) * 1.25);
+
+                solBox.style.transform = `scale(${scale.toFixed(3)}) rotate(${rotation.toFixed(1)}deg)`;
+                solBox.style.opacity = opacity.toFixed(3);
+
+                const textFade = Math.max(0, 1 - progress * 2.4);
+                const textSpread = progress * 110;
+                if (introKicker) {
+                    introKicker.style.opacity = textFade.toFixed(3);
+                    introKicker.style.transform = `translateY(-${textSpread}px)`;
+                }
+                if (introTitles) {
+                    introTitles.style.opacity = textFade.toFixed(3);
+                    introTitles.style.transform = `translateY(${textSpread * 0.5}px)`;
+                }
+                if (introCta) {
+                    introCta.style.opacity = textFade.toFixed(3);
+                }
+            }
+
+            // Handle Nav Header visibility
+            if (navContainer) {
+                const threshold = Math.min(vh * 0.65, 450);
+                if (scrollY > threshold) {
+                    navContainer.classList.add('nav-visible');
+                } else {
+                    navContainer.classList.remove('nav-visible');
+                }
             }
         }
 
-        window.addEventListener('scroll', handleNavVisibility, { passive: true });
-        window.addEventListener('resize', handleNavVisibility, { passive: true });
-        handleNavVisibility();
+        function scrollToHero() {
+            const hero = document.getElementById('hero-section');
+            if (hero) {
+                hero.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        window.addEventListener('scroll', handleSolExpansion, { passive: true });
+        window.addEventListener('resize', handleSolExpansion, { passive: true });
+        handleSolExpansion();
 
         // ----------------------------------------------------
         // 2. HERO VIDEO LOW-POWER OVERRIDE
@@ -1489,7 +1701,7 @@
         }
 
         // ----------------------------------------------------
-        // 3. INTERSECTION OBSERVER REVEAL (Slow Text & Stagger Physics)
+        // 3. INTERSECTION OBSERVER REVEAL (Slow Text & Physics)
         // ----------------------------------------------------
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -1565,8 +1777,8 @@
             requestAnimationFrame(raf);
 
             window.lenis = lenis;
-            if (typeof handleNavVisibility === 'function') {
-                lenis.on('scroll', handleNavVisibility);
+            if (typeof handleSolExpansion === 'function') {
+                lenis.on('scroll', handleSolExpansion);
             }
 
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1582,7 +1794,7 @@
                                 mobileMenu.classList.remove('flex');
                                 document.body.style.overflow = '';
                             }
-                            lenis.scrollTo(target, { offset: -40, duration: 1.1 });
+                            lenis.scrollTo(target, { offset: -30, duration: 1.1 });
                         }
                     }
                 });
