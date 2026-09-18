@@ -587,72 +587,34 @@
     <main id="main-content" class="relative z-10 bg-black w-full">
 
         <!-- ========================================================================= -->
-        <!-- SCREEN 02: CINEMATIC VIDEO (HERO - REDESIGNED VICE CITY / ZONA NORTE STYLE) -->
+        <!-- SCREEN 02: CINEMATIC STOCK VIDEO — BIG ASS TYPOGRAPHY ONLY -->
         <!-- ========================================================================= -->
-        <section id="hero-section" class="relative w-full min-h-[100dvh] flex flex-col justify-between overflow-hidden bg-black pt-20 pb-8">
+        <section id="hero-section" class="relative w-full h-[100dvh] flex items-center justify-center overflow-hidden bg-black select-none">
             <!-- Clear vibrant video background -->
-            <video id="hero-video" class="absolute inset-0 w-full h-full object-cover opacity-90 z-0" 
+            <video id="hero-video" class="absolute inset-0 w-full h-full object-cover opacity-95 z-0" 
                    playsinline webkit-playsinline muted loop autoplay preload="auto"
                    poster="assets/hero_landing_powerlifter.jpg">
                 <source src="assets/hero_video.mp4" type="video/mp4">
                 <source src="https://cdn.coverr.co/videos/coverr-a-man-lifting-weights-in-a-gym-2509/1080p.mp4" type="video/mp4">
             </video>
-            <!-- Clean subtle gradient vignette to keep video crisp and text readable -->
-            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-black/40 pointer-events-none z-1"></div>
             
-            <!-- TOP STRIP: LUXURY MINIMALIST EDITORIAL BAR -->
-            <div class="relative z-10 w-full max-w-7xl mx-auto px-6 pt-3 pb-3 border-b border-white/10 flex flex-wrap items-center justify-between gap-3 text-[10px] sm:text-xs font-mono uppercase tracking-[0.25em] text-neutral-300 select-none">
-                <div class="flex items-center gap-2">
-                    <span class="font-script text-base text-[#75AADB] normal-case">olivos</span>
-                    <span class="text-white font-bold tracking-widest">// Av. del Libertador 2450</span>
-                </div>
-                <div class="hidden sm:flex items-center gap-4 text-neutral-300">
-                    <span class="text-gold font-bold">5.0 ★ GOOGLE (140+ RESEÑAS)</span>
-                    <span class="text-white/20">|</span>
-                    <span class="font-script text-sm text-[#75AADB] normal-case">buenos aires</span>
-                </div>
-                <div class="flex items-center gap-2">
-                    <span class="text-neutral-400">PUERTAS:</span>
-                    <span class="text-gold font-bold font-mono">06:00 – 22:00 ART</span>
-                </div>
+            <!-- Clean minimal vignette to let video breathe while letters pop -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30 pointer-events-none z-1"></div>
+            
+            <!-- ONLY BIG ASS TYPOGRAPHY — NO SHIT ON STOCK VIDEO -->
+            <div class="relative z-10 w-full max-w-7xl mx-auto px-4 flex flex-col items-center justify-center text-center">
+                <h1 class="text-7xl sm:text-9xl md:text-[15vw] lg:text-[18vw] font-display font-black uppercase tracking-tighter leading-[0.78] text-white drop-shadow-[0_20px_70px_rgba(0,0,0,0.95)]">
+                    <span class="block reveal-text-mask"><span class="reveal-text block text-white">FUERZA</span></span>
+                    <span class="block reveal-text-mask"><span class="reveal-text reveal-delay-1 block text-white">PURA</span></span>
+                </h1>
             </div>
+        </section>
 
-            <!-- CENTER HERO DISPLAY: VICE CITY CURSIVE TYPOGRAPHY & MANIFESTO -->
-            <div class="relative z-10 text-center px-4 sm:px-6 w-full max-w-7xl mx-auto py-6 sm:py-10 flex flex-col items-center justify-center my-auto">
-                <h1 class="sr-only">FITAWAY Olivos Buenos Aires - Entrenamiento Personal 1 a 1, Biomecánica y Nutrición Deportiva</h1>
-                
-                <!-- VICE CITY CURSIVE ACCENT (REPLACES ROBOTIC BOXES) -->
-                <div class="mb-5 sm:mb-7 flex flex-col items-center select-none reveal">
-                    <span class="font-script text-3xl sm:text-5xl md:text-6xl text-[#75AADB] tracking-wide lowercase drop-shadow-[0_0_22px_rgba(117,170,219,0.7)] -rotate-1 mb-1">
-                        olivos, zona norte
-                    </span>
-                    <div class="flex items-center gap-3">
-                        <span class="h-[1px] w-8 sm:w-16 bg-gradient-to-r from-transparent via-[#75AADB] to-gold"></span>
-                        <span class="text-[10px] sm:text-xs uppercase tracking-[0.35em] font-mono text-neutral-200 font-semibold">
-                            Santuario de Alto Rendimiento
-                        </span>
-                        <span class="h-[1px] w-8 sm:w-16 bg-gradient-to-l from-transparent via-[#75AADB] to-gold"></span>
-                    </div>
-                </div>
-                
-                <div class="text-6xl sm:text-8xl md:text-9xl lg:text-[11.5vw] xl:text-[12.5vw] font-display font-black tracking-tight uppercase leading-[0.82] text-white drop-shadow-2xl select-none flex flex-col items-center">
-                    <span class="reveal-text-mask"><span class="reveal-text block text-white">ENTRENAMIENTO 1 A 1</span></span>
-                    <span class="reveal-text-mask"><span class="reveal-text reveal-delay-1 block text-white">NUTRICIÓN</span></span>
-                    <span class="reveal-text-mask"><span class="reveal-text reveal-delay-2 block text-white">LONGEVIDAD</span></span>
-                </div>
-
-                <!-- BESPOKE MANIFESTO -->
-                <div class="mt-8 sm:mt-10 max-w-3xl mx-auto space-y-3 reveal reveal-delay-3 px-2">
-                    <p class="font-script text-xl sm:text-2xl md:text-3xl text-gold font-normal tracking-wide">
-                        diseñado para personas exigentes • zona norte
-                    </p>
-                    <p class="text-neutral-200 font-body text-xs sm:text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
-                        Sin circuitos improvisados ni gimnasios comerciales masivos. Biomecánica aplicada, sobrecarga progresiva y nutrición deportiva personalizada en Av. del Libertador 2450.
-                    </p>
-                </div>
-
-                <!-- CALL TO ACTIONS (ROUNDED LUXURY PILLS) -->
-                <div class="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-2xl reveal reveal-delay-4">
+        <!-- ACTION & SPECIFICATION DOCK (BELOW VIDEO) -->
+        <section id="hero-dock-section" class="relative z-10 w-full bg-black py-10 px-4 sm:px-6 border-b border-white/10 select-none">
+            <div class="max-w-7xl mx-auto flex flex-col gap-8">
+                <!-- Direct Action Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-2xl mx-auto">
                     <a href="https://wa.me/5491123456789?text=Hola!%20Quiero%20consultar%20sobre%20Entrenamiento%20Personal%20en%20FITAWAY." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-[#25D366] text-black font-display text-sm sm:text-base uppercase font-bold tracking-wider px-8 sm:px-10 py-4 rounded-full hover:bg-white transition-all flex items-center justify-center gap-2.5 shadow-[0_4px_25px_rgba(37,211,102,0.35)] group">
                         <svg class="w-5 h-5 fill-current text-black group-hover:scale-110 transition-transform" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.101.005.241-.038.376.287.144.35.49 1.199.534 1.286.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.13.559 4.129 1.534 5.864l-1.634 5.964 6.13-1.609c1.684.919 3.609 1.447 5.658 1.447 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/></svg>
                         <span>Consultar al Entrenador →</span>
@@ -664,10 +626,8 @@
                         Ver Disciplinas ↓
                     </a>
                 </div>
-            </div>
 
-            <!-- BOTTOM HERO FLOATING DOCK (ORGANIC LUXURY - NO ROBOTIC BOXES) -->
-            <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 pt-4 pb-2 select-none">
+                <!-- Floating Rounded Dock -->
                 <div class="bg-black/45 backdrop-blur-xl border border-white/10 rounded-2xl p-4 sm:p-6 shadow-2xl grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 divide-y lg:divide-y-0 lg:divide-x divide-white/10">
                     <div class="flex flex-col justify-center pt-2 lg:pt-0 lg:px-4 group">
                         <div class="flex items-baseline gap-2 mb-1">
@@ -1647,7 +1607,7 @@
 
             // Handle Nav Header visibility
             if (navContainer) {
-                const threshold = Math.min(vh * 0.65, 450);
+                const threshold = Math.min(vh * 1.5, 1100);
                 if (scrollY > threshold) {
                     navContainer.classList.add('nav-visible');
                 } else {
