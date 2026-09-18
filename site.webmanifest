@@ -1,17 +1,17 @@
 {
-  "name": "FITAWAY — Entrenamiento & Alto Rendimiento",
+  "name": "FITAWAY — Gimnasio Boutique & Rendimiento",
   "short_name": "FITAWAY",
   "description": "Entrenamiento personalizado 1 a 1, biomecánica y nutrición deportiva en Olivos, Vicente López, Buenos Aires.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#050505",
-  "theme_color": "#050505",
+  "background_color": "#FFFFFF",
+  "theme_color": "#FFFFFF",
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/assets/hero_landing_powerlifter.jpg",
+      "src": "/assets/hero_gym_bright.jpg",
       "sizes": "192x192 512x512",
-      "type": "image/png",
+      "type": "image/jpeg",
       "purpose": "any maskable"
     }
   ]
